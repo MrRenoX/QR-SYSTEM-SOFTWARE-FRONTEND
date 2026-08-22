@@ -1,0 +1,100 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Clock, Users } from "lucide-react";
+import { getCategoryBadgeClass } from "@/lib/categoryStyles";
+import type { Experience } from "@/lib/types";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+
+interface ExperienceCardProps {
+  experience: Experience;
+  /** Priority-load the first card's image */
+  priority?: boolean;
+}
+
+export default function ExperienceCard({
+  experience,
+  priority = false,
+}: ExperienceCardProps) {
+  const { t } = useLanguage();
+  const { slug, title, category, image, description, duration, groupSize, price } =
+    experience;
+
+  // Skip rendering if no image is available
+  if (!image) {
+    return null;
+  }
+
+  return (
+    <article className="group overflow-hidden rounded-card border border-line bg-white shadow-card transition-shadow duration-300 hover:shadow-float">
+      <Link
+        href={`/experiences/${slug}`}
+        aria-label={t.experienceCard.ariaLabel(title, category, duration, price)}
+        className="zoom-frame arrow-nudge block"
+      >
+        <div className="relative h-[152px] w-full overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            priority={priority}
+            sizes="(min-width: 431px) 390px, 100vw"
+            className="object-cover"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"
+          />
+          <span
+            className={`absolute left-3 top-3 w-fit rounded-[4px] px-1.5 py-[3px] text-[9.5px] font-bold uppercase tracking-[0.07em] ${getCategoryBadgeClass(category)}`}
+          >
+            {category}
+          </span>
+          <dl className="absolute inset-x-3 bottom-2.5 flex items-center gap-3 text-[11px] font-semibold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.35)]">
+            <div className="flex items-center gap-1">
+              <dt className="sr-only">{t.experienceCard.durationSr}</dt>
+              <Clock size={13} strokeWidth={2.2} className="shrink-0" aria-hidden="true" />
+              <dd className="whitespace-nowrap">{duration}</dd>
+            </div>
+            <div className="flex items-center gap-1">
+              <dt className="sr-only">{t.experienceCard.groupSizeSr}</dt>
+              <Users size={13} strokeWidth={2.2} className="shrink-0" aria-hidden="true" />
+              <dd className="whitespace-nowrap">{groupSize}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div className="p-3.5">
+          <h3 className="font-serif text-[17px] font-bold leading-tight text-ink">
+            {title}
+          </h3>
+          <p className="mt-1 line-clamp-2 text-[12px] leading-[1.45] text-ink-soft">
+            {description}
+          </p>
+
+          <div className="mt-3 flex items-center justify-between border-t border-line pt-2.5">
+            <div className="leading-tight">
+              <span className="block text-[9px] font-semibold uppercase tracking-[0.07em] text-ink-faint">
+                {t.experienceCard.startsFrom}
+              </span>
+              <p className="text-[16.5px] font-bold text-terracotta">
+                {price}
+                <span className="text-[11px] font-semibold text-ink-muted">
+                  {" "}
+                  {t.experienceCard.perPerson}
+                </span>
+              </p>
+            </div>
+            <span
+              aria-hidden="true"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta text-white transition-transform duration-300 group-hover:scale-[1.06]"
+            >
+              <ArrowRight size={17} strokeWidth={2.2} />
+            </span>
+          </div>
+        </div>
+      </Link>
+    </article>
+  );
+}

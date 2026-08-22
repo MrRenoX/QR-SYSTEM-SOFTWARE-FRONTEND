@@ -1,0 +1,45 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import BookingForm from "@/components/BookingForm";
+import Footer from "@/components/Footer";
+import {
+  getExperienceBySlug,
+  getExperienceSlugs,
+} from "@/services/experienceService";
+import { getSiteSettings } from "@/services/settingsService";
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = await getExperienceSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const experience = await getExperienceBySlug(slug);
+  return {
+    title: experience ? `Book ${experience.title} | Ayodhya Anubhav` : "Book",
+  };
+}
+
+export default async function BookPage({ params }: PageProps) {
+  const { slug } = await params;
+  const [experience, settings] = await Promise.all([
+    getExperienceBySlug(slug),
+    getSiteSettings(),
+  ]);
+
+  if (!experience) notFound();
+
+  return (
+    <>
+      <main className="px-4 pb-6">
+        <BookingForm experience={experience} />
+      </main>
+      <Footer settings={settings} />
+    </>
+  );
+}

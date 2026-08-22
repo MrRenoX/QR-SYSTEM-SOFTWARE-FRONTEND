@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 190" width="240" height="190" aria-hidden="true">
+  <g fill="none" stroke="#DC4A0C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <!-- central shikhara -->
+    <path d="M120 14c-4 8-6 14-6 20 0 5 3 8 6 8s6-3 6-8c0-6-2-12-6-20z"/>
+    <path d="M120 42v-6"/>
+    <path d="M96 118c0-30 10-56 24-72 14 16 24 42 24 72z"/>
+    <path d="M104 118c0-26 7-48 16-62 9 14 16 36 16 62"/>
+    <path d="M112 118v-22a8 8 0 0 1 16 0v22"/>
+    <!-- flanking domes -->
+    <path d="M60 124c0-20 8-36 18-46 10 10 18 26 18 46z"/>
+    <path d="M144 124c0-20 8-36 18-46 10 10 18 26 18 46z"/>
+    <path d="M78 68v-8"/><path d="M162 68v-8"/>
+    <circle cx="78" cy="56" r="4"/><circle cx="162" cy="56" r="4"/>
+    <!-- outer turrets -->
+    <path d="M34 132c0-14 5-26 12-33 7 7 12 19 12 33z"/>
+    <path d="M182 132c0-14 5-26 12-33 7 7 12 19 12 33z"/>
+    <!-- colonnade -->
+    <path d="M28 132h184"/>
+    <path d="M28 146h184"/>
+    <path d="M44 146v-14M64 146v-14M84 146v-14M104 146v-14M120 146v-14M136 146v-14M156 146v-14M176 146v-14M196 146v-14"/>
+    <path d="M44 132a10 10 0 0 1 20 0M84 132a10 10 0 0 1 20 0M136 132a10 10 0 0 1 20 0M176 132a10 10 0 0 1 20 0"/>
+    <!-- plinth -->
+    <path d="M20 146h200v10H20z"/>
+    <path d="M14 156h212v8H14z"/>
+    <path d="M26 164h188"/>
+    <path d="M40 164v8M80 164v8M120 164v8M160 164v8M200 164v8"/>
+    <path d="M30 172h180"/>
+  </g>
+</svg>
