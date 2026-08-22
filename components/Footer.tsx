@@ -42,134 +42,136 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
   ];
 
   return (
-    <footer id="contact" className="mt-8 bg-cream px-4 pb-6 pt-5">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <Image
-            src="/images/branding/logo.png"
-            alt={general.websiteName}
-            width={46}
-            height={36}
-            className="h-[34px] w-auto"
-          />
-          <p className="mt-2 max-w-[190px] text-[10px] font-medium leading-[1.45] text-ink-soft">
-            {footer.description}
-          </p>
-          <ul className="mt-3 flex gap-2">
-            {socials.map(({ Icon, label, href }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="flex h-7 w-7 items-center justify-center rounded-full bg-ink text-white transition-colors hover:bg-terracotta"
-                >
-                  <Icon size={13} aria-hidden="true" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <footer id="contact" className="mt-8 bg-cream px-4 pb-6 pt-5 tab:px-8 tab:pb-8 tab:pt-7 tabLg:px-10 tabLg:pb-10 tabLg:pt-8">
+      <div className="tabLg:grid tabLg:grid-cols-4 tabLg:gap-x-10">
+        <div className="flex items-start justify-between gap-3 tab:gap-6 tabLg:contents">
+          <div className="min-w-0 tabLg:col-start-1 tabLg:row-start-1">
+            <Image
+              src="/images/branding/logo.png"
+              alt={general.websiteName}
+              width={46}
+              height={36}
+              className="h-[34px] w-auto tab:h-9"
+            />
+            <p className="mt-2 max-w-[190px] text-[10px] font-medium leading-[1.45] text-ink-soft tab:max-w-[240px] tab:text-[11.5px]">
+              {footer.description}
+            </p>
+            <ul className="mt-3 flex gap-2 tab:mt-4">
+              {socials.map(({ Icon, label, href }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-7 w-7 items-center justify-center rounded-full bg-ink text-white transition-colors hover:bg-terracotta tab:h-8 tab:w-8"
+                  >
+                    <Icon size={13} aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div className="w-[152px] shrink-0 rounded-[12px] border border-line bg-white p-3">
-          <h3 className="text-[11.5px] font-bold text-ink">{t.footer.needHelp}</h3>
-          <p className="mt-1 text-[9px] leading-[1.35] text-ink-muted">
-            {t.footer.needHelpDetail}
-          </p>
-          <a
-            href={toWaLink(general.whatsapp)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 flex h-7 items-center justify-center gap-1 rounded-[6px] bg-whatsapp text-[10px] font-semibold text-white transition-opacity hover:opacity-90"
-          >
-            <WhatsAppIcon size={11} />
-            {t.footer.chatWhatsapp}
-          </a>
-          <a
-            href={toTelLink(general.phone)}
-            className="mt-1.5 flex h-7 items-center justify-center gap-1 rounded-[6px] border border-terracotta/50 text-[10px] font-semibold text-terracotta transition-colors hover:bg-terracotta-tint"
-          >
-            <Phone size={11} aria-hidden="true" />
-            {t.footer.callUs}
-          </a>
-        </div>
-      </div>
-
-      <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-4">
-        <nav aria-label={t.footer.exploreHeading}>
-          <h3 className="text-[11.5px] font-bold text-ink">{t.footer.exploreHeading}</h3>
-          <ul className="mt-1.5 space-y-1">
-            {EXPLORE_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="text-[10px] text-ink-muted transition-colors hover:text-terracotta"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <nav aria-label={t.footer.companyHeading}>
-          <h3 className="text-[11.5px] font-bold text-ink">{t.footer.companyHeading}</h3>
-          <ul className="mt-1.5 space-y-1">
-            {COMPANY_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="text-[10px] text-ink-muted transition-colors hover:text-terracotta"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-
-      <div className="mt-4">
-        <h3 className="text-[11.5px] font-bold text-ink">{t.footer.contactHeading}</h3>
-        <ul className="mt-1.5 space-y-1.5 text-[10px] text-ink-muted">
-          <li>
-            <a href={toTelLink(general.phone)} className="flex items-center gap-1.5 hover:text-terracotta">
-              <Phone size={11} className="shrink-0 text-terracotta" aria-hidden="true" />
-              {general.phone}
-            </a>
-          </li>
-          <li>
+          <div className="w-[152px] shrink-0 rounded-[12px] border border-line bg-white p-3 tab:w-[220px] tab:p-4 tabLg:col-start-4 tabLg:row-start-1 tabLg:w-full">
+            <h3 className="text-[11.5px] font-bold text-ink tab:text-[13px]">{t.footer.needHelp}</h3>
+            <p className="mt-1 text-[9px] leading-[1.35] text-ink-muted tab:text-[11px]">
+              {t.footer.needHelpDetail}
+            </p>
             <a
-              href={`mailto:${general.email}`}
-              className="flex items-center gap-1.5 break-all hover:text-terracotta"
+              href={toWaLink(general.whatsapp)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 flex h-7 items-center justify-center gap-1 rounded-[6px] bg-whatsapp text-[10px] font-semibold text-white transition-opacity hover:opacity-90 tab:h-9 tab:text-[12px]"
             >
-              <Mail size={11} className="shrink-0 text-terracotta" aria-hidden="true" />
-              {general.email}
+              <WhatsAppIcon size={11} />
+              {t.footer.chatWhatsapp}
             </a>
-          </li>
-          <li className="flex items-start gap-1.5">
-            <MapPin size={11} className="mt-0.5 shrink-0 text-terracotta" aria-hidden="true" />
-            <span>{general.address}</span>
-          </li>
-        </ul>
-      </div>
+            <a
+              href={toTelLink(general.phone)}
+              className="mt-1.5 flex h-7 items-center justify-center gap-1 rounded-[6px] border border-terracotta/50 text-[10px] font-semibold text-terracotta transition-colors hover:bg-terracotta-tint tab:h-9 tab:text-[12px]"
+            >
+              <Phone size={11} aria-hidden="true" />
+              {t.footer.callUs}
+            </a>
+          </div>
+        </div>
 
-      <div className="mt-5 flex items-center gap-2.5 rounded-[10px] border border-line bg-white p-2.5">
-        <Image
-          src="/images/branding/website-qr.jpg"
-          alt={t.footer.qrAlt}
-          width={44}
-          height={44}
-          className="h-11 w-11 shrink-0 rounded-[5px] border border-line/70 object-cover"
-        />
-        <div>
-          <p className="text-[10px] font-bold text-ink">{t.footer.visitWebsite}</p>
-          <p className="text-[9px] leading-[1.35] text-ink-muted">{t.footer.scanQr}</p>
+        <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-4 tab:mt-8 tab:gap-x-8 tabLg:contents">
+          <nav aria-label={t.footer.exploreHeading} className="tabLg:col-start-2 tabLg:row-start-1">
+            <h3 className="text-[11.5px] font-bold text-ink tab:text-[13px]">{t.footer.exploreHeading}</h3>
+            <ul className="mt-1.5 space-y-1 tab:mt-2.5 tab:space-y-2">
+              {EXPLORE_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-[10px] text-ink-muted transition-colors hover:text-terracotta tab:text-[12px]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label={t.footer.companyHeading} className="tabLg:col-start-3 tabLg:row-start-1">
+            <h3 className="text-[11.5px] font-bold text-ink tab:text-[13px]">{t.footer.companyHeading}</h3>
+            <ul className="mt-1.5 space-y-1 tab:mt-2.5 tab:space-y-2">
+              {COMPANY_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-[10px] text-ink-muted transition-colors hover:text-terracotta tab:text-[12px]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="mt-4 tab:mt-8 tabLg:col-start-4 tabLg:row-start-2 tabLg:mt-4">
+          <h3 className="text-[11.5px] font-bold text-ink tab:text-[13px]">{t.footer.contactHeading}</h3>
+          <ul className="mt-1.5 space-y-1.5 text-[10px] text-ink-muted tab:mt-2.5 tab:space-y-2 tab:text-[12px]">
+            <li>
+              <a href={toTelLink(general.phone)} className="flex items-center gap-1.5 hover:text-terracotta">
+                <Phone size={11} className="shrink-0 text-terracotta" aria-hidden="true" />
+                {general.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${general.email}`}
+                className="flex items-center gap-1.5 break-all hover:text-terracotta"
+              >
+                <Mail size={11} className="shrink-0 text-terracotta" aria-hidden="true" />
+                {general.email}
+              </a>
+            </li>
+            <li className="flex items-start gap-1.5">
+              <MapPin size={11} className="mt-0.5 shrink-0 text-terracotta" aria-hidden="true" />
+              <span>{general.address}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-5 flex items-center gap-2.5 rounded-[10px] border border-line bg-white p-2.5 tab:mt-6 tabLg:col-start-4 tabLg:row-start-3 tabLg:mt-4">
+          <Image
+            src="/images/branding/website-qr.jpg"
+            alt={t.footer.qrAlt}
+            width={44}
+            height={44}
+            className="h-11 w-11 shrink-0 rounded-[5px] border border-line/70 object-cover"
+          />
+          <div>
+            <p className="text-[10px] font-bold text-ink tab:text-[12px]">{t.footer.visitWebsite}</p>
+            <p className="text-[9px] leading-[1.35] text-ink-muted tab:text-[11px]">{t.footer.scanQr}</p>
+          </div>
         </div>
       </div>
 
-      <p className="mt-5 border-t border-line pt-3 text-center text-[9.5px] text-ink-faint">
+      <p className="mt-5 border-t border-line pt-3 text-center text-[9.5px] text-ink-faint tab:mt-8 tab:pt-4 tab:text-[11px]">
         {footer.copyright}
       </p>
     </footer>

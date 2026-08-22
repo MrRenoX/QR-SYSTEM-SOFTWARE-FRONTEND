@@ -24,7 +24,7 @@ export default async function HomePage() {
         <Hero settings={settings} />
         <IntroSection />
 
-        <section aria-labelledby="curated" className="mt-6 px-4">
+        <section aria-labelledby="curated" className="mt-6 px-4 tab:mt-10 tab:px-6 tabLg:mx-auto tabLg:max-w-[1080px] tabLg:px-10">
           <ExperienceList
             experiences={experiences}
             categories={categories}
@@ -35,9 +35,7 @@ export default async function HomePage() {
         </section>
 
         <TrustSection />
-        <div id="how-it-works">
-          <HowItWorks />
-        </div>
+        <HowItWorks />
       </main>
       <Footer settings={settings} />
     </>

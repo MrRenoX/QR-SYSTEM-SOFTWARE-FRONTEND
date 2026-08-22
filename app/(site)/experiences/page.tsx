@@ -33,7 +33,7 @@ export default async function ExperiencesPage({
   return (
     <>
       <Header />
-      <main className="px-4 pb-4">
+      <main className="px-4 pb-4 tab:px-8 tab:pb-8 tabLg:mx-auto tabLg:max-w-[1120px] tabLg:px-10 tabLg:pb-12">
         <PageHeader page="experiences" />
 
         <ExperienceList

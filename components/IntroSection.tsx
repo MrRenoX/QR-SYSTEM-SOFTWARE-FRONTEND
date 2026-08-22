@@ -20,37 +20,37 @@ export default function IntroSection() {
     <section
       id="about"
       aria-labelledby="intro-heading"
-      className="relative z-10 -mt-[46px] px-3"
+      className="relative z-10 -mt-[46px] px-3 tab:px-6 tabLg:mx-auto tabLg:max-w-[1080px] tabLg:px-10"
     >
-      <Reveal className="rounded-panel bg-parchment px-4 pb-4 pt-5 shadow-card ring-1 ring-line/70">
-        <div className="flex items-start gap-3">
+      <Reveal className="rounded-panel bg-parchment px-4 pb-4 pt-5 shadow-card ring-1 ring-line/70 tab:px-7 tab:pb-6 tab:pt-7 tabLg:px-9 tabLg:pb-7 tabLg:pt-8">
+        <div className="flex items-start gap-3 tab:gap-5">
           <Image
             src="/images/illustrations/temple-lineart.svg"
             alt=""
             width={210}
             height={170}
             aria-hidden="true"
-            className="-ml-1 mt-1 w-[118px] shrink-0"
+            className="-ml-1 mt-1 w-[118px] shrink-0 tab:w-[150px] tabLg:w-[170px]"
           />
 
           <div className="min-w-0 flex-1">
             <h2
               id="intro-heading"
-              className="font-serif text-[19px] leading-[1.25] tracking-[-0.01em] text-ink"
+              className="font-serif text-[19px] leading-[1.25] tracking-[-0.01em] text-ink tab:text-[24px] tabLg:text-[27px]"
             >
               {t.introSection.headingLead}
-              <span className="mt-0.5 block text-[22px] font-bold text-terracotta">
+              <span className="mt-0.5 block text-[22px] font-bold text-terracotta tab:text-[27px] tabLg:text-[30px]">
                 {t.introSection.headingHighlight}
               </span>
             </h2>
-            <p className="mt-2.5 text-[13px] leading-[1.4] text-ink-soft">
+            <p className="mt-2.5 text-[13px] leading-[1.4] text-ink-soft tab:mt-3.5 tab:text-[15px]">
               {t.introSection.subtitleLine1}
               <br />
               {t.introSection.subtitleLine2}
             </p>
             <Link
               href="/experiences"
-              className="arrow-nudge mt-3 inline-flex items-center gap-1.5 text-[12.5px] font-bold uppercase tracking-[0.06em] text-terracotta"
+              className="arrow-nudge mt-3 inline-flex items-center gap-1.5 text-[12.5px] font-bold uppercase tracking-[0.06em] text-terracotta tab:mt-4 tab:text-[13.5px]"
             >
               {t.introSection.didYouKnow}
               <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
@@ -58,23 +58,23 @@ export default function IntroSection() {
           </div>
         </div>
 
-        <hr className="my-4 border-line" />
+        <hr className="my-4 border-line tab:my-6" />
 
-        <ul className="grid grid-cols-2 gap-y-4">
+        <ul className="grid grid-cols-2 gap-y-4 tab:gap-y-6 tabLg:grid-cols-4 tabLg:gap-x-2">
           {BLOCKS.map(({ Icon, title, detail }, index) => (
             <li
               key={title}
-              className={`flex items-start gap-2.5 ${
-                index % 2 === 0 ? "pr-3" : "border-l border-line pl-3"
-              }`}
+              className={`flex items-start gap-2.5 tab:gap-3 ${
+                index % 2 === 0 ? "pr-3 tab:pr-4" : "border-l border-line pl-3 tab:pl-4"
+              } tabLg:border-l tabLg:border-line tabLg:pl-4 tabLg:pr-0 first:tabLg:border-l-0 first:tabLg:pl-0`}
             >
               <Icon
                 size={22}
                 strokeWidth={1.4}
-                className="mt-0.5 shrink-0 text-terracotta"
+                className="mt-0.5 shrink-0 text-terracotta tab:h-6 tab:w-6"
                 aria-hidden="true"
               />
-              <span className="min-w-0 text-[12px] leading-[1.35]">
+              <span className="min-w-0 text-[12px] leading-[1.35] tab:text-[13.5px]">
                 <span className="block font-semibold text-ink">{title}</span>
                 <span className="block text-ink-muted">{detail}</span>
               </span>

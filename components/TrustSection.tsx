@@ -26,24 +26,24 @@ export default function TrustSection() {
   ] as const;
 
   return (
-    <section aria-label={t.trustSection.ariaLabel} className="mt-6 px-3">
-      <Reveal className="rounded-panel border border-line bg-white px-2.5 py-4 shadow-card">
-        <ul className="grid grid-cols-2 gap-y-4 min-[360px]:grid-cols-4">
+    <section aria-label={t.trustSection.ariaLabel} className="mt-6 px-3 tab:px-6 tabLg:mx-auto tabLg:max-w-[1080px] tabLg:px-10">
+      <Reveal className="rounded-panel border border-line bg-white px-2.5 py-4 shadow-card tab:px-6 tab:py-6 tabLg:px-8 tabLg:py-7">
+        <ul className="grid grid-cols-2 gap-y-4 min-[360px]:grid-cols-4 tab:gap-y-6">
           {PILLARS.map(({ Icon, title, detail }, index) => (
             <li
               key={title}
-              className={`px-2 ${DIVIDERS[index]}`}
+              className={`px-2 tab:px-3 ${DIVIDERS[index]}`}
             >
               <Icon
                 size={20}
                 strokeWidth={1.5}
-                className="text-terracotta"
+                className="text-terracotta tab:h-6 tab:w-6"
                 aria-hidden="true"
               />
-              <h3 className="mt-1.5 text-[10.5px] font-bold leading-[1.25] text-ink">
+              <h3 className="mt-1.5 text-[10.5px] font-bold leading-[1.25] text-ink tab:mt-2.5 tab:text-[13px]">
                 {title}
               </h3>
-              <p className="mt-1 text-[9.5px] leading-[1.35] text-ink-muted">
+              <p className="mt-1 text-[9.5px] leading-[1.35] text-ink-muted tab:mt-1.5 tab:text-[11.5px]">
                 {detail}
               </p>
             </li>

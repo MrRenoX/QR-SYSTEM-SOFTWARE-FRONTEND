@@ -92,16 +92,16 @@ export default function QueryForm({
     <form
       onSubmit={onSubmit}
       noValidate
-      className="rounded-panel border border-line bg-white p-4 shadow-card"
+      className="rounded-panel border border-line bg-white p-4 shadow-card tab:mx-auto tab:max-w-[640px] tab:p-7 tabLg:max-w-[720px]"
     >
-      <h2 className="font-serif text-[19px] font-bold text-ink">{t.queryForm.heading}</h2>
-      <p className="mt-1 text-[12.5px] text-ink-muted">
+      <h2 className="font-serif text-[19px] font-bold text-ink tab:text-[23px]">{t.queryForm.heading}</h2>
+      <p className="mt-1 text-[12.5px] text-ink-muted tab:text-[14px]">
         {experienceTitle
           ? t.queryForm.subtitleWithExperience(experienceTitle)
           : t.queryForm.subtitleDefault}
       </p>
 
-      <div className="mt-3.5 space-y-3">
+      <div className="mt-3.5 space-y-3 tab:mt-5 tab:space-y-4">
         <div>
           <label htmlFor="query-name" className={labelClass}>
             {t.queryForm.name}
@@ -124,7 +124,7 @@ export default function QueryForm({
           )}
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 tab:gap-4">
           <div>
             <label htmlFor="query-room" className={labelClass}>
               {t.queryForm.roomNumber}

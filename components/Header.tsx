@@ -15,9 +15,17 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
 
+  const NAV_ITEMS = [
+    { label: t.mobileMenu.items.experiences, href: "/experiences" },
+    { label: t.mobileMenu.items.categories, href: "/categories" },
+    { label: t.mobileMenu.items.about, href: "/about" },
+    { label: t.mobileMenu.items.contact, href: "/contact" },
+    { label: t.mobileMenu.items.faqs, href: "/faqs" },
+  ] as const;
+
   return (
     <header className="sticky top-0 z-40 bg-ivory/95 backdrop-blur-sm">
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between gap-4 px-4 py-3 tab:px-6 tabLg:px-8">
         <Link href="/" aria-label={t.header.homeAriaLabel} className="shrink-0">
           <Image
             src="/images/branding/logo.png"
@@ -25,9 +33,24 @@ export default function Header() {
             width={51}
             height={40}
             priority
-            className="h-[40px] w-auto"
+            className="h-[40px] w-auto tab:h-[44px] tabLg:h-[48px]"
           />
         </Link>
+
+        <nav
+          aria-label={t.mobileMenu.primaryNavAriaLabel}
+          className="hidden min-w-0 flex-1 items-center justify-center gap-6 tab:flex tabLg:flex tabLg:gap-8"
+        >
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="whitespace-nowrap text-[14px] font-semibold text-ink transition-colors hover:text-terracotta tabLg:text-[15px]"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
         <div className="flex items-center gap-2.5">
           <div className="relative">
@@ -82,7 +105,7 @@ export default function Header() {
             aria-label={t.header.openMenuAriaLabel}
             aria-expanded={menuOpen}
             aria-controls="main-menu"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-white shadow-[0_4px_12px_-4px_rgba(220,74,12,0.6)] transition-transform active:scale-95"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-white shadow-[0_4px_12px_-4px_rgba(220,74,12,0.6)] transition-transform active:scale-95 tab:hidden tabLg:hidden"
           >
             {menuOpen ? (
               <X size={20} strokeWidth={2.5} aria-hidden="true" />

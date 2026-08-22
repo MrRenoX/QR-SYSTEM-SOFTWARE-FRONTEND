@@ -87,35 +87,35 @@ export default function BookingForm({ experience }: { experience: Experience }) 
   }
 
   const header = (
-    <>
-      <div className="flex items-center gap-3 py-3">
+    <div className="tabLg:mx-auto tabLg:max-w-[1080px]">
+      <div className="flex items-center gap-3 py-3 tab:gap-4 tab:py-5">
         <Link
           href={`/experiences/${experience.slug}`}
           aria-label={t.bookingForm.backAriaLabel(experience.title)}
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:text-terracotta"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line bg-white text-ink transition-colors hover:text-terracotta tab:h-11 tab:w-11"
         >
           <ArrowLeft size={19} strokeWidth={2.2} aria-hidden="true" />
         </Link>
-        <h1 className="font-serif text-[22px] font-bold leading-tight text-ink">
+        <h1 className="font-serif text-[22px] font-bold leading-tight text-ink tab:text-[27px]">
           {t.bookingForm.headerTitle}
         </h1>
       </div>
 
-      <div className="flex items-stretch gap-3 overflow-hidden rounded-card border border-line bg-white shadow-card">
-        <div className="relative h-[84px] w-[100px] shrink-0">
+      <div className="flex items-stretch gap-3 overflow-hidden rounded-card border border-line bg-white shadow-card tab:gap-4">
+        <div className="relative h-[84px] w-[100px] shrink-0 tab:h-[108px] tab:w-[130px]">
           <Image
             src={experience.image}
             alt={experience.title}
             fill
-            sizes="100px"
+            sizes="130px"
             className="object-cover"
           />
         </div>
-        <div className="min-w-0 flex-1 py-2.5 pr-3">
-          <h2 className="truncate font-serif text-[16px] font-bold text-ink">
+        <div className="min-w-0 flex-1 py-2.5 pr-3 tab:py-4 tab:pr-5">
+          <h2 className="truncate font-serif text-[16px] font-bold text-ink tab:text-[19px]">
             {experience.title}
           </h2>
-          <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-ink-muted">
+          <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-ink-muted tab:text-[13px]">
             <span className="flex items-center gap-1">
               <Clock size={12} className="text-terracotta" aria-hidden="true" />
               {experience.duration}
@@ -125,12 +125,12 @@ export default function BookingForm({ experience }: { experience: Experience }) 
               {experience.groupSize}
             </span>
           </p>
-          <p className="mt-1 text-[12.5px] font-semibold text-terracotta">
+          <p className="mt-1 text-[12.5px] font-semibold text-terracotta tab:text-[14.5px]">
             {t.bookingForm.fromPricePrefix} {experience.price}
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 
   if (status === "sent") {
@@ -139,7 +139,7 @@ export default function BookingForm({ experience }: { experience: Experience }) 
         {header}
         <div
           role="status"
-          className="mt-4 rounded-panel border border-line bg-white p-6 text-center shadow-card"
+          className="mt-4 rounded-panel border border-line bg-white p-6 text-center shadow-card tabLg:mx-auto tabLg:max-w-[560px] tabLg:p-10"
         >
           <CheckCircle2
             size={34}
@@ -172,11 +172,15 @@ export default function BookingForm({ experience }: { experience: Experience }) 
   return (
     <>
       {header}
-      <form onSubmit={onSubmit} noValidate className="mt-4">
-        <div className="rounded-panel border border-line bg-white p-4 shadow-card">
-          <h2 className="font-serif text-[19px] font-bold text-ink">{t.bookingForm.yourDetails}</h2>
+      <form
+        onSubmit={onSubmit}
+        noValidate
+        className="mt-4 tabLg:mx-auto tabLg:grid tabLg:max-w-[1080px] tabLg:grid-cols-[1fr_380px] tabLg:items-start tabLg:gap-8"
+      >
+        <div className="rounded-panel border border-line bg-white p-4 shadow-card tab:p-6 tabLg:col-start-1">
+          <h2 className="font-serif text-[19px] font-bold text-ink tab:text-[22px]">{t.bookingForm.yourDetails}</h2>
 
-          <div className="mt-3.5 space-y-3">
+          <div className="mt-3.5 space-y-3 tab:mt-5 tab:space-y-4">
             <div>
               <label htmlFor="guest-name" className={labelClass}>
                 {t.bookingForm.guestName}
@@ -380,66 +384,68 @@ export default function BookingForm({ experience }: { experience: Experience }) 
           </div>
         </div>
 
-        <section
-          aria-labelledby="booking-summary"
-          className="mt-4 rounded-panel border border-line bg-white p-4 shadow-card"
-        >
-          <h2 id="booking-summary" className="font-serif text-[19px] font-bold text-ink">
-            {t.bookingForm.bookingSummary}
-          </h2>
-          <dl className="mt-3 space-y-2 text-[13px]">
-            <Row label={t.bookingForm.experienceLabel} value={experience.title} />
-            <Row label={t.bookingForm.dateLabel} value={draft.date || t.bookingForm.notSelected} />
-            <Row label={t.bookingForm.timeLabel} value={draft.preferredTime} />
-            <Row
-              label={t.bookingForm.guestsLabel}
-              value={t.bookingForm.guestsSummary(draft.adults, draft.children)}
-            />
-            <Row label={t.bookingForm.pickupLabel} value={t.bookingForm.pickupValue} />
-          </dl>
-
-          <div className="mt-3 flex items-baseline justify-between border-t border-line pt-3">
-            <span className="text-[13px] text-ink-muted">
-              {t.bookingForm.estimatedTotalLabel(guests)}
-            </span>
-            <span className="font-serif text-[21px] font-bold text-terracotta">
-              ₹{estimate.toLocaleString("en-IN")}
-            </span>
-          </div>
-          {appliedTier && (
-            <p className="mt-1 text-right text-[11.5px] font-medium text-terracotta">
-              {t.bookingForm.pricingAppliedLabel(appliedTier.key)}
-            </p>
-          )}
-          <p className="mt-1.5 text-[11px] text-ink-faint">
-            {t.bookingForm.indicativeOnly}
-          </p>
-        </section>
-
-        <div className="mt-4 rounded-panel border border-dashed border-line bg-sand/60 p-4 text-center">
-          <Lock size={17} className="mx-auto text-ink-muted" aria-hidden="true" />
-          <p className="mt-1.5 text-[12px] leading-[1.45] text-ink-muted">
-            {t.bookingForm.paymentNotice}
-          </p>
-        </div>
-
-        {status === "error" && submitError && (
-          <div
-            role="alert"
-            className="mt-4 flex items-start gap-2 rounded-[10px] border border-red-200 bg-red-50 px-3 py-2.5 text-[12.5px] text-red-700"
+        <div className="tabLg:sticky tabLg:top-6 tabLg:col-start-2">
+          <section
+            aria-labelledby="booking-summary"
+            className="mt-4 rounded-panel border border-line bg-white p-4 shadow-card tabLg:mt-0 tabLg:p-5"
           >
-            <AlertCircle size={15} className="mt-0.5 shrink-0" aria-hidden="true" />
-            {submitError}
-          </div>
-        )}
+            <h2 id="booking-summary" className="font-serif text-[19px] font-bold text-ink">
+              {t.bookingForm.bookingSummary}
+            </h2>
+            <dl className="mt-3 space-y-2 text-[13px]">
+              <Row label={t.bookingForm.experienceLabel} value={experience.title} />
+              <Row label={t.bookingForm.dateLabel} value={draft.date || t.bookingForm.notSelected} />
+              <Row label={t.bookingForm.timeLabel} value={draft.preferredTime} />
+              <Row
+                label={t.bookingForm.guestsLabel}
+                value={t.bookingForm.guestsSummary(draft.adults, draft.children)}
+              />
+              <Row label={t.bookingForm.pickupLabel} value={t.bookingForm.pickupValue} />
+            </dl>
 
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className={`${primaryButtonClass} mt-4`}
-        >
-          {status === "submitting" ? t.bookingForm.sending : t.bookingForm.sendBooking}
-        </button>
+            <div className="mt-3 flex items-baseline justify-between border-t border-line pt-3">
+              <span className="text-[13px] text-ink-muted">
+                {t.bookingForm.estimatedTotalLabel(guests)}
+              </span>
+              <span className="font-serif text-[21px] font-bold text-terracotta">
+                ₹{estimate.toLocaleString("en-IN")}
+              </span>
+            </div>
+            {appliedTier && (
+              <p className="mt-1 text-right text-[11.5px] font-medium text-terracotta">
+                {t.bookingForm.pricingAppliedLabel(appliedTier.key)}
+              </p>
+            )}
+            <p className="mt-1.5 text-[11px] text-ink-faint">
+              {t.bookingForm.indicativeOnly}
+            </p>
+          </section>
+
+          <div className="mt-4 rounded-panel border border-dashed border-line bg-sand/60 p-4 text-center">
+            <Lock size={17} className="mx-auto text-ink-muted" aria-hidden="true" />
+            <p className="mt-1.5 text-[12px] leading-[1.45] text-ink-muted">
+              {t.bookingForm.paymentNotice}
+            </p>
+          </div>
+
+          {status === "error" && submitError && (
+            <div
+              role="alert"
+              className="mt-4 flex items-start gap-2 rounded-[10px] border border-red-200 bg-red-50 px-3 py-2.5 text-[12.5px] text-red-700"
+            >
+              <AlertCircle size={15} className="mt-0.5 shrink-0" aria-hidden="true" />
+              {submitError}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={status === "submitting"}
+            className={`${primaryButtonClass} mt-4`}
+          >
+            {status === "submitting" ? t.bookingForm.sending : t.bookingForm.sendBooking}
+          </button>
+        </div>
       </form>
     </>
   );

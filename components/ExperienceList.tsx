@@ -49,12 +49,12 @@ export default function ExperienceList({
       {heading && (
         <h2
           id="curated"
-          className="font-serif text-[25px] font-bold tracking-[-0.01em] text-ink"
+          className="font-serif text-[25px] font-bold tracking-[-0.01em] text-ink tab:text-[30px] tabLg:text-[34px]"
         >
           {t.home.curatedExperiencesHeading}
         </h2>
       )}
-      <div className={heading ? "mt-3" : undefined}>
+      <div className={heading ? "mt-3 tab:mt-5" : undefined}>
         <CategoryFilters
           categories={categories}
           active={active}
@@ -62,7 +62,7 @@ export default function ExperienceList({
         />
 
         {visible.length > 0 ? (
-          <ul className="mt-3 space-y-2.5">
+          <ul className="mt-3 space-y-2.5 tab:mt-5 tab:grid tab:grid-cols-2 tab:gap-5 tab:space-y-0 tabLg:grid tabLg:grid-cols-3 tabLg:gap-5">
             {visible.map((experience, index) => (
               <Reveal
                 as="li"
@@ -80,10 +80,10 @@ export default function ExperienceList({
         )}
 
         {showViewAll && (
-          <div className="mt-4 flex justify-center">
+          <div className="mt-4 flex justify-center tab:mt-7">
             <Link
               href="/experiences"
-              className="flex h-[46px] w-[286px] max-w-full items-center justify-center gap-2 rounded-full border border-line bg-white text-[15px] font-semibold text-ink shadow-card transition-colors hover:border-terracotta/50 hover:text-terracotta"
+              className="flex h-[46px] w-[286px] max-w-full items-center justify-center gap-2 rounded-full border border-line bg-white text-[15px] font-semibold text-ink shadow-card transition-colors hover:border-terracotta/50 hover:text-terracotta tab:h-[52px] tab:w-[320px] tab:text-[16px]"
             >
               {t.experiences.viewAll}
               <ChevronDown size={17} strokeWidth={2.2} aria-hidden="true" />

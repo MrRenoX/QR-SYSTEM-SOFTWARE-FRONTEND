@@ -17,30 +17,30 @@ export default function TouchpointCard({
   const { t } = useLanguage();
 
   return (
-    <article className="overflow-hidden rounded-card border border-line bg-white shadow-card">
+    <article className="h-full overflow-hidden rounded-card border border-line bg-white shadow-card">
       <button
         type="button"
         onClick={() => onOpen(touchpoint)}
         aria-label={t.touchpoints.card.openAriaLabel(touchpoint.name)}
-        className="zoom-frame block w-full text-left"
+        className="zoom-frame flex h-full w-full flex-col text-left"
       >
-        <div className="relative h-[132px] w-full overflow-hidden bg-gradient-to-br from-sand-light to-sand">
+        <div className="relative h-[132px] w-full shrink-0 overflow-hidden bg-gradient-to-br from-sand-light to-sand tab:h-[150px]">
           {touchpoint.image && (
             <Image
               src={touchpoint.image}
               alt={touchpoint.name}
               fill
-              sizes="366px"
+              sizes="(min-width: 1024px) 33vw, (min-width: 431px) 50vw, 366px"
               className="object-cover"
             />
           )}
         </div>
 
-        <div className="p-3.5">
-          <h3 className="font-serif text-[17px] font-bold leading-tight text-ink">
+        <div className="flex-1 p-3.5 tab:p-4">
+          <h3 className="font-serif text-[17px] font-bold leading-tight text-ink tab:text-[18px]">
             {touchpoint.name}
           </h3>
-          <p className="mt-1.5 text-[12.5px] leading-[1.45] text-ink-soft">
+          <p className="mt-1.5 text-[12.5px] leading-[1.45] text-ink-soft tab:text-[13px]">
             {touchpoint.description}
           </p>
           <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-muted">

@@ -83,7 +83,7 @@ export default function TouchpointModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="touchpoint-title"
-        className="relative max-h-[88vh] w-full animate-fade-up overflow-y-auto overflow-x-hidden rounded-t-[22px] bg-ivory pb-6 shadow-shell"
+        className="relative max-h-[88vh] w-full animate-fade-up overflow-y-auto overflow-x-hidden rounded-t-[22px] bg-ivory pb-6 shadow-shell tab:pb-8"
       >
         {/* Drag handle */}
         <div className="flex justify-center pb-2.5 pt-2.5">
@@ -100,7 +100,7 @@ export default function TouchpointModal({
             {gallery.map((src, index) => (
               <div
                 key={src + index}
-                className="relative h-[230px] w-full shrink-0 snap-center"
+                className="relative h-[230px] w-full shrink-0 snap-center tab:h-[320px] tabLg:h-[380px]"
               >
                 <Image
                   src={src}
@@ -147,12 +147,12 @@ export default function TouchpointModal({
           </button>
         </div>
 
-        <div className="px-4">
-          <p className="mt-4 text-[13.5px] leading-[1.6] text-ink-soft">
+        <div className="px-4 tab:px-7 tabLg:px-8">
+          <p className="mt-4 text-[13.5px] leading-[1.6] text-ink-soft tab:mt-5 tab:text-[15px]">
             {touchpoint.description}
           </p>
 
-          <dl className="mt-4 grid grid-cols-2 gap-2.5">
+          <dl className="mt-4 grid grid-cols-2 gap-2.5 tab:mt-5 tab:gap-4">
             <div className="flex items-center gap-2.5 rounded-card border border-line bg-white px-3 py-2.5 shadow-card">
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-terracotta-tint">
                 <Clock size={15} className="text-terracotta" aria-hidden="true" />

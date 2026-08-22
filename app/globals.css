@@ -9,6 +9,8 @@
   --ink: #241a14;
   --line: #ede0d2;
   --shell-width: 390px;
+  --shell-width-md: 760px;
+  --shell-width-lg: 1120px;
 }
 
 * {
@@ -30,8 +32,13 @@ body {
 }
 
 /* ---------------------------------------------------------------
-   The app is a fixed mobile composition at every breakpoint.
-   Phones: fluid up to 390px. Tablet/desktop: locked to 390px, centred.
+   Three-tier shell width:
+   - <=430px (phone, the QR-scan entry point): fluid up to 390px, no card
+     frame — this *is* the screen.
+   - 431-1439px (tablet/iPad band): widens progressively so components can
+     genuinely reflow into multi-column layouts, no card frame.
+   - >=1440px (real desktop): locked back to 390px, centred, with the card
+     frame — identical to the original phone-only design, untouched.
    --------------------------------------------------------------- */
 .mobile-app {
   position: relative;
@@ -44,22 +51,53 @@ body {
   overflow-x: hidden;
 }
 
-@media (min-width: 431px) {
+@media (min-width: 431px) and (max-width: 1023px) {
+  .mobile-app {
+    max-width: var(--shell-width-md);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .mobile-app {
+    max-width: var(--shell-width-lg);
+  }
+}
+
+@media (min-width: 1440px) {
   .mobile-app {
     width: var(--shell-width);
+    max-width: var(--shell-width);
     box-shadow:
       0 0 0 1px rgba(36, 26, 20, 0.05),
       0 30px 80px -20px rgba(36, 26, 20, 0.22);
   }
 }
 
-/* Anything fixed (menu, modal) is clamped to the same column */
+/* Anything fixed (menu, modal) is clamped to the same column, tier for tier */
 .shell-fixed {
   position: fixed;
   inset: 0;
   width: 100%;
   max-width: var(--shell-width);
   margin: 0 auto;
+}
+
+@media (min-width: 431px) and (max-width: 1023px) {
+  .shell-fixed {
+    max-width: var(--shell-width-md);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .shell-fixed {
+    max-width: var(--shell-width-lg);
+  }
+}
+
+@media (min-width: 1440px) {
+  .shell-fixed {
+    max-width: var(--shell-width);
+  }
 }
 
 .scrollbar-hide {

@@ -66,7 +66,7 @@ export default async function ExperienceDetailPage({ params }: PageProps) {
         <JourneyRoute stops={stops} />
         <TouchpointsSection touchpoints={touchpoints} />
 
-        <section id="raise-a-query" className="px-4 pt-6">
+        <section id="raise-a-query" className="px-4 pt-6 tab:px-8 tab:pt-10 tabLg:px-10">
           <QueryForm experienceTitle={experience.title} experienceId={experience.id} />
         </section>
       </main>

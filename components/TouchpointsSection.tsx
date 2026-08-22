@@ -16,18 +16,18 @@ export default function TouchpointsSection({
   const [selected, setSelected] = useState<Touchpoint | null>(null);
 
   return (
-    <section aria-labelledby="touchpoints" className="px-4 pt-7">
+    <section aria-labelledby="touchpoints" className="px-4 pt-7 tab:px-8 tabLg:px-10">
       <h2
         id="touchpoints"
-        className="font-serif text-[22px] font-bold tracking-[-0.01em] text-ink"
+        className="font-serif text-[22px] font-bold tracking-[-0.01em] text-ink tab:text-[26px]"
       >
         {t.touchpoints.section.heading}
       </h2>
-      <p className="mt-1 text-[12.5px] text-ink-muted">
+      <p className="mt-1 text-[12.5px] text-ink-muted tab:text-[14px]">
         {t.touchpoints.section.subtitle}
       </p>
 
-      <ul className="mt-4 space-y-3">
+      <ul className="mt-4 space-y-3 tab:mt-6 tab:grid tab:grid-cols-2 tab:gap-4 tab:space-y-0 tabLg:grid tabLg:grid-cols-3 tabLg:gap-4">
         {touchpoints.map((touchpoint, index) => (
           <Reveal as="li" key={touchpoint.id} delay={Math.min(index * 70, 210)}>
             <TouchpointCard touchpoint={touchpoint} onOpen={setSelected} />

@@ -9,6 +9,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      /**
+       * Bounded (min AND max) screens for the public site only — NOT a
+       * replacement for `md`/`lg` (the admin dashboard already uses those
+       * with normal Tailwind cascading semantics for real desktop support,
+       * and must keep working that way). The public site is a fixed-width
+       * phone shell at <=430px and again at >=1440px (real desktop,
+       * untouched) — `tab`/`tabLg` only ever apply in the tablet/iPad band
+       * between those two, so a `tabLg:` utility can never leak onto a
+       * desktop monitor. Unlike `md`/`lg`, these do NOT cascade into each
+       * other — a property set under `tab:` must be repeated under
+       * `tabLg:` if it should still apply there.
+       */
+      screens: {
+        tab: { min: "431px", max: "1023px" },
+        tabLg: { min: "1024px", max: "1439px" },
+      },
       colors: {
         ivory: "#FDF9F4",
         cream: "#FBF3E9",

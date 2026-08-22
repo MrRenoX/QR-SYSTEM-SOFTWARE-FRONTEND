@@ -140,16 +140,16 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
   }, [started, reducedMotion, pathD, stops.length]);
 
   return (
-    <section aria-labelledby="journey-route" className="px-4 pt-7">
+    <section aria-labelledby="journey-route" className="px-4 pt-7 tab:px-8 tabLg:mx-auto tabLg:max-w-[620px] tabLg:px-0">
       <div className="flex items-baseline justify-between">
         <div>
           <h2
             id="journey-route"
-            className="font-serif text-[22px] font-bold tracking-[-0.01em] text-ink"
+            className="font-serif text-[22px] font-bold tracking-[-0.01em] text-ink tab:text-[26px]"
           >
             {t.journeyRoute.heading}
           </h2>
-          <p className="mt-1 text-[12.5px] text-ink-muted">
+          <p className="mt-1 text-[12.5px] text-ink-muted tab:text-[14px]">
             {t.journeyRoute.subtitle}
           </p>
         </div>
@@ -160,7 +160,7 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
 
       <div
         ref={ref}
-        className="relative mt-4 overflow-hidden rounded-panel border border-line bg-[radial-gradient(circle,rgba(36,26,20,0.055)_1px,transparent_1px)] bg-[length:15px_15px] py-2 shadow-card"
+        className="relative mt-4 overflow-hidden rounded-panel border border-line bg-[radial-gradient(circle,rgba(36,26,20,0.055)_1px,transparent_1px)] bg-[length:15px_15px] py-2 shadow-card tab:mt-6"
         style={{ backgroundColor: "#FFFDFA" }}
       >
         <svg

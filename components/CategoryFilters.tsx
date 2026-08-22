@@ -21,7 +21,7 @@ export default function CategoryFilters({
       id="categories"
       role="tablist"
       aria-label="Filter experiences by category"
-      className="scrollbar-hide -mx-4 flex gap-2 overflow-x-auto px-4 pb-1"
+      className="scrollbar-hide -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 tab:-mx-6 tab:gap-2.5 tab:px-6 tabLg:mx-0 tabLg:flex-wrap tabLg:px-0"
     >
       {categories.map((category) => {
         const isActive = category === active;
@@ -32,7 +32,7 @@ export default function CategoryFilters({
             role="tab"
             aria-selected={isActive}
             onClick={() => onChange(category)}
-            className={`h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-4 text-[13.5px] font-medium transition-colors ${
+            className={`h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-4 text-[13.5px] font-medium transition-colors tab:h-[40px] tab:px-5 tab:text-[14.5px] ${
               isActive
                 ? "bg-terracotta text-white shadow-[0_4px_10px_-6px_rgba(220,74,12,0.9)]"
                 : "border border-line bg-white text-ink hover:border-terracotta/40"
