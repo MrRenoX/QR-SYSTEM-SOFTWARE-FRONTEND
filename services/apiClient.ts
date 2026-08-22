@@ -78,6 +78,13 @@ async function request<T>(
   try {
     const res = await fetch(`${baseUrl}${path}`, {
       cache: "no-store",
+      // The admin API authenticates via an httpOnly `access_token` cookie
+      // (see BACKEND_ISSUE_ADMIN_AUTH_COOKIE.md), set on
+      // /admin/auth/login and required on every other /admin/* route.
+      // Without "include", the browser neither stores that Set-Cookie
+      // (cross-origin: app on ayodhyaanubhav..., API on api.ayodhyaanubhav...)
+      // nor sends it back on later requests.
+      credentials: "include",
       ...init,
       signal: controller.signal,
       headers: {
