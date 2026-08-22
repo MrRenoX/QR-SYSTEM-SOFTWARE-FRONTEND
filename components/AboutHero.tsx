@@ -1,18 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, ShieldCheck, Users } from "lucide-react";
 import SectionOrnament from "./SectionOrnament";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function AboutHero() {
   const { t } = useLanguage();
-
-  const BADGES = [
-    { Icon: ShieldCheck, label: t.about.hero.badges.authentic },
-    { Icon: Users, label: t.about.hero.badges.guides },
-    { Icon: Heart, label: t.about.hero.badges.curated },
-  ] as const;
 
   return (
     <section className="px-4 pt-3">
@@ -27,22 +20,6 @@ export default function AboutHero() {
       <p className="mt-3 text-[15px] leading-[1.45] text-ink-soft">
         {t.about.hero.subtitle}
       </p>
-
-      <ul className="mt-5 grid grid-cols-3 gap-2">
-        {BADGES.map(({ Icon, label }) => (
-          <li
-            key={label}
-            className="flex flex-col items-center gap-1.5 text-center"
-          >
-            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-terracotta/30 text-terracotta">
-              <Icon size={19} strokeWidth={1.6} aria-hidden="true" />
-            </span>
-            <span className="text-[10.5px] font-semibold leading-[1.25] text-ink">
-              {label}
-            </span>
-          </li>
-        ))}
-      </ul>
 
       <div className="relative mt-5 h-[190px] w-full overflow-hidden rounded-panel shadow-card">
         <Image

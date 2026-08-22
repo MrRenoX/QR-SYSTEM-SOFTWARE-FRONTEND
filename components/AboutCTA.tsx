@@ -23,9 +23,6 @@ export default function AboutCTA() {
         <p className="relative text-[11px] font-bold uppercase tracking-[0.08em] text-white/70">
           {t.about.cta.tagline}
         </p>
-        <p className="relative mt-1.5 max-w-[220px] font-serif text-[20px] font-bold leading-[1.25] text-white">
-          {t.about.cta.heading}
-        </p>
         <Link
           href="/experiences"
           className="arrow-nudge relative mt-4 inline-flex h-11 items-center gap-2 rounded-full bg-white pl-4 pr-2 text-[13.5px] font-bold text-terracotta shadow-card"

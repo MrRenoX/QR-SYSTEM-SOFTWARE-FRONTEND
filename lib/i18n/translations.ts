@@ -317,11 +317,6 @@ const en = {
       breadcrumbCurrent: "About Ayodhya Anubhav",
       title: "About Ayodhya Anubhav",
       subtitle: "Sixteen journeys into the many layers of Ayodhya.",
-      badges: {
-        authentic: "Authentic Experiences",
-        guides: "Expert Local Guides",
-        curated: "Curated with Love",
-      },
     },
     story: {
       paragraph1:
@@ -341,7 +336,6 @@ const en = {
     },
     cta: {
       tagline: "Explore. Choose. Experience Ayodhya.",
-      heading: "Let's create your unforgettable Ayodhya experience.",
       explore: "Explore Experiences",
     },
   },
@@ -659,11 +653,6 @@ const hi: TranslationDict = {
       breadcrumbCurrent: "अयोध्या अनुभव के बारे में",
       title: "अयोध्या अनुभव के बारे में",
       subtitle: "अयोध्या की अनेक परतों में सोलह यात्राएँ।",
-      badges: {
-        authentic: "प्रामाणिक अनुभव",
-        guides: "विशेषज्ञ स्थानीय गाइड",
-        curated: "प्रेम से तैयार",
-      },
     },
     story: {
       paragraph1:
@@ -683,7 +672,6 @@ const hi: TranslationDict = {
     },
     cta: {
       tagline: "जानें। चुनें। अयोध्या का अनुभव करें।",
-      heading: "आइए मिलकर आपका यादगार अयोध्या अनुभव रचें।",
       explore: "अनुभव देखें",
     },
   },
@@ -998,11 +986,6 @@ const gu: TranslationDict = {
       breadcrumbCurrent: "અયોધ્યા અનુભવ વિશે",
       title: "અયોધ્યા અનુભવ વિશે",
       subtitle: "અયોધ્યાના અનેક પડોમાં સોળ યાત્રાઓ.",
-      badges: {
-        authentic: "પ્રામાણિક અનુભવો",
-        guides: "નિષ્ણાત સ્થાનિક ગાઇડ",
-        curated: "પ્રેમથી તૈયાર",
-      },
     },
     story: {
       paragraph1:
@@ -1022,7 +1005,6 @@ const gu: TranslationDict = {
     },
     cta: {
       tagline: "જાણો. પસંદ કરો. અયોધ્યાનો અનુભવ કરો.",
-      heading: "ચાલો સાથે મળીને તમારો યાદગાર અયોધ્યા અનુભવ રચીએ.",
       explore: "અનુભવો જુઓ",
     },
   },
@@ -1338,11 +1320,6 @@ const ta: TranslationDict = {
       breadcrumbCurrent: "அயோத்தி அனுபவம் பற்றி",
       title: "அயோத்தி அனுபவம் பற்றி",
       subtitle: "அயோத்தியின் பல அடுக்குகளுக்குள் பதினாறு பயணங்கள்.",
-      badges: {
-        authentic: "உண்மையான அனுபவங்கள்",
-        guides: "நிபுணத்துவமிக்க உள்ளூர் வழிகாட்டிகள்",
-        curated: "அன்புடன் வடிவமைக்கப்பட்டது",
-      },
     },
     story: {
       paragraph1:
@@ -1362,7 +1339,6 @@ const ta: TranslationDict = {
     },
     cta: {
       tagline: "அறியுங்கள். தேர்ந்தெடுங்கள். அயோத்தியை அனுபவியுங்கள்.",
-      heading: "உங்கள் மறக்க முடியாத அயோத்தி அனுபவத்தை ஒன்றாக உருவாக்குவோம்.",
       explore: "அனுபவங்களைப் பார்க்க",
     },
   },
