@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import SectionOrnament from "./SectionOrnament";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -20,17 +19,6 @@ export default function AboutHero() {
       <p className="mt-3 text-[15px] leading-[1.45] text-ink-soft">
         {t.about.hero.subtitle}
       </p>
-
-      <div className="relative mt-5 h-[190px] w-full overflow-hidden rounded-panel shadow-card">
-        <Image
-          src="/images/hero/ayodhya-sarayu-ghat.jpg"
-          alt="Ayodhya's temple skyline reflected on the Sarayu at dusk"
-          fill
-          priority
-          sizes="390px"
-          className="object-cover"
-        />
-      </div>
     </section>
   );
 }
