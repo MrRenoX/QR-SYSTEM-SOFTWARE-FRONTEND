@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionOrnament from "./SectionOrnament";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -19,15 +18,6 @@ export default function AboutStory() {
           <p>{t.about.story.paragraph1}</p>
           <p>{t.about.story.paragraph2}</p>
         </div>
-
-        <Image
-          src="/images/illustrations/temple-lineart.svg"
-          alt=""
-          width={340}
-          height={220}
-          aria-hidden="true"
-          className="mx-auto mt-4 w-[220px]"
-        />
       </Reveal>
 
       <Reveal delay={140} className="mt-6">
