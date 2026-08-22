@@ -7,9 +7,9 @@ import ContactForm from "@/components/ContactForm";
 import { getSiteSettings } from "@/services/settingsService";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Ayodhya Anubhav",
+  title: "Get in Touch | Ayodhya Anubhav",
   description:
-    "Talk to the Guide Guru Global team directly — WhatsApp, call, email, or send a message and we'll get back to you.",
+    "Talk to the Guide Guru Global Experience Desk directly — WhatsApp, call, email, or send a message and we'll get back to you.",
 };
 
 export default async function ContactPage() {

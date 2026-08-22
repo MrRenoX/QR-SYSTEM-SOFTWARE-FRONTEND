@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronRight, Heart, House, ShieldCheck, Users } from "lucide-react";
+import { Heart, ShieldCheck, Users } from "lucide-react";
 import SectionOrnament from "./SectionOrnament";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -18,11 +17,6 @@ export default function AboutHero() {
   return (
     <section className="px-4 pt-3">
       <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-[12px] text-ink-muted">
-        <Link href="/" className="flex items-center gap-1 hover:text-terracotta">
-          <House size={12.5} aria-hidden="true" />
-          {t.about.hero.breadcrumbHome}
-        </Link>
-        <ChevronRight size={12.5} className="text-ink-faint" aria-hidden="true" />
         <span className="font-semibold text-terracotta">{t.about.hero.breadcrumbCurrent}</span>
       </nav>
 

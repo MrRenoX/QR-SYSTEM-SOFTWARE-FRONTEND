@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { ArrowUpRight, MessageCircle, X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 interface MobileMenuProps {
@@ -122,7 +123,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           rel="noopener noreferrer"
           className="mt-6 flex h-12 items-center justify-center gap-2 rounded-full bg-whatsapp text-[15px] font-semibold text-white"
         >
-          <MessageCircle size={16} aria-hidden="true" />
+          <WhatsAppIcon size={16} />
           {t.mobileMenu.chatWhatsapp}
         </a>
 

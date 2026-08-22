@@ -11,7 +11,7 @@ import { getSiteSettings } from "@/services/settingsService";
 export const metadata: Metadata = {
   title: "Browse by Category | Ayodhya Anubhav",
   description:
-    "Fifteen ways into Ayodhya, sorted by what draws you in — spiritual darshans, heritage walks, the Sarayu, craft studios and food trails.",
+    "Sixteen ways into Ayodhya, sorted by what draws you in — spiritual darshans, heritage walks, the Sarayu, craft studios and food trails.",
 };
 
 export default async function CategoriesPage() {

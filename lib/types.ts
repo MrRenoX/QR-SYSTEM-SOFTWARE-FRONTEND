@@ -130,6 +130,7 @@ export interface SiteSettings {
     instagram: string;
     facebook: string;
     youtube: string;
+    linkedin: string;
   };
   homepage: {
     heroTitle: string;

@@ -1,7 +1,9 @@
 "use client";
 
-import { ArrowUpRight, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import Reveal from "./Reveal";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const WHATSAPP_NUMBER = "919695210246";
@@ -9,6 +11,10 @@ const PHONE_NUMBER = "+919695210246";
 const PHONE_DISPLAY = "+91 96952 10246";
 const EMAIL = "ayodhyaanubhav@gmail.com";
 const ADDRESS = "Evoke Rambagh, Ayodhya, Uttar Pradesh";
+
+function mapsLink(query: string) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
 
 export default function ContactChannels() {
   const { t } = useLanguage();
@@ -20,22 +26,34 @@ export default function ContactChannels() {
       </h2>
 
       <Reveal>
+        <p className="font-serif text-[19px] font-bold text-ink">
+          {t.contact.channels.needHelpHeading}
+        </p>
+        <p className="mt-0.5 font-serif text-[19px] font-bold text-ink">
+          {t.contact.channels.experienceDeskIntro}
+        </p>
+        <p className="mt-2 text-[13.5px] leading-[1.55] text-ink-soft">
+          {t.contact.channels.question}
+        </p>
+        <p className="mt-2 text-[13px] text-ink-soft">
+          {t.contact.channels.assistanceLabel}{" "}
+          <span className="font-bold text-ink">{t.contact.channels.assistanceItems}</span>
+        </p>
+      </Reveal>
+
+      <Reveal delay={40} className="mt-4">
+        <p className="text-[13.5px] font-bold text-ink">{t.contact.channels.chatWithUsLabel}</p>
         <a
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="arrow-nudge flex items-center gap-3.5 rounded-panel bg-whatsapp px-4 py-4 shadow-card transition-opacity hover:opacity-95"
+          className="arrow-nudge mt-2 flex items-center gap-3.5 rounded-panel bg-whatsapp px-4 py-4 shadow-card transition-opacity hover:opacity-95"
         >
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20">
-            <MessageCircle size={22} className="text-white" aria-hidden="true" />
+            <WhatsAppIcon size={22} className="text-white" />
           </span>
-          <span className="min-w-0 flex-1">
-            <span className="block text-[15.5px] font-bold text-white">
-              {t.contact.channels.whatsappTitle}
-            </span>
-            <span className="block text-[12px] text-white/85">
-              {t.contact.channels.whatsappSubtitle}
-            </span>
+          <span className="min-w-0 flex-1 text-[15.5px] font-bold text-white">
+            {t.contact.channels.whatsappButtonLabel}
           </span>
           <ArrowUpRight size={18} className="shrink-0 text-white" aria-hidden="true" />
         </a>
@@ -93,7 +111,7 @@ export default function ContactChannels() {
               {ADDRESS}
             </span>
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`}
+              href={mapsLink(ADDRESS)}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-1.5 inline-flex items-center gap-1 text-[12px] font-bold text-terracotta"
@@ -108,6 +126,38 @@ export default function ContactChannels() {
           <Clock size={14} className="shrink-0 text-terracotta" aria-hidden="true" />
           {t.contact.channels.hoursLine}
         </div>
+      </Reveal>
+
+      <Reveal
+        delay={210}
+        className="mt-6 border-t border-line pt-5 text-center"
+      >
+        <p className="font-serif text-[17px] font-bold text-ink">
+          {t.contact.channels.preferToSpeak}
+        </p>
+        <p className="mx-auto mt-1.5 max-w-[280px] text-[13px] leading-[1.55] text-ink-soft">
+          {t.contact.channels.visitDeskBody}{" "}
+          <a
+            href={mapsLink("Evoke Rambagh, Ayodhya, Uttar Pradesh")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-terracotta underline underline-offset-2"
+          >
+            {t.contact.channels.getDirections}
+          </a>
+        </p>
+        <p className="mt-3 text-[12.5px] font-bold uppercase tracking-[0.06em] text-ink-faint">
+          {t.contact.channels.exploreAskExperience}
+        </p>
+        <Link
+          href="/experiences"
+          className="arrow-nudge mt-3 inline-flex h-11 items-center gap-2 rounded-full bg-terracotta pl-4 pr-2 text-[13.5px] font-bold text-white shadow-card"
+        >
+          {t.contact.channels.exploreExperiences}
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-terracotta">
+            <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+          </span>
+        </Link>
       </Reveal>
     </section>
   );

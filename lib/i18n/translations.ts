@@ -62,8 +62,8 @@ const en = {
       privacyPolicy: "Privacy Policy",
       termsConditions: "Terms & Conditions",
     },
-    visitWebsite: "Visit our website",
-    scanQr: "Scan to open this site on your phone",
+    visitWebsite: "Visit Guide Guru Global Website",
+    scanQr: "Scan to open.",
     qrAlt: "QR code linking to the Guide Guru Global website",
   },
   home: {
@@ -94,18 +94,18 @@ const en = {
   trustSection: {
     ariaLabel: "Why guests book with us",
     pillars: {
-      guides: { title: "Expert Storyteller Guides", detail: "Certified & passionate locals" },
+      guides: { title: "Certified Guides", detail: "Expert & passionate local storytellers" },
       safety: {
-        title: "Seamless & Safe Journeys",
-        detail: "Well-planned routes, verified vehicles & priority access",
+        title: "Seamless Journeys",
+        detail: "Well-planned routes & comfortable mobility for a smooth experience",
       },
       authentic: {
         title: "Authentic Local Experiences",
-        detail: "Go beyond the obvious, discover real Ayodhya",
+        detail: "Go beyond the obvious and discover the real Ayodhya",
       },
       personalized: {
-        title: "Personalized for You",
-        detail: "Curated experiences that match your interests",
+        title: "Curated for You",
+        detail: "Thoughtfully curated journeys that match your interests and reveal Ayodhya beyond the familiar",
       },
     },
   },
@@ -113,7 +113,7 @@ const en = {
     heading: "How It Works",
     steps: {
       explore: { title: "1. Explore", detail: "Discover experiences curated for you" },
-      choose: { title: "2. Choose", detail: "Pick a date, time & experience" },
+      choose: { title: "2. Choose", detail: "Pick a date as per the scheduled time slots" },
       shareDetails: { title: "3. Share Details", detail: "Tell us a bit about yourself" },
       bookPay: { title: "4. Book & Pay", detail: "Secure your spot with easy payment" },
       enjoy: { title: "5. Enjoy", detail: "We take care of the rest, you enjoy the journey!" },
@@ -122,7 +122,7 @@ const en = {
   categories: {
     pageHeader: {
       title: "Browse by Category",
-      subtitle: "Fifteen ways into Ayodhya — pick where you begin.",
+      subtitle: "Sixteen ways into Ayodhya — pick where you begin.",
     },
   },
   categoryFilters: {
@@ -254,21 +254,28 @@ const en = {
   },
   contact: {
     hero: {
-      breadcrumbHome: "Home",
-      breadcrumbCurrent: "Contact Us",
+      breadcrumbCurrent: "Get in Touch",
       title: "Get in Touch",
-      subtitle:
-        "Questions about an experience, or need help planning your visit? Our team replies fast — reach us however's easiest for you.",
     },
     channels: {
       sectionHeadingSr: "Ways to reach us",
-      whatsappTitle: "Chat on WhatsApp",
-      whatsappSubtitle: "Fastest way to reach us — usually within the hour",
+      needHelpHeading: "Need Help?",
+      experienceDeskIntro: "Our Experience Desk is here for you.",
+      question:
+        "Have a question, want to book an experience, need help with an existing booking, or simply want a recommendation?",
+      assistanceLabel: "For assistance with:",
+      assistanceItems: "Bookings · Enquiries · Feedback",
+      chatWithUsLabel: "Chat with us on WhatsApp.",
+      whatsappButtonLabel: "WhatsApp the Experience Desk",
       callUs: "Call us",
       emailUs: "Email us",
       visitUs: "Visit us",
       getDirections: "Get directions",
       hoursLine: "Every day, 7 AM – 9 PM IST",
+      preferToSpeak: "Prefer to speak to someone?",
+      visitDeskBody: "Visit the Ayodhya Anubhav Experience Desk at Evoke Rambagh Reception.",
+      exploreAskExperience: "Explore. Ask. Experience.",
+      exploreExperiences: "Explore Experiences",
     },
     form: {
       heading: "Send us a message",
@@ -307,10 +314,9 @@ const en = {
   },
   about: {
     hero: {
-      breadcrumbHome: "Home",
-      breadcrumbCurrent: "About Us",
-      title: "About Us",
-      subtitle: "We are storytellers, experience curators and your local hosts in Ayodhya.",
+      breadcrumbCurrent: "About Ayodhya Anubhav",
+      title: "About Ayodhya Anubhav",
+      subtitle: "Sixteen journeys into the many layers of Ayodhya.",
       badges: {
         authentic: "Authentic Experiences",
         guides: "Expert Local Guides",
@@ -318,26 +324,23 @@ const en = {
       },
     },
     story: {
-      heading: "Our Story",
       paragraph1:
-        "Guide Guru Global was born out of a simple belief — that travel is not just about places, but about people, stories and emotions.",
+        "Ayodhya Anubhav is a destination-specific experience campaign by Guide Guru Global, created especially for Evoke Rambagh, bringing together thoughtfully curated journeys that enable you to discover the many layers of Ayodhya.",
       paragraph2:
-        "Ayodhya, a timeless city of faith and culture, has countless stories that deserve to be experienced, not just seen.",
-      paragraph3:
-        "We bring together local storytellers, heritage experts and passionate guides to create meaningful journeys that connect you with the soul of Ayodhya.",
-      ourJourney: "Our Journey",
-      missionHeading: "Our Mission",
-      missionBody:
-        "To offer authentic, seamless and soulful experiences in Ayodhya that create lasting memories and support local communities.",
-      visionHeading: "Our Vision",
-      visionBody:
-        "To become India's most trusted cultural experience brand, connecting travellers with the heart and heritage of sacred destinations.",
-    },
-    qrCode: {
-      heading: "Scan to Explore More",
-      caption: "Want to know more about us? Scan this code to visit our website.",
+        "From its sacred heritage and timeless stories to its living traditions, neighbourhoods, sacred waters, crafts, cuisine, music and people, each experience has been designed to take you beyond the familiar and help you experience Ayodhya in a more meaningful way.",
+      poweredByHeading: "Powered by Guide Guru Global",
+      poweredByParagraph1:
+        "Guide Guru Global is an experience-first travel platform connecting travellers with curated journeys, authentic local stories and passionate storytellers across India's destinations.",
+      poweredByParagraph2:
+        "We work with luxury hotels, certified local guides and destination communities to create experiences that are thoughtfully planned, locally rooted and easy to discover and book.",
+      poweredByParagraph3:
+        "With Ayodhya Anubhav, we bring this approach to Ayodhya, creating a collection of journeys that you can discover and book directly through this platform during your stay at Evoke Rambagh.",
+      journeyHeading: "Your Ayodhya Journey Starts Here",
+      journeyParagraph:
+        "Whether you have a few hours, an entire evening or a full day to explore, choose an experience that matches your interests and let us take care of the details.",
     },
     cta: {
+      tagline: "Explore. Choose. Experience Ayodhya.",
       heading: "Let's create your unforgettable Ayodhya experience.",
       explore: "Explore Experiences",
     },
@@ -593,21 +596,28 @@ const hi: TranslationDict = {
   },
   contact: {
     hero: {
-      breadcrumbHome: "मुखपृष्ठ",
-      breadcrumbCurrent: "संपर्क करें",
+      breadcrumbCurrent: "हमसे जुड़ें",
       title: "हमसे जुड़ें",
-      subtitle:
-        "किसी अनुभव के बारे में सवाल है, या यात्रा की योजना बनाने में मदद चाहिए? हमारी टीम तुरंत जवाब देती है — जो भी तरीका आपके लिए आसान हो, उससे संपर्क करें।",
     },
     channels: {
       sectionHeadingSr: "हमसे संपर्क करने के तरीके",
-      whatsappTitle: "व्हाट्सऐप पर बात करें",
-      whatsappSubtitle: "हम तक पहुँचने का सबसे तेज़ तरीका — आमतौर पर एक घंटे के भीतर जवाब",
+      needHelpHeading: "मदद चाहिए?",
+      experienceDeskIntro: "हमारा एक्सपीरियंस डेस्क आपके लिए यहाँ है।",
+      question:
+        "कोई सवाल है, कोई अनुभव बुक करना चाहते हैं, मौजूदा बुकिंग में मदद चाहिए, या बस कोई सुझाव चाहिए?",
+      assistanceLabel: "इनमें सहायता के लिए:",
+      assistanceItems: "बुकिंग · पूछताछ · फ़ीडबैक",
+      chatWithUsLabel: "हमसे व्हाट्सऐप पर बात करें।",
+      whatsappButtonLabel: "एक्सपीरियंस डेस्क को व्हाट्सऐप करें",
       callUs: "हमें कॉल करें",
       emailUs: "हमें ईमेल करें",
       visitUs: "हमसे मिलें",
       getDirections: "दिशा-निर्देश पाएं",
       hoursLine: "हर दिन, सुबह 7 बजे – रात 9 बजे तक (IST)",
+      preferToSpeak: "किसी से बात करना पसंद करेंगे?",
+      visitDeskBody: "एवोक रामबाग रिसेप्शन पर अयोध्या अनुभव एक्सपीरियंस डेस्क पर जाएं।",
+      exploreAskExperience: "जानें। पूछें। अनुभव करें।",
+      exploreExperiences: "अनुभव देखें",
     },
     form: {
       heading: "हमें संदेश भेजें",
@@ -646,10 +656,9 @@ const hi: TranslationDict = {
   },
   about: {
     hero: {
-      breadcrumbHome: "मुखपृष्ठ",
-      breadcrumbCurrent: "हमारे बारे में",
-      title: "हमारे बारे में",
-      subtitle: "हम कथावाचक, अनुभव क्यूरेटर और अयोध्या में आपके स्थानीय मेज़बान हैं।",
+      breadcrumbCurrent: "अयोध्या अनुभव के बारे में",
+      title: "अयोध्या अनुभव के बारे में",
+      subtitle: "अयोध्या की अनेक परतों में सोलह यात्राएँ।",
       badges: {
         authentic: "प्रामाणिक अनुभव",
         guides: "विशेषज्ञ स्थानीय गाइड",
@@ -657,26 +666,23 @@ const hi: TranslationDict = {
       },
     },
     story: {
-      heading: "हमारी कहानी",
       paragraph1:
-        "गाइड गुरु ग्लोबल की शुरुआत एक सरल विश्वास से हुई — कि यात्रा केवल जगहों के बारे में नहीं, बल्कि लोगों, कहानियों और भावनाओं के बारे में है।",
+        "अयोध्या अनुभव, गाइड गुरु ग्लोबल का एक विशेष अनुभव अभियान है, जो खासतौर पर एवोक रामबाग के लिए बनाया गया है — जो सोच-समझकर तैयार की गई यात्राओं के ज़रिए आपको अयोध्या की अनेक परतों को जानने का मौका देता है।",
       paragraph2:
-        "आस्था और संस्कृति के शाश्वत शहर अयोध्या में ऐसी अनगिनत कहानियाँ हैं जिन्हें सिर्फ देखा नहीं, बल्कि जिया जाना चाहिए।",
-      paragraph3:
-        "हम स्थानीय कथावाचकों, विरासत विशेषज्ञों और जुनूनी गाइडों को एक साथ लाकर ऐसी सार्थक यात्राएँ रचते हैं जो आपको अयोध्या की आत्मा से जोड़ती हैं।",
-      ourJourney: "हमारी यात्रा",
-      missionHeading: "हमारा उद्देश्य",
-      missionBody:
-        "अयोध्या में प्रामाणिक, सहज और आत्मिक अनुभव देना जो स्थायी यादें बनाएं और स्थानीय समुदायों को सहयोग दें।",
-      visionHeading: "हमारी परिकल्पना",
-      visionBody:
-        "भारत का सबसे भरोसेमंद सांस्कृतिक अनुभव ब्रांड बनना, जो यात्रियों को पवित्र स्थलों की आत्मा और विरासत से जोड़े।",
-    },
-    qrCode: {
-      heading: "और जानने के लिए स्कैन करें",
-      caption: "हमारे बारे में और जानना चाहते हैं? हमारी वेबसाइट देखने के लिए यह कोड स्कैन करें।",
+        "इसकी पवित्र विरासत और कालातीत कहानियों से लेकर इसकी जीवंत परंपराओं, मोहल्लों, पवित्र जलस्रोतों, शिल्प, व्यंजनों, संगीत और लोगों तक — हर अनुभव को इस तरह रचा गया है कि आप सामान्य से आगे जाकर अयोध्या को एक गहरे और सार्थक तरीके से महसूस कर सकें।",
+      poweredByHeading: "गाइड गुरु ग्लोबल द्वारा संचालित",
+      poweredByParagraph1:
+        "गाइड गुरु ग्लोबल एक अनुभव-केंद्रित ट्रैवल प्लेटफ़ॉर्म है, जो यात्रियों को भारत के विभिन्न स्थलों पर चुनिंदा यात्राओं, प्रामाणिक स्थानीय कहानियों और जुनूनी कथावाचकों से जोड़ता है।",
+      poweredByParagraph2:
+        "हम लक्ज़री होटलों, प्रमाणित स्थानीय गाइडों और स्थानीय समुदायों के साथ मिलकर ऐसे अनुभव बनाते हैं जो सोच-समझकर योजनाबद्ध, स्थानीय रूप से जुड़े और आसानी से खोजे व बुक किए जा सकें।",
+      poweredByParagraph3:
+        "अयोध्या अनुभव के साथ, हम इसी सोच को अयोध्या में लेकर आए हैं — यात्राओं का एक संग्रह जिसे आप एवोक रामबाग में अपने ठहराव के दौरान सीधे इसी प्लेटफ़ॉर्म से खोज और बुक कर सकते हैं।",
+      journeyHeading: "आपकी अयोध्या यात्रा यहीं से शुरू होती है",
+      journeyParagraph:
+        "चाहे आपके पास कुछ घंटे हों, पूरी शाम हो या पूरा दिन घूमने के लिए — अपनी रुचि से मेल खाता अनुभव चुनें और बाकी की ज़िम्मेदारी हम पर छोड़ दें।",
     },
     cta: {
+      tagline: "जानें। चुनें। अयोध्या का अनुभव करें।",
       heading: "आइए मिलकर आपका यादगार अयोध्या अनुभव रचें।",
       explore: "अनुभव देखें",
     },
@@ -930,21 +936,28 @@ const gu: TranslationDict = {
   },
   contact: {
     hero: {
-      breadcrumbHome: "હોમ",
-      breadcrumbCurrent: "સંપર્ક કરો",
+      breadcrumbCurrent: "અમારો સંપર્ક કરો",
       title: "અમારો સંપર્ક કરો",
-      subtitle:
-        "કોઈ અનુભવ વિશે પ્રશ્ન છે, અથવા તમારી મુલાકાત આયોજિત કરવામાં મદદ જોઈએ છે? અમારી ટીમ ઝડપથી જવાબ આપે છે — તમારા માટે જે સરળ હોય તે રીતે અમારો સંપર્ક કરો.",
     },
     channels: {
       sectionHeadingSr: "અમારો સંપર્ક કરવાની રીતો",
-      whatsappTitle: "વોટ્સએપ પર વાત કરો",
-      whatsappSubtitle: "અમારો સંપર્ક કરવાની સૌથી ઝડપી રીત — સામાન્ય રીતે એક કલાકમાં",
+      needHelpHeading: "મદદ જોઈએ છે?",
+      experienceDeskIntro: "અમારું એક્સપિરિયન્સ ડેસ્ક તમારા માટે અહીં છે.",
+      question:
+        "કોઈ પ્રશ્ન છે, અનુભવ બુક કરવો છે, હાલની બુકિંગમાં મદદ જોઈએ છે, અથવા ફક્ત કોઈ ભલામણ જોઈએ છે?",
+      assistanceLabel: "આમાં સહાય માટે:",
+      assistanceItems: "બુકિંગ · પૂછપરછ · ફીડબેક",
+      chatWithUsLabel: "અમારી સાથે વોટ્સએપ પર વાત કરો.",
+      whatsappButtonLabel: "એક્સપિરિયન્સ ડેસ્કને વોટ્સએપ કરો",
       callUs: "અમને કૉલ કરો",
       emailUs: "અમને ઇમેઇલ કરો",
       visitUs: "અમારી મુલાકાત લો",
       getDirections: "દિશા-નિર્દેશ મેળવો",
       hoursLine: "દરરોજ, સવારે 7 થી રાત્રે 9 વાગ્યા સુધી (IST)",
+      preferToSpeak: "કોઈની સાથે વાત કરવાનું પસંદ કરશો?",
+      visitDeskBody: "એવોક રામબાગ રિસેપ્શન ખાતે અયોધ્યા અનુભવ એક્સપિરિયન્સ ડેસ્કની મુલાકાત લો.",
+      exploreAskExperience: "જાણો. પૂછો. અનુભવો.",
+      exploreExperiences: "અનુભવો જુઓ",
     },
     form: {
       heading: "અમને સંદેશ મોકલો",
@@ -982,10 +995,9 @@ const gu: TranslationDict = {
   },
   about: {
     hero: {
-      breadcrumbHome: "હોમ",
-      breadcrumbCurrent: "અમારા વિશે",
-      title: "અમારા વિશે",
-      subtitle: "અમે કથાકારો, અનુભવ ક્યુરેટર્સ અને અયોધ્યામાં તમારા સ્થાનિક યજમાનો છીએ.",
+      breadcrumbCurrent: "અયોધ્યા અનુભવ વિશે",
+      title: "અયોધ્યા અનુભવ વિશે",
+      subtitle: "અયોધ્યાના અનેક પડોમાં સોળ યાત્રાઓ.",
       badges: {
         authentic: "પ્રામાણિક અનુભવો",
         guides: "નિષ્ણાત સ્થાનિક ગાઇડ",
@@ -993,26 +1005,23 @@ const gu: TranslationDict = {
       },
     },
     story: {
-      heading: "અમારી કથા",
       paragraph1:
-        "ગાઇડ ગુરુ ગ્લોબલનો જન્મ એક સાદા વિશ્વાસમાંથી થયો — કે પ્રવાસ ફક્ત સ્થળો વિશે નથી, પરંતુ લોકો, કથાઓ અને લાગણીઓ વિશે છે.",
+        "અયોધ્યા અનુભવ એ ગાઇડ ગુરુ ગ્લોબલ દ્વારા ખાસ એવોક રામબાગ માટે બનાવવામાં આવેલું એક સ્થળ-વિશિષ્ટ અનુભવ અભિયાન છે, જે કાળજીપૂર્વક ક્યુરેટ કરેલી યાત્રાઓ દ્વારા તમને અયોધ્યાના અનેક પડ જાણવાની તક આપે છે.",
       paragraph2:
-        "શ્રદ્ધા અને સંસ્કૃતિનું શાશ્વત શહેર અયોધ્યા પાસે અસંખ્ય કથાઓ છે જે ફક્ત જોવાને બદલે અનુભવવા લાયક છે.",
-      paragraph3:
-        "અમે સ્થાનિક કથાકારો, વારસા નિષ્ણાતો અને ઉત્સાહી ગાઇડને એકસાથે લાવીને એવી અર્થપૂર્ણ યાત્રાઓ રચીએ છીએ જે તમને અયોધ્યાના આત્મા સાથે જોડે.",
-      ourJourney: "અમારી યાત્રા",
-      missionHeading: "અમારો ઉદ્દેશ",
-      missionBody:
-        "અયોધ્યામાં પ્રામાણિક, સરળ અને આત્મિક અનુભવો આપવા જે કાયમી યાદો બનાવે અને સ્થાનિક સમુદાયોને ટેકો આપે.",
-      visionHeading: "અમારી દ્રષ્ટિ",
-      visionBody:
-        "ભારતનું સૌથી વિશ્વસનીય સાંસ્કૃતિક અનુભવ બ્રાન્ડ બનવું, જે પ્રવાસીઓને પવિત્ર સ્થળોના હૃદય અને વારસા સાથે જોડે.",
-    },
-    qrCode: {
-      heading: "વધુ જાણવા સ્કેન કરો",
-      caption: "અમારા વિશે વધુ જાણવા માંગો છો? અમારી વેબસાઇટની મુલાકાત લેવા આ કોડ સ્કેન કરો.",
+        "તેના પવિત્ર વારસા અને કાલાતીત કથાઓથી લઈને તેની જીવંત પરંપરાઓ, પડોશો, પવિત્ર જળસ્રોતો, હસ્તકલા, વ્યંજનો, સંગીત અને લોકો સુધી — દરેક અનુભવ તમને સામાન્યથી આગળ લઈ જઈ અયોધ્યાને વધુ અર્થપૂર્ણ રીતે અનુભવવા માટે ડિઝાઇન કરવામાં આવ્યો છે.",
+      poweredByHeading: "ગાઇડ ગુરુ ગ્લોબલ દ્વારા સંચાલિત",
+      poweredByParagraph1:
+        "ગાઇડ ગુરુ ગ્લોબલ એક અનુભવ-કેન્દ્રિત ટ્રાવેલ પ્લેટફોર્મ છે, જે પ્રવાસીઓને ભારતના સ્થળો પર ક્યુરેટેડ યાત્રાઓ, પ્રામાણિક સ્થાનિક કથાઓ અને ઉત્સાહી કથાકારો સાથે જોડે છે.",
+      poweredByParagraph2:
+        "અમે લક્ઝરી હોટેલો, પ્રમાણિત સ્થાનિક ગાઇડ અને સ્થાનિક સમુદાયો સાથે મળીને એવા અનુભવો બનાવીએ છીએ જે કાળજીપૂર્વક આયોજિત, સ્થાનિક રીતે મૂળ ધરાવતા અને શોધવા-બુક કરવામાં સરળ હોય.",
+      poweredByParagraph3:
+        "અયોધ્યા અનુભવ સાથે, અમે આ અભિગમ અયોધ્યામાં લાવીએ છીએ, યાત્રાઓનો સંગ્રહ બનાવીને જે તમે એવોક રામબાગ ખાતેના તમારા રોકાણ દરમિયાન સીધા આ પ્લેટફોર્મ દ્વારા શોધી અને બુક કરી શકો છો.",
+      journeyHeading: "તમારી અયોધ્યા યાત્રા અહીંથી શરૂ થાય છે",
+      journeyParagraph:
+        "તમારી પાસે થોડા કલાકો હોય, આખી સાંજ હોય કે આખો દિવસ ફરવા માટે — તમારી રુચિ સાથે મેળ ખાતો અનુભવ પસંદ કરો અને બાકીની કાળજી અમને લેવા દો.",
     },
     cta: {
+      tagline: "જાણો. પસંદ કરો. અયોધ્યાનો અનુભવ કરો.",
       heading: "ચાલો સાથે મળીને તમારો યાદગાર અયોધ્યા અનુભવ રચીએ.",
       explore: "અનુભવો જુઓ",
     },
@@ -1266,21 +1275,28 @@ const ta: TranslationDict = {
   },
   contact: {
     hero: {
-      breadcrumbHome: "முகப்பு",
-      breadcrumbCurrent: "தொடர்பு கொள்ள",
+      breadcrumbCurrent: "எங்களைத் தொடர்பு கொள்ளுங்கள்",
       title: "எங்களைத் தொடர்பு கொள்ளுங்கள்",
-      subtitle:
-        "ஒரு அனுபவம் பற்றிய கேள்விகளா, அல்லது உங்கள் வருகையைத் திட்டமிட உதவி வேண்டுமா? எங்கள் குழு விரைவாகப் பதிலளிக்கிறது — உங்களுக்கு எது எளிதோ அதன் மூலம் எங்களைத் தொடர்பு கொள்ளுங்கள்.",
     },
     channels: {
       sectionHeadingSr: "எங்களைத் தொடர்பு கொள்ளும் வழிகள்",
-      whatsappTitle: "வாட்ஸ்அப்பில் பேசுங்கள்",
-      whatsappSubtitle: "எங்களை அடைவதற்கான வேகமான வழி — பொதுவாக ஒரு மணி நேரத்திற்குள்",
+      needHelpHeading: "உதவி வேண்டுமா?",
+      experienceDeskIntro: "எங்கள் அனுபவ மையம் உங்களுக்காக இங்கே உள்ளது.",
+      question:
+        "ஒரு கேள்வி உள்ளதா, ஒரு அனுபவத்தை முன்பதிவு செய்ய விரும்புகிறீர்களா, ஏற்கனவே உள்ள முன்பதிவில் உதவி வேண்டுமா, அல்லது ஒரு பரிந்துரை வேண்டுமா?",
+      assistanceLabel: "இவற்றுக்கு உதவி பெற:",
+      assistanceItems: "முன்பதிவுகள் · விசாரணைகள் · கருத்துகள்",
+      chatWithUsLabel: "வாட்ஸ்அப்பில் எங்களுடன் பேசுங்கள்.",
+      whatsappButtonLabel: "அனுபவ மையத்திற்கு வாட்ஸ்அப் செய்யுங்கள்",
       callUs: "எங்களை அழைக்கவும்",
       emailUs: "எங்களுக்கு மின்னஞ்சல் அனுப்புங்கள்",
       visitUs: "எங்களைப் பார்வையிடுங்கள்",
       getDirections: "வழிகளைப் பெறுங்கள்",
       hoursLine: "தினமும், காலை 7 முதல் இரவு 9 வரை (IST)",
+      preferToSpeak: "யாருடனாவது பேச விரும்புகிறீர்களா?",
+      visitDeskBody: "எவோக் ராம்பாக் வரவேற்பறையில் உள்ள அயோத்தி அனுபவ மையத்திற்குச் செல்லுங்கள்.",
+      exploreAskExperience: "அறியுங்கள். கேளுங்கள். அனுபவியுங்கள்.",
+      exploreExperiences: "அனுபவங்களைப் பார்க்க",
     },
     form: {
       heading: "எங்களுக்கு ஒரு செய்தி அனுப்புங்கள்",
@@ -1319,10 +1335,9 @@ const ta: TranslationDict = {
   },
   about: {
     hero: {
-      breadcrumbHome: "முகப்பு",
-      breadcrumbCurrent: "எங்களைப் பற்றி",
-      title: "எங்களைப் பற்றி",
-      subtitle: "நாங்கள் கதைசொல்லிகள், அனுபவ தொகுப்பாளர்கள் மற்றும் அயோத்தியில் உங்கள் உள்ளூர் புரவலர்கள்.",
+      breadcrumbCurrent: "அயோத்தி அனுபவம் பற்றி",
+      title: "அயோத்தி அனுபவம் பற்றி",
+      subtitle: "அயோத்தியின் பல அடுக்குகளுக்குள் பதினாறு பயணங்கள்.",
       badges: {
         authentic: "உண்மையான அனுபவங்கள்",
         guides: "நிபுணத்துவமிக்க உள்ளூர் வழிகாட்டிகள்",
@@ -1330,26 +1345,23 @@ const ta: TranslationDict = {
       },
     },
     story: {
-      heading: "எங்கள் கதை",
       paragraph1:
-        "கைட் குரு குளோபல் ஒரு எளிய நம்பிக்கையிலிருந்து பிறந்தது — பயணம் என்பது இடங்களைப் பற்றியது மட்டுமல்ல, மனிதர்கள், கதைகள் மற்றும் உணர்வுகளைப் பற்றியது.",
+        "அயோத்தி அனுபவம் என்பது கைட் குரு குளோபல் வழங்கும் ஒரு தளம்-சார்ந்த அனுபவப் பயணத் திட்டமாகும், இது குறிப்பாக எவோக் ராம்பாக்கிற்காக உருவாக்கப்பட்டது — கவனமாக வடிவமைக்கப்பட்ட பயணங்கள் மூலம் அயோத்தியின் பல அடுக்குகளை அறிய உங்களுக்கு வாய்ப்பளிக்கிறது.",
       paragraph2:
-        "நம்பிக்கை மற்றும் பண்பாட்டின் காலம் கடந்த நகரமான அயோத்தியில், வெறுமனே பார்ப்பதற்குப் பதிலாக அனுபவிக்கப்பட வேண்டிய எண்ணற்ற கதைகள் உள்ளன.",
-      paragraph3:
-        "உள்ளூர் கதைசொல்லிகள், பாரம்பரிய நிபுணர்கள் மற்றும் ஆர்வமுள்ள வழிகாட்டிகளை ஒன்றிணைத்து, அயோத்தியின் ஆன்மாவுடன் உங்களை இணைக்கும் அர்த்தமுள்ள பயணங்களை நாங்கள் உருவாக்குகிறோம்.",
-      ourJourney: "எங்கள் பயணம்",
-      missionHeading: "எங்கள் நோக்கம்",
-      missionBody:
-        "நீடித்த நினைவுகளை உருவாக்கி, உள்ளூர் சமூகங்களை ஆதரிக்கும் உண்மையான, தடையற்ற மற்றும் ஆன்மீக அனுபவங்களை அயோத்தியில் வழங்குவது.",
-      visionHeading: "எங்கள் தொலைநோக்கு",
-      visionBody:
-        "புனித இடங்களின் இதயத்துடனும் பாரம்பரியத்துடனும் பயணிகளை இணைக்கும், இந்தியாவின் மிகவும் நம்பகமான பண்பாட்டு அனுபவ பிராண்டாக மாறுவது.",
-    },
-    qrCode: {
-      heading: "மேலும் அறிய ஸ்கேன் செய்யுங்கள்",
-      caption: "எங்களைப் பற்றி மேலும் அறிய விரும்புகிறீர்களா? எங்கள் இணையதளத்தைப் பார்வையிட இந்த குறியீட்டை ஸ்கேன் செய்யுங்கள்.",
+        "அதன் புனித பாரம்பரியம் மற்றும் காலம் கடந்த கதைகளிலிருந்து, அதன் உயிரோட்டமுள்ள பாரம்பரியங்கள், சுற்றுப்புறங்கள், புனித நீர்நிலைகள், கைவினைப் பொருட்கள், உணவு வகைகள், இசை மற்றும் மக்கள் வரை — ஒவ்வொரு அனுபவமும் உங்களை பழக்கமானதற்கு அப்பால் அழைத்துச் சென்று, அயோத்தியை இன்னும் அர்த்தமுள்ள வகையில் அனுபவிக்க உதவும் வகையில் வடிவமைக்கப்பட்டுள்ளது.",
+      poweredByHeading: "கைட் குரு குளோபல் வழங்குகிறது",
+      poweredByParagraph1:
+        "கைட் குரு குளோபல் ஒரு அனுபவ-முதன்மையான பயணத் தளமாகும், இது பயணிகளை இந்தியாவின் இடங்களில் தேர்ந்தெடுக்கப்பட்ட பயணங்கள், உண்மையான உள்ளூர் கதைகள் மற்றும் ஆர்வமுள்ள கதைசொல்லிகளுடன் இணைக்கிறது.",
+      poweredByParagraph2:
+        "நாங்கள் ஆடம்பர ஹோட்டல்கள், சான்றளிக்கப்பட்ட உள்ளூர் வழிகாட்டிகள் மற்றும் உள்ளூர் சமூகங்களுடன் இணைந்து, கவனமாக திட்டமிடப்பட்ட, உள்ளூர் ரீதியாக வேரூன்றிய, எளிதில் கண்டறிந்து முன்பதிவு செய்யக்கூடிய அனுபவங்களை உருவாக்குகிறோம்.",
+      poweredByParagraph3:
+        "அயோத்தி அனுபவத்துடன், இந்த அணுகுமுறையை அயோத்தியிலும் கொண்டு வருகிறோம் — எவோக் ராம்பாக்கில் உங்கள் தங்குமிடத்தின் போது இந்தத் தளத்தின் மூலமாகவே நீங்கள் கண்டறிந்து முன்பதிவு செய்யக்கூடிய பயணங்களின் தொகுப்பை உருவாக்கியுள்ளோம்.",
+      journeyHeading: "உங்கள் அயோத்தி பயணம் இங்கிருந்து தொடங்குகிறது",
+      journeyParagraph:
+        "உங்களிடம் சில மணிநேரங்களோ, முழு மாலைப் பொழுதோ அல்லது முழு நாளோ இருந்தாலும் — உங்கள் ஆர்வத்திற்கு ஏற்ற அனுபவத்தைத் தேர்ந்தெடுத்து, மீதமுள்ளதை நாங்கள் கவனித்துக் கொள்கிறோம்.",
     },
     cta: {
+      tagline: "அறியுங்கள். தேர்ந்தெடுங்கள். அயோத்தியை அனுபவியுங்கள்.",
       heading: "உங்கள் மறக்க முடியாத அயோத்தி அனுபவத்தை ஒன்றாக உருவாக்குவோம்.",
       explore: "அனுபவங்களைப் பார்க்க",
     },

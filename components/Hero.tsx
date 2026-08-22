@@ -64,7 +64,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
       {/* Floating count card */}
       <div className="absolute right-4 top-1 w-[142px] rounded-[16px] bg-white/95 px-3 pb-2 pt-3 text-center shadow-float">
         <p className="font-serif text-[40px] font-bold leading-none text-terracotta">
-          15
+          16
         </p>
         <p className="mt-1.5 text-[12.5px] leading-[1.25] text-ink">
           {t.hero.expCountLine1}

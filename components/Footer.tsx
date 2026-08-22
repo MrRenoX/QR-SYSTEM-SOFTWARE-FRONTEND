@@ -2,15 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-  Youtube,
-} from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import type { SiteSettings } from "@/lib/types";
 
@@ -44,8 +37,8 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
   const socials = [
     { Icon: Facebook, label: "Facebook", href: social.facebook },
     { Icon: Instagram, label: "Instagram", href: social.instagram },
-    { Icon: MessageCircle, label: "WhatsApp", href: toWaLink(general.whatsapp) },
-    { Icon: Youtube, label: "YouTube", href: social.youtube },
+    { Icon: WhatsAppIcon, label: "WhatsApp", href: toWaLink(general.whatsapp) },
+    { Icon: Linkedin, label: "LinkedIn", href: social.linkedin },
   ];
 
   return (
@@ -90,7 +83,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
             rel="noopener noreferrer"
             className="mt-2 flex h-7 items-center justify-center gap-1 rounded-[6px] bg-whatsapp text-[10px] font-semibold text-white transition-opacity hover:opacity-90"
           >
-            <MessageCircle size={11} aria-hidden="true" />
+            <WhatsAppIcon size={11} />
             {t.footer.chatWhatsapp}
           </a>
           <a

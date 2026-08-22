@@ -20,7 +20,10 @@ export default function AboutCTA() {
           aria-hidden="true"
           className="pointer-events-none absolute -right-6 bottom-0 h-[92px] w-auto opacity-25 [filter:brightness(0)_invert(1)]"
         />
-        <p className="relative max-w-[220px] font-serif text-[20px] font-bold leading-[1.25] text-white">
+        <p className="relative text-[11px] font-bold uppercase tracking-[0.08em] text-white/70">
+          {t.about.cta.tagline}
+        </p>
+        <p className="relative mt-1.5 max-w-[220px] font-serif text-[20px] font-bold leading-[1.25] text-white">
           {t.about.cta.heading}
         </p>
         <Link

@@ -15,13 +15,14 @@ const DEFAULTS: WebsiteSettings = {
   },
   social: {
     instagram: "https://www.instagram.com/guideguruglobal",
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/share/1DJyVQNgzv/",
     youtube: "https://youtube.com",
+    linkedin: "https://www.linkedin.com/showcase/guideguruglobal/",
     googleMaps: "",
   },
   homepage: {
     heroTitle: "Ayodhya Anubhav",
-    heroSubtitle: "Fifteen ways into a city everyone thinks they know.",
+    heroSubtitle: "Sixteen journeys into the many layers of Ayodhya.",
     heroImage: "/images/hero/ayodhya-sarayu-ghat.jpg",
   },
   contact: {
@@ -33,7 +34,7 @@ const DEFAULTS: WebsiteSettings = {
   },
   footer: {
     description:
-      "Curated experiences, authentic stories, and seamless journeys across India's most sacred and beautiful destinations.",
+      "Curated experiences, certified guides, authentic stories and seamless journeys that bring India's destinations to life.",
     copyright: "© 2026 Guide Guru Global. All rights reserved.",
   },
   qrWebsite: {

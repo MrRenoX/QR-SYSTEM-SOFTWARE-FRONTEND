@@ -12,6 +12,7 @@ export interface SocialSettings {
   instagram: string;
   facebook: string;
   youtube: string;
+  linkedin: string;
   googleMaps: string;
 }
 

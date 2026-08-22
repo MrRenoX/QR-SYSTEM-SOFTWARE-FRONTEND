@@ -103,6 +103,9 @@ export default function AdminSettingsPage() {
             <FormField label="YouTube" htmlFor="s-youtube">
               <input id="s-youtube" value={settings.social.youtube} onChange={(e) => update("social", { youtube: e.target.value })} className={adminInputClass} />
             </FormField>
+            <FormField label="LinkedIn" htmlFor="s-linkedin">
+              <input id="s-linkedin" value={settings.social.linkedin} onChange={(e) => update("social", { linkedin: e.target.value })} className={adminInputClass} />
+            </FormField>
             <FormField label="Google Maps" htmlFor="s-social-maps">
               <input id="s-social-maps" value={settings.social.googleMaps} onChange={(e) => update("social", { googleMaps: e.target.value })} className={adminInputClass} />
             </FormField>

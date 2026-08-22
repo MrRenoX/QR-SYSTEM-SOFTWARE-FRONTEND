@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import HashScroll from "@/components/HashScroll";
 import Hero from "@/components/Hero";
 import IntroSection from "@/components/IntroSection";
 import ExperienceList from "@/components/ExperienceList";
@@ -18,6 +19,7 @@ export default async function HomePage() {
   return (
     <>
       <Header />
+      <HashScroll />
       <main>
         <Hero settings={settings} />
         <IntroSection />
