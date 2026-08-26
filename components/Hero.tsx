@@ -77,7 +77,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
                 </span>
                 <span className="max-w-[188px] text-[12.5px] leading-[1.3] text-ink tab:max-w-[280px] tab:text-[14.5px]">
                   <span className="block font-semibold">{title}</span>
-                  <span className="block">{detail}</span>
+                  {detail && <span className="block">{detail}</span>}
                 </span>
               </li>
             ))}

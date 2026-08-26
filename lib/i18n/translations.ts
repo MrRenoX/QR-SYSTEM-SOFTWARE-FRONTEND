@@ -35,7 +35,7 @@ const en = {
       experiences: "Experiences",
       categories: "Categories",
       about: "About Us",
-      contact: "Contact",
+      contact: "Get in Touch",
       faqs: "FAQs",
     },
     chatWhatsapp: "Chat on WhatsApp",
@@ -73,7 +73,7 @@ const en = {
   hero: {
     welcomeTo: "Welcome to",
     featureCurated: { title: "Curated Experiences", detail: "by Guide Guru Global" },
-    featureCertified: { title: "Certified", detail: "Storyteller Guides" },
+    featureCertified: { title: "Certified Guides", detail: "" },
     featureBegins: { title: "Every experience begins", detail: "and ends at Evoke Rambagh" },
     expCountLine1: "experiences",
     expCountLine2: "curated for you",
@@ -316,7 +316,7 @@ const en = {
     hero: {
       breadcrumbCurrent: "About Ayodhya Anubhav",
       title: "About Ayodhya Anubhav",
-      subtitle: "Sixteen journeys into the many layers of Ayodhya.",
+      subtitle: "Fifteen journeys into the many layers of Ayodhya.",
     },
     story: {
       paragraph1:
@@ -374,7 +374,7 @@ const hi: TranslationDict = {
       experiences: "अनुभव",
       categories: "श्रेणियाँ",
       about: "हमारे बारे में",
-      contact: "संपर्क करें",
+      contact: "हमसे जुड़ें",
       faqs: "सामान्य प्रश्न",
     },
     chatWhatsapp: "व्हाट्सएप पर चैट करें",
@@ -412,7 +412,7 @@ const hi: TranslationDict = {
   hero: {
     welcomeTo: "आपका स्वागत है",
     featureCurated: { title: "चुनिंदा अनुभव", detail: "गाइड गुरु ग्लोबल द्वारा" },
-    featureCertified: { title: "प्रमाणित", detail: "कथावाचक गाइड" },
+    featureCertified: { title: "प्रमाणित गाइड", detail: "" },
     featureBegins: { title: "हर अनुभव शुरू होता है", detail: "और एवोक रामबाग पर समाप्त होता है" },
     expCountLine1: "अनुभव",
     expCountLine2: "आपके लिए चुने गए",
@@ -652,7 +652,7 @@ const hi: TranslationDict = {
     hero: {
       breadcrumbCurrent: "अयोध्या अनुभव के बारे में",
       title: "अयोध्या अनुभव के बारे में",
-      subtitle: "अयोध्या की अनेक परतों में सोलह यात्राएँ।",
+      subtitle: "अयोध्या की अनेक परतों में पंद्रह यात्राएँ।",
     },
     story: {
       paragraph1:
@@ -708,7 +708,7 @@ const gu: TranslationDict = {
       experiences: "અનુભવો",
       categories: "શ્રેણીઓ",
       about: "અમારા વિશે",
-      contact: "સંપર્ક કરો",
+      contact: "અમારો સંપર્ક કરો",
       faqs: "વારંવાર પુછાતા પ્રશ્નો",
     },
     chatWhatsapp: "વોટ્સએપ પર ચેટ કરો",
@@ -746,7 +746,7 @@ const gu: TranslationDict = {
   hero: {
     welcomeTo: "તમારું સ્વાગત છે",
     featureCurated: { title: "ક્યુરેટેડ અનુભવો", detail: "ગાઇડ ગુરુ ગ્લોબલ દ્વારા" },
-    featureCertified: { title: "પ્રમાણિત", detail: "કથાકાર ગાઇડ" },
+    featureCertified: { title: "પ્રમાણિત ગાઇડ", detail: "" },
     featureBegins: { title: "દરેક અનુભવ શરૂ થાય છે", detail: "અને એવોક રામબાગ ખાતે પૂર્ણ થાય છે" },
     expCountLine1: "અનુભવો",
     expCountLine2: "તમારા માટે પસંદ કરેલા",
@@ -985,7 +985,7 @@ const gu: TranslationDict = {
     hero: {
       breadcrumbCurrent: "અયોધ્યા અનુભવ વિશે",
       title: "અયોધ્યા અનુભવ વિશે",
-      subtitle: "અયોધ્યાના અનેક પડોમાં સોળ યાત્રાઓ.",
+      subtitle: "અયોધ્યાના અનેક પડોમાં પંદર યાત્રાઓ.",
     },
     story: {
       paragraph1:
@@ -1041,7 +1041,7 @@ const ta: TranslationDict = {
       experiences: "அனுபவங்கள்",
       categories: "வகைகள்",
       about: "எங்களைப் பற்றி",
-      contact: "தொடர்பு கொள்ள",
+      contact: "எங்களைத் தொடர்பு கொள்ளுங்கள்",
       faqs: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
     },
     chatWhatsapp: "வாட்ஸ்அப்பில் அரட்டையடிக்கவும்",
@@ -1079,7 +1079,7 @@ const ta: TranslationDict = {
   hero: {
     welcomeTo: "வரவேற்கிறோம்",
     featureCurated: { title: "தேர்ந்தெடுக்கப்பட்ட அனுபவங்கள்", detail: "கைட் குரு குளோபல் வழங்கும்" },
-    featureCertified: { title: "சான்றளிக்கப்பட்ட", detail: "கதைசொல்லி வழிகாட்டிகள்" },
+    featureCertified: { title: "சான்றளிக்கப்பட்ட வழிகாட்டிகள்", detail: "" },
     featureBegins: { title: "ஒவ்வொரு அனுபவமும் தொடங்குகிறது", detail: "எவோக் ராம்பாக்கில் முடிவடைகிறது" },
     expCountLine1: "அனுபவங்கள்",
     expCountLine2: "உங்களுக்காகத் தேர்ந்தெடுக்கப்பட்டவை",
@@ -1319,7 +1319,7 @@ const ta: TranslationDict = {
     hero: {
       breadcrumbCurrent: "அயோத்தி அனுபவம் பற்றி",
       title: "அயோத்தி அனுபவம் பற்றி",
-      subtitle: "அயோத்தியின் பல அடுக்குகளுக்குள் பதினாறு பயணங்கள்.",
+      subtitle: "அயோத்தியின் பல அடுக்குகளுக்குள் பதினைந்து பயணங்கள்.",
     },
     story: {
       paragraph1:

@@ -46,6 +46,38 @@ interface RequestOptions {
   headers?: Record<string, string>;
 }
 
+/**
+ * Must match TOKEN_KEY/USER_KEY in services/admin/authService.ts — duplicated
+ * here (rather than imported) to avoid a circular import, since authService
+ * already imports apiClient.
+ */
+const ADMIN_TOKEN_KEY = "anubhav_admin_token";
+const ADMIN_USER_KEY = "anubhav_admin_user";
+
+/**
+ * The dashboard's "am I logged in" check only ever looks at the locally
+ * stored token/user (see authService.readSession/isAuthenticated) — it never
+ * asks the server. That local copy and the real httpOnly session cookie can
+ * drift apart (e.g. the backend restarts with a rotated JWT secret, or the
+ * cookie simply expires) without the local copy noticing, since it only
+ * checks its own embedded `exp` claim, not the signature. The dashboard then
+ * renders as if logged in and every request 401s. When that happens, clear
+ * the stale local copy and send the admin back to log in properly instead of
+ * leaving a broken-looking dashboard on screen.
+ */
+function handleAdminUnauthorized(path: string) {
+  if (typeof window === "undefined") return;
+  if (!path.startsWith("/api/v1/admin/")) return;
+  if (path === "/api/v1/admin/auth/login") return; // a 401 here just means wrong credentials
+  if (window.location.pathname.startsWith("/dashboard/super-admin/login")) return;
+
+  window.localStorage.removeItem(ADMIN_TOKEN_KEY);
+  window.localStorage.removeItem(ADMIN_USER_KEY);
+  window.sessionStorage.removeItem(ADMIN_TOKEN_KEY);
+  window.sessionStorage.removeItem(ADMIN_USER_KEY);
+  window.location.href = "/dashboard/super-admin/login";
+}
+
 /** FormData bodies (file uploads) must skip JSON.stringify and the JSON Content-Type — the browser sets its own multipart boundary. */
 function isFormData(body: unknown): body is FormData {
   return typeof FormData !== "undefined" && body instanceof FormData;
@@ -106,6 +138,8 @@ async function request<T>(
     }
 
     if (!res.ok) {
+      if (res.status === 401) handleAdminUnauthorized(path);
+
       const parsed = (body ?? {}) as {
         message?: string;
         error?: string;
