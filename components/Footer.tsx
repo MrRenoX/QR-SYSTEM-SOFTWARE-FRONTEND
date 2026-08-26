@@ -32,6 +32,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
     { label: t.footer.companyLinks.faqs, href: "/faqs" },
     { label: t.footer.companyLinks.privacyPolicy, href: "/privacy" },
     { label: t.footer.companyLinks.termsConditions, href: "/terms" },
+    { label: t.footer.companyLinks.refundPolicy, href: "/refund-policy" },
   ];
 
   const socials = [

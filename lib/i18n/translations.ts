@@ -57,10 +57,11 @@ const en = {
     },
     companyLinks: {
       aboutUs: "About Us",
-      contactUs: "Contact Us",
+      contactUs: "Get In Touch",
       faqs: "FAQs",
       privacyPolicy: "Privacy Policy",
       termsConditions: "Terms & Conditions",
+      refundPolicy: "Refund & Cancellation Policy",
     },
     visitWebsite: "Visit Guide Guru Global Website",
     scanQr: "Scan to open.",
@@ -296,7 +297,6 @@ const en = {
   },
   faqs: {
     hero: {
-      breadcrumbHome: "Home",
       breadcrumbCurrent: "FAQs",
       titleLine1: "Frequently Asked",
       titleLine2: "Questions",
@@ -396,10 +396,11 @@ const hi: TranslationDict = {
     },
     companyLinks: {
       aboutUs: "हमारे बारे में",
-      contactUs: "संपर्क करें",
+      contactUs: "हमसे जुड़ें",
       faqs: "सामान्य प्रश्न",
       privacyPolicy: "गोपनीयता नीति",
       termsConditions: "नियम व शर्तें",
+      refundPolicy: "रद्दीकरण व धनवापसी नीति",
     },
     visitWebsite: "हमारी वेबसाइट देखें",
     scanQr: "इस साइट को अपने फोन पर खोलने के लिए स्कैन करें",
@@ -632,7 +633,6 @@ const hi: TranslationDict = {
   },
   faqs: {
     hero: {
-      breadcrumbHome: "मुखपृष्ठ",
       breadcrumbCurrent: "सामान्य प्रश्न",
       titleLine1: "अक्सर पूछे जाने वाले",
       titleLine2: "प्रश्न",
@@ -730,10 +730,11 @@ const gu: TranslationDict = {
     },
     companyLinks: {
       aboutUs: "અમારા વિશે",
-      contactUs: "સંપર્ક કરો",
+      contactUs: "અમારો સંપર્ક કરો",
       faqs: "વારંવાર પુછાતા પ્રશ્નો",
       privacyPolicy: "ગોપનીયતા નીતિ",
       termsConditions: "નિયમો અને શરતો",
+      refundPolicy: "રદ્દીકરણ અને રિફંડ નીતિ",
     },
     visitWebsite: "અમારી વેબસાઇટની મુલાકાત લો",
     scanQr: "આ સાઇટ તમારા ફોન પર ખોલવા સ્કેન કરો",
@@ -966,7 +967,6 @@ const gu: TranslationDict = {
   },
   faqs: {
     hero: {
-      breadcrumbHome: "હોમ",
       breadcrumbCurrent: "વારંવાર પુછાતા પ્રશ્નો",
       titleLine1: "વારંવાર પુછાતા",
       titleLine2: "પ્રશ્નો",
@@ -1063,10 +1063,11 @@ const ta: TranslationDict = {
     },
     companyLinks: {
       aboutUs: "எங்களைப் பற்றி",
-      contactUs: "தொடர்பு கொள்ள",
+      contactUs: "எங்களைத் தொடர்பு கொள்ளுங்கள்",
       faqs: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
       privacyPolicy: "தனியுரிமைக் கொள்கை",
       termsConditions: "விதிமுறைகள் & நிபந்தனைகள்",
+      refundPolicy: "ரத்து & திரும்பப் பணம் கொள்கை",
     },
     visitWebsite: "எங்கள் இணையதளத்தைப் பார்வையிடுங்கள்",
     scanQr: "இந்த தளத்தை உங்கள் ஃபோனில் திறக்க ஸ்கேன் செய்யுங்கள்",
@@ -1299,7 +1300,6 @@ const ta: TranslationDict = {
   },
   faqs: {
     hero: {
-      breadcrumbHome: "முகப்பு",
       breadcrumbCurrent: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
       titleLine1: "அடிக்கடி கேட்கப்படும்",
       titleLine2: "கேள்விகள்",
