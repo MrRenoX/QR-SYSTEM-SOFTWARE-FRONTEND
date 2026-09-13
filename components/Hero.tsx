@@ -45,12 +45,12 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
     <section className="relative isolate overflow-hidden pb-[118px] tabLg:pb-0">
       {/* Phone/tablet: full-bleed backdrop photo. At lg the photo becomes its own right-column panel instead. */}
       <Image
-        src="/images/hero/ayodhya-sarayu-ghat.jpg"
-        alt="A pilgrim walking the stone ghats of the Sarayu at sunrise, with Ayodhya's temple spires behind"
+        src="/images/hero/ram-mandir-carved-facade.jpg"
+        alt="The intricately carved stone facade of the Ram Mandir in Ayodhya, its arched colonnade lit in warm gold"
         fill
         priority
         sizes="(min-width: 1024px) 0px, (min-width: 431px) 760px, 390px"
-        className="-z-10 object-cover object-[68%_center] tabLg:hidden"
+        className="-z-10 object-cover object-[60%_65%] tabLg:hidden"
       />
       {/* Dark wash so the headline sits on the noir chrome, not directly on the photograph */}
       <div
@@ -102,14 +102,14 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
           </Link>
         </div>
 
-        <div className="relative hidden h-[520px] flex-1 overflow-hidden rounded-panel shadow-float tabLg:block">
+        <div className="relative hidden h-[520px] flex-1 overflow-hidden rounded-panel shadow-float ring-1 ring-terracotta/25 tabLg:block">
           <Image
-            src="/images/hero/ayodhya-sarayu-ghat.jpg"
-            alt="A pilgrim walking the stone ghats of the Sarayu at sunrise, with Ayodhya's temple spires behind"
+            src="/images/hero/ram-mandir-carved-facade.jpg"
+            alt="The intricately carved stone facade of the Ram Mandir in Ayodhya, its arched colonnade lit in warm gold"
             fill
             priority
             sizes="500px"
-            className="object-cover"
+            className="object-cover object-[60%_60%]"
           />
           <CountCard className="absolute left-4 top-4 w-[150px]" />
         </div>
