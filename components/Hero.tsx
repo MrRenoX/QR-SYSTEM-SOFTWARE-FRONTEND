@@ -49,7 +49,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
         alt="The intricately carved stone facade of the Ram Mandir in Ayodhya, its arched colonnade lit in warm gold"
         fill
         priority
-        sizes="(min-width: 1024px) 0px, (min-width: 431px) 760px, 390px"
+        sizes="(min-width: 1440px) 390px, (min-width: 1024px) 0px, (min-width: 431px) 760px, 390px"
         className="-z-10 object-cover object-[60%_65%] tabLg:hidden"
       />
       {/* Dark wash so the headline sits on the noir chrome, not directly on the photograph */}
