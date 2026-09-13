@@ -2,20 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
-import {
-  getExperienceBySlug,
-  getExperienceSlugs,
-} from "@/services/experienceService";
+import { getExperienceBySlug } from "@/services/experienceService";
 import { getSiteSettings } from "@/services/settingsService";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const slugs = await getExperienceSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
+/** Same no-store/generateStaticParams conflict as experiences/[slug] — see the comment there. */
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;

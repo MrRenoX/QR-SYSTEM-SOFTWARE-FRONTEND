@@ -6,7 +6,7 @@ import ExperienceInfo from "@/components/ExperienceInfo";
 import JourneyRoute from "@/components/JourneyRoute";
 import TouchpointsSection from "@/components/TouchpointsSection";
 import QueryForm from "@/components/QueryForm";
-import { getExperienceBySlug, getExperienceSlugs } from "@/services/experienceService";
+import { getExperienceBySlug } from "@/services/experienceService";
 import { getSiteSettings } from "@/services/settingsService";
 import type { JourneyStop, Touchpoint } from "@/lib/types";
 
@@ -14,10 +14,15 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const slugs = await getExperienceSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
+/**
+ * Every fetch behind this page goes through apiClient with `cache: "no-store"`
+ * (admin-managed content must reflect immediately, no rebuild/revalidate
+ * window) — that's inherently incompatible with generateStaticParams'
+ * build-time static generation, which is what previously produced the
+ * "Page changed from static to dynamic at runtime" 500 in production. There's
+ * nothing to prerender here; render fresh on every request instead.
+ */
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
