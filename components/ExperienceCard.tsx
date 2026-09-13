@@ -27,7 +27,7 @@ export default function ExperienceCard({
   }
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white shadow-card transition-shadow duration-300 hover:shadow-float">
+    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-noir-border bg-noir-card shadow-card transition-shadow duration-300 hover:shadow-float">
       <Link
         href={`/experiences/${slug}`}
         aria-label={t.experienceCard.ariaLabel(title, category, duration, price)}
@@ -66,21 +66,21 @@ export default function ExperienceCard({
         </div>
 
         <div className="flex flex-1 flex-col p-3.5 tab:p-4">
-          <h3 className="font-serif text-[17px] font-bold leading-tight text-ink tab:text-[19px]">
+          <h3 className="font-serif text-[17px] font-bold leading-tight text-white tab:text-[19px]">
             {title}
           </h3>
-          <p className="mt-1 line-clamp-2 text-[12px] leading-[1.45] text-ink-soft tab:text-[13px]">
+          <p className="mt-1 line-clamp-2 text-[12px] leading-[1.45] text-white/70 tab:text-[13px]">
             {description}
           </p>
 
-          <div className="mt-3 flex flex-1 items-end justify-between border-t border-line pt-2.5">
+          <div className="mt-3 flex flex-1 items-end justify-between border-t border-noir-border pt-2.5">
             <div className="leading-tight">
-              <span className="block text-[9px] font-semibold uppercase tracking-[0.07em] text-ink-faint">
+              <span className="block text-[9px] font-semibold uppercase tracking-[0.07em] text-white/50">
                 {t.experienceCard.startsFrom}
               </span>
               <p className="text-[16.5px] font-bold text-terracotta tab:text-[18px]">
                 {price}
-                <span className="text-[11px] font-semibold text-ink-muted">
+                <span className="text-[11px] font-semibold text-white/60">
                   {" "}
                   {t.experienceCard.perPerson}
                 </span>
@@ -88,7 +88,7 @@ export default function ExperienceCard({
             </div>
             <span
               aria-hidden="true"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta text-white transition-transform duration-300 group-hover:scale-[1.06] tab:h-10 tab:w-10"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta text-ink transition-transform duration-300 group-hover:scale-[1.06] tab:h-10 tab:w-10"
             >
               <ArrowRight size={17} strokeWidth={2.2} />
             </span>

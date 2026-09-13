@@ -34,8 +34,8 @@ export default function CategoryFilters({
             onClick={() => onChange(category)}
             className={`h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-4 text-[13.5px] font-medium transition-colors tab:h-[40px] tab:px-5 tab:text-[14.5px] ${
               isActive
-                ? "bg-terracotta text-white shadow-[0_4px_10px_-6px_rgba(220,74,12,0.9)]"
-                : "border border-line bg-white text-ink hover:border-terracotta/40"
+                ? "bg-terracotta text-ink shadow-[0_4px_10px_-6px_rgba(217,162,75,0.7)]"
+                : "border border-noir-border bg-transparent text-white hover:border-terracotta/40"
             }`}
           >
             {category === "All" ? t.categoryFilters.all : category}

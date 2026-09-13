@@ -31,16 +31,22 @@ const config: Config = {
         sand: "#F6EADB",
         parchment: "#FFFDFA",
         terracotta: {
-          DEFAULT: "#DC4A0C",
-          soft: "#E4703C",
-          deep: "#B93A06",
-          tint: "#FCEAE0",
+          DEFAULT: "#D9A24B",
+          soft: "#E8C179",
+          deep: "#A8722C",
+          tint: "#F6EEDC",
         },
         ink: {
           DEFAULT: "#241A14",
           soft: "#3B2C23",
           muted: "#6D5B4F",
           faint: "#9A8878",
+        },
+        /** The homepage's dark hero/footer chrome — see Header/Hero/Footer etc. Not used on the site's other (still light) pages. */
+        noir: {
+          DEFAULT: "#1E1712",
+          card: "#2A2018",
+          border: "rgba(255,255,255,0.12)",
         },
         line: "#EDE0D2",
         water: {

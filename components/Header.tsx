@@ -24,7 +24,7 @@ export default function Header() {
   ] as const;
 
   return (
-    <header className="sticky top-0 z-40 bg-ivory/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 bg-noir/95 backdrop-blur-sm">
       <div className="flex items-center justify-between gap-4 px-4 py-3 tab:px-6 tabLg:px-8">
         <Link href="/" aria-label={t.header.homeAriaLabel} className="shrink-0">
           <Image
@@ -45,7 +45,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap text-[14px] font-semibold text-ink transition-colors hover:text-terracotta tabLg:text-[15px]"
+              className="whitespace-nowrap text-[14px] font-semibold text-white transition-colors hover:text-terracotta tabLg:text-[15px]"
             >
               {item.label}
             </Link>
@@ -105,7 +105,7 @@ export default function Header() {
             aria-label={t.header.openMenuAriaLabel}
             aria-expanded={menuOpen}
             aria-controls="main-menu"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-white shadow-[0_4px_12px_-4px_rgba(220,74,12,0.6)] transition-transform active:scale-95 tab:hidden tabLg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-ink shadow-[0_4px_12px_-4px_rgba(217,162,75,0.6)] transition-transform active:scale-95 tab:hidden tabLg:hidden"
           >
             {menuOpen ? (
               <X size={20} strokeWidth={2.5} aria-hidden="true" />

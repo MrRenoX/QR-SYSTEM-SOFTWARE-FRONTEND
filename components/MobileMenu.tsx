@@ -80,30 +80,30 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         role="dialog"
         aria-modal="true"
         aria-label={t.mobileMenu.mainMenuAriaLabel}
-        className="absolute inset-x-0 top-0 animate-slide-in rounded-b-[22px] bg-ivory px-5 pb-7 pt-4 shadow-float"
+        className="absolute inset-x-0 top-0 animate-slide-in rounded-b-[22px] bg-noir px-5 pb-7 pt-4 shadow-float"
       >
         <div className="flex items-center justify-between">
-          <p className="font-serif text-[19px] font-bold text-ink">{t.mobileMenu.title}</p>
+          <p className="font-serif text-[19px] font-bold text-white">{t.mobileMenu.title}</p>
           <button
             ref={closeRef}
             type="button"
             onClick={onClose}
             aria-label={t.mobileMenu.closeAriaLabel}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-white transition-transform active:scale-95"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-ink transition-transform active:scale-95"
           >
             <X size={20} strokeWidth={2.5} aria-hidden="true" />
           </button>
         </div>
 
         <nav aria-label={t.mobileMenu.primaryNavAriaLabel} className="mt-5">
-          <ul className="divide-y divide-line">
+          <ul className="divide-y divide-noir-border">
             {MENU_ITEMS.map((item, index) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
                   onClick={onClose}
                   style={{ animationDelay: `${index * 45}ms` }}
-                  className="arrow-nudge flex animate-fade-up items-center justify-between py-3.5 font-serif text-[21px] font-semibold text-ink transition-colors hover:text-terracotta"
+                  className="arrow-nudge flex animate-fade-up items-center justify-between py-3.5 font-serif text-[21px] font-semibold text-white transition-colors hover:text-terracotta"
                 >
                   {item.label}
                   <ArrowUpRight
@@ -127,7 +127,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           {t.mobileMenu.chatWhatsapp}
         </a>
 
-        <p className="mt-3 text-center text-[11.5px] text-ink-muted">
+        <p className="mt-3 text-center text-[11.5px] text-white/60">
           {t.mobileMenu.tagline}
         </p>
       </div>

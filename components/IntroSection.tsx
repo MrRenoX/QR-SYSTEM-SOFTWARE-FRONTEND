@@ -22,7 +22,7 @@ export default function IntroSection() {
       aria-labelledby="intro-heading"
       className="relative z-10 -mt-[46px] px-3 tab:px-6 tabLg:mx-auto tabLg:max-w-[1080px] tabLg:px-10"
     >
-      <Reveal className="rounded-panel bg-parchment px-4 pb-4 pt-5 shadow-card ring-1 ring-line/70 tab:px-7 tab:pb-6 tab:pt-7 tabLg:px-9 tabLg:pb-7 tabLg:pt-8">
+      <Reveal className="rounded-panel bg-noir-card px-4 pb-4 pt-5 shadow-card ring-1 ring-noir-border tab:px-7 tab:pb-6 tab:pt-7 tabLg:px-9 tabLg:pb-7 tabLg:pt-8">
         <div className="flex items-start gap-3 tab:gap-5">
           <Image
             src="/images/illustrations/temple-lineart.svg"
@@ -36,14 +36,14 @@ export default function IntroSection() {
           <div className="min-w-0 flex-1">
             <h2
               id="intro-heading"
-              className="font-serif text-[19px] leading-[1.25] tracking-[-0.01em] text-ink tab:text-[24px] tabLg:text-[27px]"
+              className="font-serif text-[19px] leading-[1.25] tracking-[-0.01em] text-white tab:text-[24px] tabLg:text-[27px]"
             >
               {t.introSection.headingLead}
               <span className="mt-0.5 block text-[22px] font-bold text-terracotta tab:text-[27px] tabLg:text-[30px]">
                 {t.introSection.headingHighlight}
               </span>
             </h2>
-            <p className="mt-2.5 text-[13px] leading-[1.4] text-ink-soft tab:mt-3.5 tab:text-[15px]">
+            <p className="mt-2.5 text-[13px] leading-[1.4] text-white/70 tab:mt-3.5 tab:text-[15px]">
               {t.introSection.subtitleLine1}
               <br />
               {t.introSection.subtitleLine2}
@@ -58,15 +58,15 @@ export default function IntroSection() {
           </div>
         </div>
 
-        <hr className="my-4 border-line tab:my-6" />
+        <hr className="my-4 border-noir-border tab:my-6" />
 
         <ul className="grid grid-cols-2 gap-y-4 tab:gap-y-6 tabLg:grid-cols-4 tabLg:gap-x-2">
           {BLOCKS.map(({ Icon, title, detail }, index) => (
             <li
               key={title}
               className={`flex items-start gap-2.5 tab:gap-3 ${
-                index % 2 === 0 ? "pr-3 tab:pr-4" : "border-l border-line pl-3 tab:pl-4"
-              } tabLg:border-l tabLg:border-line tabLg:pl-4 tabLg:pr-0 first:tabLg:border-l-0 first:tabLg:pl-0`}
+                index % 2 === 0 ? "pr-3 tab:pr-4" : "border-l border-noir-border pl-3 tab:pl-4"
+              } tabLg:border-l tabLg:border-noir-border tabLg:pl-4 tabLg:pr-0 first:tabLg:border-l-0 first:tabLg:pl-0`}
             >
               <Icon
                 size={22}
@@ -75,8 +75,8 @@ export default function IntroSection() {
                 aria-hidden="true"
               />
               <span className="min-w-0 text-[12px] leading-[1.35] tab:text-[13.5px]">
-                <span className="block font-semibold text-ink">{title}</span>
-                <span className="block text-ink-muted">{detail}</span>
+                <span className="block font-semibold text-white">{title}</span>
+                <span className="block text-white/60">{detail}</span>
               </span>
             </li>
           ))}

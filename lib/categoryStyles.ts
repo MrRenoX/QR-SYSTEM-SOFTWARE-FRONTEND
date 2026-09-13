@@ -1,13 +1,11 @@
-/** Badge treatment for the categories the site launched with. Water reads cool; everything else is terracotta. */
-const categoryBadge: Record<string, string> = {
-  Spiritual: "bg-terracotta-tint text-terracotta",
-  Walks: "bg-terracotta-tint text-terracotta",
-  Water: "bg-water-tint text-water",
-  "Craft & Culture": "bg-terracotta-tint text-terracotta",
-  Culinary: "bg-terracotta-tint text-terracotta",
-};
+/**
+ * Badge treatment for the experience card's category tag, which always sits
+ * on top of a photo — a dark chip with gold text reads consistently there
+ * regardless of category, so every category (including ones added later via
+ * the admin panel) shares the same on-photo treatment.
+ */
+const CARD_BADGE_CLASS = "bg-ink/70 text-terracotta-soft backdrop-blur-[1px]";
 
-/** Badge classes for a category name, with a terracotta fallback for categories added later via the admin panel. */
-export function getCategoryBadgeClass(name: string): string {
-  return categoryBadge[name] ?? "bg-terracotta-tint text-terracotta";
+export function getCategoryBadgeClass(_name: string): string {
+  return CARD_BADGE_CLASS;
 }

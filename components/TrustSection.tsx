@@ -10,9 +10,9 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
  */
 const DIVIDERS = [
   "",
-  "border-l border-line",
-  "border-l-0 border-line min-[360px]:border-l",
-  "border-l border-line",
+  "border-l border-noir-border",
+  "border-l-0 border-noir-border min-[360px]:border-l",
+  "border-l border-noir-border",
 ] as const;
 
 export default function TrustSection() {
@@ -27,7 +27,7 @@ export default function TrustSection() {
 
   return (
     <section aria-label={t.trustSection.ariaLabel} className="mt-6 px-3 tab:px-6 tabLg:mx-auto tabLg:max-w-[1080px] tabLg:px-10">
-      <Reveal className="rounded-panel border border-line bg-white px-2.5 py-4 shadow-card tab:px-6 tab:py-6 tabLg:px-8 tabLg:py-7">
+      <Reveal className="rounded-panel border border-noir-border bg-noir-card px-2.5 py-4 shadow-card tab:px-6 tab:py-6 tabLg:px-8 tabLg:py-7">
         <ul className="grid grid-cols-2 gap-y-4 min-[360px]:grid-cols-4 tab:gap-y-6">
           {PILLARS.map(({ Icon, title, detail }, index) => (
             <li
@@ -40,10 +40,10 @@ export default function TrustSection() {
                 className="text-terracotta tab:h-6 tab:w-6"
                 aria-hidden="true"
               />
-              <h3 className="mt-1.5 text-[10.5px] font-bold leading-[1.25] text-ink tab:mt-2.5 tab:text-[13px]">
+              <h3 className="mt-1.5 text-[10.5px] font-bold leading-[1.25] text-white tab:mt-2.5 tab:text-[13px]">
                 {title}
               </h3>
-              <p className="mt-1 text-[9.5px] leading-[1.35] text-ink-muted tab:mt-1.5 tab:text-[11.5px]">
+              <p className="mt-1 text-[9.5px] leading-[1.35] text-white/60 tab:mt-1.5 tab:text-[11.5px]">
                 {detail}
               </p>
             </li>

@@ -173,8 +173,8 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
         >
           <defs>
             <linearGradient id="routeGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#E4703C" />
-              <stop offset="100%" stopColor="#B93A06" />
+              <stop offset="0%" stopColor="#E8C179" />
+              <stop offset="100%" stopColor="#A8722C" />
             </linearGradient>
             <clipPath id="journeyReveal" clipPathUnits="userSpaceOnUse">
               <rect
@@ -376,8 +376,8 @@ function CarIcon() {
     <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
       <defs>
         <linearGradient id="carBody" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#E4703C" />
-          <stop offset="55%" stopColor="#DC4A0C" />
+          <stop offset="0%" stopColor="#E8C179" />
+          <stop offset="55%" stopColor="#D9A24B" />
           <stop offset="100%" stopColor="#A63505" />
         </linearGradient>
         <linearGradient id="carGlass" x1="0" y1="0" x2="0" y2="1">
@@ -416,7 +416,7 @@ function CarIcon() {
       <rect x="15.3" y="2.8" width="2.1" height="1" rx="0.45" fill="#FFF4E8" />
 
       {/* Roof */}
-      <rect x="7.6" y="10.6" width="8.8" height="4.1" rx="1.6" fill="#B93A06" />
+      <rect x="7.6" y="10.6" width="8.8" height="4.1" rx="1.6" fill="#A8722C" />
       <rect x="7.6" y="10.6" width="8.8" height="1.4" rx="0.7" fill="#F0946A" opacity="0.55" />
 
       {/* Rear window */}

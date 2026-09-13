@@ -49,7 +49,7 @@ export default function ExperienceList({
       {heading && (
         <h2
           id="curated"
-          className="font-serif text-[25px] font-bold tracking-[-0.01em] text-ink tab:text-[30px] tabLg:text-[34px]"
+          className="font-serif text-[25px] font-bold tracking-[-0.01em] text-white tab:text-[30px] tabLg:text-[34px]"
         >
           {t.home.curatedExperiencesHeading}
         </h2>
@@ -74,7 +74,7 @@ export default function ExperienceList({
             ))}
           </ul>
         ) : (
-          <p className="mt-6 rounded-card border border-dashed border-line bg-white px-4 py-6 text-center text-[13px] text-ink-muted">
+          <p className="mt-6 rounded-card border border-dashed border-noir-border bg-noir-card px-4 py-6 text-center text-[13px] text-white/60">
             {t.experiences.emptyState}
           </p>
         )}
@@ -83,7 +83,7 @@ export default function ExperienceList({
           <div className="mt-4 flex justify-center tab:mt-7">
             <Link
               href="/experiences"
-              className="flex h-[46px] w-[286px] max-w-full items-center justify-center gap-2 rounded-full border border-line bg-white text-[15px] font-semibold text-ink shadow-card transition-colors hover:border-terracotta/50 hover:text-terracotta tab:h-[52px] tab:w-[320px] tab:text-[16px]"
+              className="flex h-[46px] w-[286px] max-w-full items-center justify-center gap-2 rounded-full bg-terracotta text-[15px] font-semibold text-ink shadow-card transition-colors hover:bg-terracotta-deep tab:h-[52px] tab:w-[320px] tab:text-[16px]"
             >
               {t.experiences.viewAll}
               <ChevronDown size={17} strokeWidth={2.2} aria-hidden="true" />

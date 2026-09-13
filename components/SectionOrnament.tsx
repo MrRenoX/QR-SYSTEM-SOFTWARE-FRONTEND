@@ -12,7 +12,7 @@ export default function SectionOrnament({
       aria-hidden="true"
       className={`mt-1.5 ${align === "center" ? "mx-auto" : ""}`}
     >
-      <line x1="0" y1="5" x2="46" y2="5" stroke="#DC4A0C" strokeWidth="1.4" />
+      <line x1="0" y1="5" x2="46" y2="5" stroke="#D9A24B" strokeWidth="1.4" />
     </svg>
   );
 }

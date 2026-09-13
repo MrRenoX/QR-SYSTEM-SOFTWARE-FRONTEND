@@ -20,7 +20,7 @@ export default async function HomePage() {
     <>
       <Header />
       <HashScroll />
-      <main>
+      <main className="bg-noir pb-1">
         <Hero settings={settings} />
         <IntroSection />
 
