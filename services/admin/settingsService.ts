@@ -22,7 +22,7 @@ const DEFAULTS: WebsiteSettings = {
   },
   homepage: {
     heroTitle: "Ayodhya Anubhav",
-    heroSubtitle: "Fourteen journeys into the many layers of Ayodhya.",
+    heroSubtitle: "Thirteen journeys into the many layers of Ayodhya.",
     heroImage: "/images/hero/ayodhya-sarayu-ghat.jpg",
   },
   contact: {

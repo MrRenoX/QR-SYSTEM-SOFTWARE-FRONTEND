@@ -42,6 +42,11 @@ export default function QueryPageForm({ experience }: { experience: Experience }
             />
           </div>
           <div className="min-w-0 flex-1 py-2.5 pr-3 tab:py-4 tab:pr-5">
+            {experience.experienceCode && (
+              <p className="text-[9.5px] font-bold uppercase tracking-[0.06em] text-ink-faint">
+                {experience.experienceCode}
+              </p>
+            )}
             <h2 className="truncate font-serif text-[16px] font-bold text-ink tab:text-[19px]">
               {experience.title}
             </h2>

@@ -8,7 +8,7 @@ import { getSiteSettings } from "@/services/settingsService";
 
 export const metadata: Metadata = {
   title: "About Ayodhya Anubhav | Ayodhya Anubhav",
-  description: "Fourteen journeys into the many layers of Ayodhya, powered by Guide Guru Global.",
+  description: "Thirteen journeys into the many layers of Ayodhya, powered by Guide Guru Global.",
 };
 
 export default async function AboutPage() {

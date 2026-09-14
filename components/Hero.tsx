@@ -23,7 +23,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
       className={`rounded-[13px] border border-terracotta-deep/30 bg-sand px-2.5 pb-1.5 pt-2 text-center shadow-float ${className}`}
     >
       <p className="font-serif text-[26px] font-bold leading-none text-terracotta-deep tabLg:text-[30px]">
-        14
+        13
       </p>
       <p className="mt-1 text-[9.5px] leading-[1.2] text-ink tabLg:text-[10.5px]">
         {t.hero.expCountLine1}

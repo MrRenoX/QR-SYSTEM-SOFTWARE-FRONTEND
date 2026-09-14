@@ -32,7 +32,7 @@ const DEFAULTS: SiteSettings = {
   },
   homepage: {
     heroTitle: "Ayodhya Anubhav",
-    heroSubtitle: "Fourteen journeys into the many layers of Ayodhya.",
+    heroSubtitle: "Thirteen journeys into the many layers of Ayodhya.",
   },
   footer: {
     description:

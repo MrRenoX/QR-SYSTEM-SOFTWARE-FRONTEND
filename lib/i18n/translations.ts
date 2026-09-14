@@ -72,9 +72,9 @@ const en = {
   },
   hero: {
     welcomeTo: "Welcome to",
-    featureCurated: { title: "Curated Experiences", detail: "by Guide Guru Global" },
+    featureCurated: { title: "Curated Experiences", detail: "" },
     featureCertified: { title: "Certified Guides", detail: "" },
-    featureBegins: { title: "Every experience begins", detail: "and ends at Evoke Rambagh" },
+    featureBegins: { title: "End to End mobility", detail: "by golfcart" },
     expCountLine1: "experiences",
     expCountLine2: "curated for you",
     exploreExperiences: "Explore Experiences",
@@ -123,7 +123,7 @@ const en = {
   categories: {
     pageHeader: {
       title: "Browse by Category",
-      subtitle: "Fourteen ways into Ayodhya — pick where you begin.",
+      subtitle: "Thirteen ways into Ayodhya — pick where you begin.",
     },
   },
   categoryFilters: {
@@ -158,7 +158,7 @@ const en = {
     groupSizeLabel: "Group size",
     bestTimeLabel: "Preferred trail time",
     startingFromLabel: "Starting from",
-    chargeOfTrailLabel: "Charge of trail",
+    chargeOfTrailLabel: "Trail starting from",
     availableSlots: "Available slots",
     included: "Inclusions",
     notIncluded: "Exclusions",
@@ -185,8 +185,8 @@ const en = {
     },
     modal: {
       closeAriaLabel: "Close details",
-      recommended: "Recommended",
-      bestTime: "Best time",
+      recommended: "Duration",
+      bestTime: "Preferred trail",
       didYouKnow: "Did you know?",
     },
   },
@@ -229,10 +229,10 @@ const en = {
     sendBooking: "Send booking request",
     sending: "Sending…",
     successTitle: "Request received.",
-    successBody: (guestName: string, title: string, date: string) =>
+    successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
       `${guestName || "Your"}'s booking request for ${title}${
-        date ? ` on ${date}` : ""
-      } has been received. Reception will confirm on WhatsApp and share the payment link.`,
+        experienceCode ? ` (${experienceCode})` : ""
+      }${date ? ` on ${date}` : ""} has been received. Reception will confirm on WhatsApp and share the payment link.`,
     bookAnother: "Book another experience",
   },
   queryForm: {
@@ -316,7 +316,7 @@ const en = {
     hero: {
       breadcrumbCurrent: "About Ayodhya Anubhav",
       title: "About Ayodhya Anubhav",
-      subtitle: "Fifteen journeys into the many layers of Ayodhya.",
+      subtitle: "Curated Journey",
     },
     story: {
       paragraph1:
@@ -411,9 +411,9 @@ const hi: TranslationDict = {
   },
   hero: {
     welcomeTo: "आपका स्वागत है",
-    featureCurated: { title: "चुनिंदा अनुभव", detail: "गाइड गुरु ग्लोबल द्वारा" },
+    featureCurated: { title: "चुनिंदा अनुभव", detail: "" },
     featureCertified: { title: "प्रमाणित गाइड", detail: "" },
-    featureBegins: { title: "हर अनुभव शुरू होता है", detail: "और एवोक रामबाग पर समाप्त होता है" },
+    featureBegins: { title: "एंड-टू-एंड मोबिलिटी", detail: "गोल्फ़कार्ट द्वारा" },
     expCountLine1: "अनुभव",
     expCountLine2: "आपके लिए चुने गए",
     exploreExperiences: "अनुभव देखें",
@@ -497,7 +497,7 @@ const hi: TranslationDict = {
     groupSizeLabel: "समूह का आकार",
     bestTimeLabel: "पसंदीदा ट्रेल समय",
     startingFromLabel: "शुरुआती कीमत",
-    chargeOfTrailLabel: "ट्रेल का शुल्क",
+    chargeOfTrailLabel: "ट्रेल की शुरुआती कीमत",
     availableSlots: "उपलब्ध स्लॉट",
     included: "समावेश",
     notIncluded: "अपवर्जन",
@@ -524,8 +524,8 @@ const hi: TranslationDict = {
     },
     modal: {
       closeAriaLabel: "विवरण बंद करें",
-      recommended: "अनुशंसित",
-      bestTime: "सर्वोत्तम समय",
+      recommended: "अवधि",
+      bestTime: "पसंदीदा ट्रेल",
       didYouKnow: "क्या आप जानते हैं?",
     },
   },
@@ -565,8 +565,10 @@ const hi: TranslationDict = {
     sendBooking: "बुकिंग अनुरोध भेजें",
     sending: "भेजा जा रहा है…",
     successTitle: "अनुरोध प्राप्त हुआ।",
-    successBody: (guestName: string, title: string, date: string) =>
-      `${guestName || "आपकी"} की ${title} के लिए बुकिंग रिक्वेस्ट${
+    successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
+      `${guestName || "आपकी"} की ${title}${
+        experienceCode ? ` (${experienceCode})` : ""
+      } के लिए बुकिंग रिक्वेस्ट${
         date ? ` (${date})` : ""
       } प्राप्त हो गई है। रिसेप्शन व्हाट्सऐप पर पुष्टि करेगा और भुगतान लिंक भेजेगा।`,
     bookAnother: "एक और अनुभव बुक करें",
@@ -652,7 +654,7 @@ const hi: TranslationDict = {
     hero: {
       breadcrumbCurrent: "अयोध्या अनुभव के बारे में",
       title: "अयोध्या अनुभव के बारे में",
-      subtitle: "अयोध्या की अनेक परतों में पंद्रह यात्राएँ।",
+      subtitle: "चुनिंदा यात्रा",
     },
     story: {
       paragraph1:
@@ -745,9 +747,9 @@ const gu: TranslationDict = {
   },
   hero: {
     welcomeTo: "તમારું સ્વાગત છે",
-    featureCurated: { title: "ક્યુરેટેડ અનુભવો", detail: "ગાઇડ ગુરુ ગ્લોબલ દ્વારા" },
+    featureCurated: { title: "ક્યુરેટેડ અનુભવો", detail: "" },
     featureCertified: { title: "પ્રમાણિત ગાઇડ", detail: "" },
-    featureBegins: { title: "દરેક અનુભવ શરૂ થાય છે", detail: "અને એવોક રામબાગ ખાતે પૂર્ણ થાય છે" },
+    featureBegins: { title: "એન્ડ-ટુ-એન્ડ મોબિલિટી", detail: "ગોલ્ફકાર્ટ દ્વારા" },
     expCountLine1: "અનુભવો",
     expCountLine2: "તમારા માટે પસંદ કરેલા",
     exploreExperiences: "અનુભવો જુઓ",
@@ -831,7 +833,7 @@ const gu: TranslationDict = {
     groupSizeLabel: "ગ્રુપ સાઇઝ",
     bestTimeLabel: "પસંદગીનો ટ્રેલ સમય",
     startingFromLabel: "શરૂઆતી કિંમત",
-    chargeOfTrailLabel: "ટ્રેલનો ચાર્જ",
+    chargeOfTrailLabel: "ટ્રેલની શરૂઆતી કિંમત",
     availableSlots: "ઉપલબ્ધ સ્લોટ",
     included: "સમાવેશ",
     notIncluded: "બાકાત",
@@ -858,8 +860,8 @@ const gu: TranslationDict = {
     },
     modal: {
       closeAriaLabel: "વિગતો બંધ કરો",
-      recommended: "ભલામણ કરેલ",
-      bestTime: "શ્રેષ્ઠ સમય",
+      recommended: "સમયગાળો",
+      bestTime: "પસંદગીનો ટ્રેલ",
       didYouKnow: "શું તમે જાણો છો?",
     },
   },
@@ -899,8 +901,10 @@ const gu: TranslationDict = {
     sendBooking: "બુકિંગ વિનંતી મોકલો",
     sending: "મોકલાઈ રહ્યું છે…",
     successTitle: "વિનંતી પ્રાપ્ત થઈ.",
-    successBody: (guestName: string, title: string, date: string) =>
-      `${guestName || "તમારી"} ની ${title} માટેની બુકિંગ વિનંતી${
+    successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
+      `${guestName || "તમારી"} ની ${title}${
+        experienceCode ? ` (${experienceCode})` : ""
+      } માટેની બુકિંગ વિનંતી${
         date ? ` (${date})` : ""
       } પ્રાપ્ત થઈ ગઈ છે. રિસેપ્શન વોટ્સએપ પર પુષ્ટિ કરશે અને ચુકવણી લિંક શેર કરશે.`,
     bookAnother: "બીજો અનુભવ બુક કરો",
@@ -985,7 +989,7 @@ const gu: TranslationDict = {
     hero: {
       breadcrumbCurrent: "અયોધ્યા અનુભવ વિશે",
       title: "અયોધ્યા અનુભવ વિશે",
-      subtitle: "અયોધ્યાના અનેક પડોમાં પંદર યાત્રાઓ.",
+      subtitle: "ક્યુરેટેડ યાત્રા",
     },
     story: {
       paragraph1:
@@ -1078,9 +1082,9 @@ const ta: TranslationDict = {
   },
   hero: {
     welcomeTo: "வரவேற்கிறோம்",
-    featureCurated: { title: "தேர்ந்தெடுக்கப்பட்ட அனுபவங்கள்", detail: "கைட் குரு குளோபல் வழங்கும்" },
+    featureCurated: { title: "தேர்ந்தெடுக்கப்பட்ட அனுபவங்கள்", detail: "" },
     featureCertified: { title: "சான்றளிக்கப்பட்ட வழிகாட்டிகள்", detail: "" },
-    featureBegins: { title: "ஒவ்வொரு அனுபவமும் தொடங்குகிறது", detail: "எவோக் ராம்பாக்கில் முடிவடைகிறது" },
+    featureBegins: { title: "எண்ட்-டு-எண்ட் மொபிலிட்டி", detail: "கோல்ஃப்கார்ட் மூலம்" },
     expCountLine1: "அனுபவங்கள்",
     expCountLine2: "உங்களுக்காகத் தேர்ந்தெடுக்கப்பட்டவை",
     exploreExperiences: "அனுபவங்களைப் பார்க்க",
@@ -1164,7 +1168,7 @@ const ta: TranslationDict = {
     groupSizeLabel: "குழு அளவு",
     bestTimeLabel: "விருப்பமான பயண நேரம்",
     startingFromLabel: "தொடக்க விலை",
-    chargeOfTrailLabel: "பயணக் கட்டணம்",
+    chargeOfTrailLabel: "பயணத் தொடக்க விலை",
     availableSlots: "கிடைக்கும் நேரங்கள்",
     included: "சேர்க்கைகள்",
     notIncluded: "விலக்குகள்",
@@ -1191,8 +1195,8 @@ const ta: TranslationDict = {
     },
     modal: {
       closeAriaLabel: "விவரங்களை மூடு",
-      recommended: "பரிந்துரைக்கப்படுகிறது",
-      bestTime: "சிறந்த நேரம்",
+      recommended: "கால அளவு",
+      bestTime: "விருப்பமான பயணம்",
       didYouKnow: "உங்களுக்குத் தெரியுமா?",
     },
   },
@@ -1232,8 +1236,10 @@ const ta: TranslationDict = {
     sendBooking: "முன்பதிவு கோரிக்கையை அனுப்பு",
     sending: "அனுப்பப்படுகிறது…",
     successTitle: "கோரிக்கை பெறப்பட்டது.",
-    successBody: (guestName: string, title: string, date: string) =>
-      `${guestName || "உங்கள்"} ${title}க்கான முன்பதிவு கோரிக்கை${
+    successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
+      `${guestName || "உங்கள்"} ${title}${
+        experienceCode ? ` (${experienceCode})` : ""
+      }க்கான முன்பதிவு கோரிக்கை${
         date ? ` (${date})` : ""
       } பெறப்பட்டுள்ளது. ரிசெப்ஷன் வாட்ஸ்அப்பில் உறுதிசெய்து கட்டண இணைப்பைப் பகிரும்.`,
     bookAnother: "மற்றொரு அனுபவத்தை முன்பதிவு செய்யுங்கள்",
@@ -1319,7 +1325,7 @@ const ta: TranslationDict = {
     hero: {
       breadcrumbCurrent: "அயோத்தி அனுபவம் பற்றி",
       title: "அயோத்தி அனுபவம் பற்றி",
-      subtitle: "அயோத்தியின் பல அடுக்குகளுக்குள் பதினைந்து பயணங்கள்.",
+      subtitle: "தேர்ந்தெடுக்கப்பட்ட பயணம்",
     },
     story: {
       paragraph1:

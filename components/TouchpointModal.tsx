@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Clock, Sparkles, Sun, X } from "lucide-react";
+import { Clock, Sun, X } from "lucide-react";
 import type { Touchpoint } from "@/lib/types";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -180,16 +180,6 @@ export default function TouchpointModal({
               </div>
             </div>
           </dl>
-
-          <div className="mt-3.5 rounded-panel border border-terracotta/15 bg-terracotta-tint p-4">
-            <h3 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-terracotta">
-              <Sparkles size={13} aria-hidden="true" />
-              {t.touchpoints.modal.didYouKnow}
-            </h3>
-            <p className="mt-1.5 font-serif text-[15px] leading-[1.5] text-ink">
-              {touchpoint.fact}
-            </p>
-          </div>
         </div>
       </div>
     </div>

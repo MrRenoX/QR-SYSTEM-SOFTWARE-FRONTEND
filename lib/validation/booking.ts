@@ -34,7 +34,7 @@ export function validateBookingDraft(draft: BookingDraft): {
     guestName: guestErrors.name,
     roomNumber: guestErrors.roomNumber,
     whatsapp: guestErrors.mobile,
-    email: validateEmail(draft.email),
+    email: draft.email.trim() ? validateEmail(draft.email) : undefined,
     date: validateFutureDate(draft.date),
     adults: validateGuestCount(draft.adults, {
       min: LIMITS.guests.adultsMin,

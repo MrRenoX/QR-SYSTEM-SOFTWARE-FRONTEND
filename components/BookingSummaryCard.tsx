@@ -32,19 +32,10 @@ export default function BookingSummaryCard({
   return (
     <Reveal className={`overflow-hidden rounded-panel border border-line bg-white shadow-card ${className}`}>
       <div className="bg-gradient-to-br from-terracotta-tint via-white to-white p-4 tabLg:p-5">
-        <div className="flex items-baseline justify-between">
-          <span className="text-[12.5px] font-medium text-ink-muted tabLg:text-[13.5px]">
-            {t.experienceInfo.startingFromLabel}
-          </span>
-          <span className="font-serif text-[28px] font-bold text-terracotta tabLg:text-[32px]">
-            {experience.price}
-          </span>
-        </div>
-
         {experience.pricingOptions && experience.pricingOptions.length > 0 && (() => {
           const cheapest = Math.min(...experience.pricingOptions.map((option) => option.value));
           return (
-            <div className="mt-4 border-t border-dashed border-terracotta/25 pt-4">
+            <div>
               <p className="mb-2.5 flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-[0.08em] text-ink-faint">
                 <Tag size={12} strokeWidth={2.4} className="text-terracotta" aria-hidden="true" />
                 {t.experienceInfo.pricingOptions}

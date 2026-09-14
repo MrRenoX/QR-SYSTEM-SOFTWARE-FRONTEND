@@ -112,6 +112,11 @@ export default function BookingForm({ experience }: { experience: Experience }) 
           />
         </div>
         <div className="min-w-0 flex-1 py-2.5 pr-3 tab:py-4 tab:pr-5">
+          {experience.experienceCode && (
+            <p className="text-[9.5px] font-bold uppercase tracking-[0.06em] text-ink-faint">
+              {experience.experienceCode}
+            </p>
+          )}
           <h2 className="truncate font-serif text-[16px] font-bold text-ink tab:text-[19px]">
             {experience.title}
           </h2>
@@ -151,7 +156,7 @@ export default function BookingForm({ experience }: { experience: Experience }) 
             {t.bookingForm.successTitle}
           </h2>
           <p className="mt-1.5 text-[13px] leading-[1.5] text-ink-muted">
-            {t.bookingForm.successBody(draft.guestName, experience.title, draft.date)}
+            {t.bookingForm.successBody(draft.guestName, experience.title, draft.date, experience.experienceCode)}
           </p>
           <button
             type="button"
@@ -257,7 +262,6 @@ export default function BookingForm({ experience }: { experience: Experience }) 
               <input
                 id="email"
                 type="email"
-                required
                 maxLength={LIMITS.email.max}
                 value={draft.email}
                 onChange={(event) => update("email", event.target.value)}
@@ -393,7 +397,14 @@ export default function BookingForm({ experience }: { experience: Experience }) 
               {t.bookingForm.bookingSummary}
             </h2>
             <dl className="mt-3 space-y-2 text-[13px]">
-              <Row label={t.bookingForm.experienceLabel} value={experience.title} />
+              <Row
+                label={t.bookingForm.experienceLabel}
+                value={
+                  experience.experienceCode
+                    ? `${experience.title} (${experience.experienceCode})`
+                    : experience.title
+                }
+              />
               <Row label={t.bookingForm.dateLabel} value={draft.date || t.bookingForm.notSelected} />
               <Row label={t.bookingForm.timeLabel} value={draft.preferredTime} />
               <Row
