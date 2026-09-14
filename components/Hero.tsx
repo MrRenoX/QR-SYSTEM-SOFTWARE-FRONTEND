@@ -55,7 +55,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
       {/* Dark wash so the headline sits on the noir chrome, not directly on the photograph */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[linear-gradient(102deg,#1E1712_0%,#1E1712_26%,rgba(30,23,18,0.90)_42%,rgba(30,23,18,0.55)_57%,rgba(30,23,18,0.15)_74%,rgba(30,23,18,0)_92%)] tabLg:hidden"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(102deg,#4A2E1D_0%,#4A2E1D_26%,rgba(74,46,29,0.90)_42%,rgba(74,46,29,0.55)_57%,rgba(74,46,29,0.15)_74%,rgba(74,46,29,0)_92%)] tabLg:hidden"
       />
       <div
         aria-hidden="true"

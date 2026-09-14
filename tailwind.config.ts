@@ -42,10 +42,10 @@ const config: Config = {
           muted: "#6D5B4F",
           faint: "#9A8878",
         },
-        /** The homepage's dark hero/footer chrome — see Header/Hero/Footer etc. Not used on the site's other (still light) pages. */
+        /** The homepage's rustic-brown hero/footer chrome — see Header/Hero/Footer etc. Not used on the site's other (still light) pages. */
         noir: {
-          DEFAULT: "#1E1712",
-          card: "#2A2018",
+          DEFAULT: "#4A2E1D",
+          card: "#5C4030",
           border: "rgba(255,255,255,0.12)",
         },
         line: "#EDE0D2",
