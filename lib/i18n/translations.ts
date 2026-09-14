@@ -74,7 +74,7 @@ const en = {
     welcomeTo: "Welcome to",
     featureCurated: { title: "Curated Experiences", detail: "" },
     featureCertified: { title: "Certified Guides", detail: "" },
-    featureBegins: { title: "End to End mobility", detail: "by golfcart" },
+    featureBegins: { title: "End-to-End Mobility", detail: "by Golf Cart" },
     expCountLine1: "experiences",
     expCountLine2: "curated for you",
     exploreExperiences: "Explore Experiences",
