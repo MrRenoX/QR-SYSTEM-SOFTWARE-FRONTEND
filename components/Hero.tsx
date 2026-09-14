@@ -62,7 +62,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
 
       <div className="relative px-5 pt-3 tab:px-8 tab:pt-6 tabLg:mx-auto tabLg:flex tabLg:max-w-[1080px] tabLg:items-center tabLg:gap-14 tabLg:px-10 tabLg:py-16">
         <div className="tabLg:flex-1">
-          <span className="-ml-2 inline-block max-w-[230px] text-balance rounded-[6px] border border-terracotta-soft/40 px-3 py-1.5 text-[9px] font-bold uppercase leading-[1.35] tracking-[0.05em] text-terracotta-soft tab:-ml-2.5 tab:max-w-[320px] tab:text-[10px] tabLg:-ml-3 tabLg:max-w-[380px] tabLg:text-[10.5px]">
+          <span className="-ml-2 inline-block max-w-[176px] text-balance rounded-[6px] border border-terracotta-soft/40 px-3 py-1.5 text-[9px] font-bold uppercase leading-[1.35] tracking-[0.05em] text-terracotta-soft tab:-ml-2.5 tab:max-w-[320px] tab:text-[10px] tabLg:-ml-3 tabLg:max-w-[380px] tabLg:text-[10.5px]">
             {t.header.partnerTagline}
           </span>
           <p className="mt-2.5 text-[20px] font-medium leading-none tracking-[-0.01em] text-white tab:text-[24px] tabLg:text-[26px]">

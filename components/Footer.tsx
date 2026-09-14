@@ -46,13 +46,15 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
       <div className="tabLg:grid tabLg:grid-cols-4 tabLg:gap-x-10">
         <div className="flex items-start justify-between gap-3 tab:gap-6 tabLg:contents">
           <div className="min-w-0 tabLg:col-start-1 tabLg:row-start-1">
-            <Image
-              src="/images/branding/logo-full.jpg"
-              alt={general.websiteName}
-              width={128}
-              height={100}
-              className="h-[34px] w-auto rounded-md tab:h-9"
-            />
+            <div className="inline-block overflow-hidden rounded-[10px] border border-white/10 bg-white p-1 shadow-float">
+              <Image
+                src="/images/branding/logo-full.jpg"
+                alt={general.websiteName}
+                width={128}
+                height={100}
+                className="h-[28px] w-auto rounded-[6px] tab:h-8"
+              />
+            </div>
             <p className="mt-2 max-w-[190px] text-[10px] font-medium leading-[1.45] text-white/70 tab:max-w-[240px] tab:text-[11.5px]">
               {footer.description}
             </p>

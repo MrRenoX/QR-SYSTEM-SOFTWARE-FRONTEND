@@ -26,14 +26,18 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-noir/95 backdrop-blur-sm">
       <div className="flex items-center justify-between gap-4 px-4 py-3 tab:px-6 tabLg:px-8">
-        <Link href="/" aria-label={t.header.homeAriaLabel} className="shrink-0">
+        <Link
+          href="/"
+          aria-label={t.header.homeAriaLabel}
+          className="shrink-0 overflow-hidden rounded-[10px] border border-white/10 bg-white p-1 shadow-float transition-transform duration-200 hover:scale-[1.04] tab:p-1.5"
+        >
           <Image
             src="/images/branding/logo-full.jpg"
             alt="Guide Guru Global"
             width={128}
             height={100}
             priority
-            className="h-[40px] w-auto rounded-md tab:h-[44px] tabLg:h-[48px]"
+            className="h-[32px] w-auto rounded-[6px] tab:h-[36px] tabLg:h-[40px]"
           />
         </Link>
 
