@@ -25,6 +25,7 @@ const en = {
     homeAriaLabel: "Guide Guru Global — Home",
     selectLanguageAriaLabel: "Select language",
     openMenuAriaLabel: "Open menu",
+    partnerTagline: "Official Experience Partner of Evoke Rambagh",
   },
   mobileMenu: {
     title: "Menu",
@@ -364,6 +365,7 @@ const hi: TranslationDict = {
     homeAriaLabel: "गाइड गुरु ग्लोबल — मुखपृष्ठ",
     selectLanguageAriaLabel: "भाषा चुनें",
     openMenuAriaLabel: "मेनू खोलें",
+    partnerTagline: "एवोक रामबाग का आधिकारिक अनुभव भागीदार",
   },
   mobileMenu: {
     title: "मेनू",
@@ -700,6 +702,7 @@ const gu: TranslationDict = {
     homeAriaLabel: "ગાઇડ ગુરુ ગ્લોબલ — હોમ",
     selectLanguageAriaLabel: "ભાષા પસંદ કરો",
     openMenuAriaLabel: "મેનૂ ખોલો",
+    partnerTagline: "એવોક રામબાગનો સત્તાવાર અનુભવ ભાગીદાર",
   },
   mobileMenu: {
     title: "મેનૂ",
@@ -1035,6 +1038,7 @@ const ta: TranslationDict = {
     homeAriaLabel: "கைட் குரு குளோபல் — முகப்பு",
     selectLanguageAriaLabel: "மொழியைத் தேர்ந்தெடுக்கவும்",
     openMenuAriaLabel: "மெனுவைத் திற",
+    partnerTagline: "எவோக் ராம்பாக்கின் அதிகாரப்பூர்வ அனுபவப் பங்குதாரர்",
   },
   mobileMenu: {
     title: "மெனு",

@@ -20,15 +20,13 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
 
   const CountCard = ({ className = "" }: { className?: string }) => (
     <div
-      className={`rounded-[13px] border border-terracotta-deep/30 bg-sand px-2.5 pb-1.5 pt-2 text-center shadow-float ${className}`}
+      className={`overflow-hidden rounded-[13px] border border-terracotta-deep/30 bg-sand px-2 pb-1.5 pt-2 text-center shadow-float ${className}`}
     >
-      <p className="font-serif text-[26px] font-bold leading-none text-terracotta-deep tabLg:text-[30px]">
+      <p className="font-serif text-[24px] font-bold leading-none text-terracotta-deep tabLg:text-[28px]">
         13
       </p>
-      <p className="mt-1 text-[9.5px] leading-[1.2] text-ink tabLg:text-[10.5px]">
-        {t.hero.expCountLine1}
-        <br />
-        {t.hero.expCountLine2}
+      <p className="mt-1 text-[8.5px] leading-[1.2] text-ink tabLg:text-[9.5px]">
+        {t.hero.expCountLine1} {t.hero.expCountLine2}
       </p>
       <Image
         src="/images/illustrations/temple-mini.svg"
@@ -36,7 +34,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
         width={118}
         height={66}
         aria-hidden="true"
-        className="mx-auto mt-1 h-[38px] w-auto"
+        className="mx-auto mt-1 h-[36px] w-auto"
       />
     </div>
   );
@@ -64,7 +62,10 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
 
       <div className="relative px-5 pt-3 tab:px-8 tab:pt-6 tabLg:mx-auto tabLg:flex tabLg:max-w-[1080px] tabLg:items-center tabLg:gap-14 tabLg:px-10 tabLg:py-16">
         <div className="tabLg:flex-1">
-          <p className="text-[20px] font-medium leading-none tracking-[-0.01em] text-white tab:text-[24px] tabLg:text-[26px]">
+          <span className="inline-block max-w-[230px] rounded-[6px] border border-terracotta-soft/40 px-3 py-1.5 text-[9px] font-bold uppercase leading-[1.35] tracking-[0.05em] text-terracotta-soft tab:max-w-[320px] tab:text-[10px] tabLg:max-w-[380px] tabLg:text-[10.5px]">
+            {t.header.partnerTagline}
+          </span>
+          <p className="mt-2.5 text-[20px] font-medium leading-none tracking-[-0.01em] text-white tab:text-[24px] tabLg:text-[26px]">
             {t.hero.welcomeTo}
           </p>
           <h1 className="mt-2 font-serif text-[46px] font-bold leading-[1.02] tracking-[-0.02em] tab:text-[58px] tabLg:text-[68px]">
