@@ -47,11 +47,11 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
         <div className="flex items-start justify-between gap-3 tab:gap-6 tabLg:contents">
           <div className="min-w-0 tabLg:col-start-1 tabLg:row-start-1">
             <Image
-              src="/images/branding/logo.png"
+              src="/images/branding/logo-full.jpg"
               alt={general.websiteName}
-              width={46}
-              height={36}
-              className="h-[34px] w-auto tab:h-9"
+              width={128}
+              height={100}
+              className="h-[34px] w-auto rounded-md tab:h-9"
             />
             <p className="mt-2 max-w-[190px] text-[10px] font-medium leading-[1.45] text-white/70 tab:max-w-[240px] tab:text-[11.5px]">
               {footer.description}

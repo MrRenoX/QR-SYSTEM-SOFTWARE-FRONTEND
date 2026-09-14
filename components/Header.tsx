@@ -28,12 +28,12 @@ export default function Header() {
       <div className="flex items-center justify-between gap-4 px-4 py-3 tab:px-6 tabLg:px-8">
         <Link href="/" aria-label={t.header.homeAriaLabel} className="shrink-0">
           <Image
-            src="/images/branding/logo.png"
+            src="/images/branding/logo-full.jpg"
             alt="Guide Guru Global"
-            width={51}
-            height={40}
+            width={128}
+            height={100}
             priority
-            className="h-[40px] w-auto tab:h-[44px] tabLg:h-[48px]"
+            className="h-[40px] w-auto rounded-md tab:h-[44px] tabLg:h-[48px]"
           />
         </Link>
 
