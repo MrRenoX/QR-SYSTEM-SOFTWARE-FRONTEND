@@ -156,8 +156,9 @@ const en = {
   experienceInfo: {
     durationLabel: "Duration",
     groupSizeLabel: "Group size",
-    bestTimeLabel: "Best time",
+    bestTimeLabel: "Preferred trail time",
     startingFromLabel: "Starting from",
+    chargeOfTrailLabel: "Charge of trail",
     availableSlots: "Available slots",
     included: "Inclusions",
     notIncluded: "Exclusions",
@@ -494,8 +495,9 @@ const hi: TranslationDict = {
   experienceInfo: {
     durationLabel: "अवधि",
     groupSizeLabel: "समूह का आकार",
-    bestTimeLabel: "सर्वोत्तम समय",
+    bestTimeLabel: "पसंदीदा ट्रेल समय",
     startingFromLabel: "शुरुआती कीमत",
+    chargeOfTrailLabel: "ट्रेल का शुल्क",
     availableSlots: "उपलब्ध स्लॉट",
     included: "समावेश",
     notIncluded: "अपवर्जन",
@@ -827,8 +829,9 @@ const gu: TranslationDict = {
   experienceInfo: {
     durationLabel: "સમયગાળો",
     groupSizeLabel: "ગ્રુપ સાઇઝ",
-    bestTimeLabel: "શ્રેષ્ઠ સમય",
+    bestTimeLabel: "પસંદગીનો ટ્રેલ સમય",
     startingFromLabel: "શરૂઆતી કિંમત",
+    chargeOfTrailLabel: "ટ્રેલનો ચાર્જ",
     availableSlots: "ઉપલબ્ધ સ્લોટ",
     included: "સમાવેશ",
     notIncluded: "બાકાત",
@@ -1159,8 +1162,9 @@ const ta: TranslationDict = {
   experienceInfo: {
     durationLabel: "கால அளவு",
     groupSizeLabel: "குழு அளவு",
-    bestTimeLabel: "சிறந்த நேரம்",
+    bestTimeLabel: "விருப்பமான பயண நேரம்",
     startingFromLabel: "தொடக்க விலை",
+    chargeOfTrailLabel: "பயணக் கட்டணம்",
     availableSlots: "கிடைக்கும் நேரங்கள்",
     included: "சேர்க்கைகள்",
     notIncluded: "விலக்குகள்",

@@ -16,7 +16,7 @@ export default function ExperienceInfo({
     { Icon: Clock, label: t.experienceInfo.durationLabel, value: experience.duration },
     { Icon: Users, label: t.experienceInfo.groupSizeLabel, value: experience.groupSize },
     { Icon: Sun, label: t.experienceInfo.bestTimeLabel, value: experience.bestTime },
-    { Icon: IndianRupee, label: t.experienceInfo.startingFromLabel, value: experience.price },
+    { Icon: IndianRupee, label: t.experienceInfo.chargeOfTrailLabel, value: experience.price },
   ] as const;
 
   return (
