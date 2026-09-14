@@ -105,7 +105,7 @@ export default function Header() {
             aria-label={t.header.openMenuAriaLabel}
             aria-expanded={menuOpen}
             aria-controls="main-menu"
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-ink shadow-[0_4px_12px_-4px_rgba(217,162,75,0.6)] transition-transform active:scale-95 tab:hidden tabLg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta-soft text-ink shadow-goldButtonSm transition-all hover:bg-terracotta active:translate-y-[1px] active:shadow-goldButtonPressed tab:hidden tabLg:hidden"
           >
             {menuOpen ? (
               <X size={20} strokeWidth={2.5} aria-hidden="true" />

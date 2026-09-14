@@ -21,10 +21,10 @@ const body = Inter({
 export const metadata: Metadata = {
   title: "Ayodhya Anubhav | Guide Guru Global",
   description:
-    "Sixteen journeys into the many layers of Ayodhya. Curated experiences with certified storyteller guides, beginning and ending at Evoke Rambagh.",
+    "Fourteen journeys into the many layers of Ayodhya. Curated experiences with certified storyteller guides, beginning and ending at Evoke Rambagh.",
   openGraph: {
     title: "Ayodhya Anubhav | Guide Guru Global",
-    description: "Sixteen journeys into the many layers of Ayodhya.",
+    description: "Fourteen journeys into the many layers of Ayodhya.",
     type: "website",
   },
 };

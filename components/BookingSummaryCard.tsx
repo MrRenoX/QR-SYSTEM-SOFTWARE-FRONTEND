@@ -87,9 +87,9 @@ export default function BookingSummaryCard({
         <Link href={`/book/${experience.slug}`} className={`${primaryButtonClass} mt-4`}>
           {t.experienceInfo.bookThisExperience}
         </Link>
-        <a href="#raise-a-query" className={`${secondaryButtonClass} mt-2.5`}>
+        <Link href={`/query/${experience.slug}`} className={`${secondaryButtonClass} mt-2.5`}>
           {t.experienceInfo.raiseAQuery}
-        </a>
+        </Link>
       </div>
     </Reveal>
   );

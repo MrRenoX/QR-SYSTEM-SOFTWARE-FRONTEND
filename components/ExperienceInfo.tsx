@@ -2,7 +2,6 @@
 
 import { CalendarClock, Check, Clock, IndianRupee, Sparkles, Sun, Users, X } from "lucide-react";
 import Reveal from "./Reveal";
-import BookingSummaryCard from "./BookingSummaryCard";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import type { Experience } from "@/lib/types";
 
@@ -115,9 +114,6 @@ export default function ExperienceInfo({
           </p>
         </Reveal>
       )}
-
-      {/* At tabLg: this same card renders as a sticky sidebar instead — see experiences/[slug]/page.tsx */}
-      <BookingSummaryCard experience={experience} className="mt-7 tabLg:hidden" />
     </section>
   );
 }

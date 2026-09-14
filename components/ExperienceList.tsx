@@ -83,7 +83,7 @@ export default function ExperienceList({
           <div className="mt-4 flex justify-center tab:mt-7">
             <Link
               href="/experiences"
-              className="flex h-[46px] w-[286px] max-w-full items-center justify-center gap-2 rounded-full bg-terracotta text-[15px] font-semibold text-ink shadow-card transition-colors hover:bg-terracotta-deep tab:h-[52px] tab:w-[320px] tab:text-[16px]"
+              className="flex h-[46px] w-[286px] max-w-full items-center justify-center gap-2 rounded-full bg-terracotta-soft text-[15px] font-semibold text-ink shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed tab:h-[52px] tab:w-[320px] tab:text-[16px]"
             >
               {t.experiences.viewAll}
               <ChevronDown size={17} strokeWidth={2.2} aria-hidden="true" />

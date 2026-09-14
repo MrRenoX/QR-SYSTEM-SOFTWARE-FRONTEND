@@ -23,7 +23,6 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
     { label: t.footer.exploreLinks.allExperiences, href: "/experiences" },
     { label: t.footer.exploreLinks.categories, href: "/categories" },
     { label: t.footer.exploreLinks.howItWorks, href: "/#how-it-works" },
-    { label: t.footer.exploreLinks.customExperiences, href: "/experiences" },
   ];
 
   const COMPANY_LINKS = [

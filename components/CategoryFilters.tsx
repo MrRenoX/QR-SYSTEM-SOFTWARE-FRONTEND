@@ -32,10 +32,10 @@ export default function CategoryFilters({
             role="tab"
             aria-selected={isActive}
             onClick={() => onChange(category)}
-            className={`h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-4 text-[13.5px] font-medium transition-colors tab:h-[40px] tab:px-5 tab:text-[14.5px] ${
+            className={`h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-4 text-[13.5px] font-medium transition-all tab:h-[40px] tab:px-5 tab:text-[14.5px] ${
               isActive
-                ? "bg-terracotta text-ink shadow-[0_4px_10px_-6px_rgba(217,162,75,0.7)]"
-                : "border border-noir-border bg-transparent text-white hover:border-terracotta/40"
+                ? "bg-terracotta-soft text-ink shadow-goldButtonSm hover:bg-terracotta active:translate-y-[1px] active:shadow-goldButtonPressed"
+                : "border border-noir-border bg-noir-card text-white hover:border-terracotta/40"
             }`}
           >
             {category === "All" ? t.categoryFilters.all : category}

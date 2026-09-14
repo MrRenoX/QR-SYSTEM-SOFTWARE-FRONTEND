@@ -416,9 +416,6 @@ export default function BookingForm({ experience }: { experience: Experience }) 
                 {t.bookingForm.pricingAppliedLabel(appliedTier.key)}
               </p>
             )}
-            <p className="mt-1.5 text-[11px] text-ink-faint">
-              {t.bookingForm.indicativeOnly}
-            </p>
           </section>
 
           <div className="mt-4 rounded-panel border border-dashed border-line bg-sand/60 p-4 text-center">

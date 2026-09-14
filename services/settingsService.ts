@@ -22,7 +22,7 @@ const DEFAULTS: SiteSettings = {
     phone: "+91 96952 10246",
     email: "ayodhyaanubhav@gmail.com",
     whatsapp: "+91 96952 10246",
-    address: "Evoke Rambagh, Ayodhya, Uttar Pradesh",
+    address: "Experience Desk - Evoke Rambagh, Ayodhya",
   },
   social: {
     instagram: "https://www.instagram.com/guideguruglobal",
@@ -32,7 +32,7 @@ const DEFAULTS: SiteSettings = {
   },
   homepage: {
     heroTitle: "Ayodhya Anubhav",
-    heroSubtitle: "Sixteen journeys into the many layers of Ayodhya.",
+    heroSubtitle: "Fourteen journeys into the many layers of Ayodhya.",
   },
   footer: {
     description:

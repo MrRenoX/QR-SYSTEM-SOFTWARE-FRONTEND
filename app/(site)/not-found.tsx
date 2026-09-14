@@ -22,7 +22,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/experiences"
-          className="mt-5 flex h-12 items-center justify-center rounded-full bg-terracotta px-6 text-[15px] font-semibold text-white"
+          className="mt-5 flex h-12 items-center justify-center rounded-full bg-terracotta-soft px-6 text-[15px] font-semibold text-ink shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed"
         >
           {t.notFound.browseAll}
         </Link>

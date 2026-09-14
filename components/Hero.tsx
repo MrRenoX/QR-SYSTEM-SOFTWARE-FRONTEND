@@ -23,7 +23,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
       className={`rotate-6 rounded-[16px] border border-terracotta-deep/30 bg-sand px-3 pb-2 pt-3 text-center shadow-float ${className}`}
     >
       <p className="font-serif text-[40px] font-bold leading-none text-terracotta-deep tabLg:text-[46px]">
-        16
+        14
       </p>
       <p className="mt-1.5 text-[12.5px] leading-[1.25] text-ink tabLg:text-[13.5px]">
         {t.hero.expCountLine1}
@@ -45,12 +45,12 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
     <section className="relative isolate overflow-hidden pb-[118px] tabLg:pb-0">
       {/* Phone/tablet: full-bleed backdrop photo. At lg the photo becomes its own right-column panel instead. */}
       <Image
-        src="/images/hero/ram-mandir-carved-facade.jpg"
-        alt="The intricately carved stone facade of the Ram Mandir in Ayodhya, its arched colonnade lit in warm gold"
+        src="/images/hero/ram-mandir-aerial.jpg"
+        alt="Aerial view of the complete Ram Mandir temple complex in Ayodhya, with pilgrims gathered across its courtyards"
         fill
         priority
         sizes="(min-width: 1440px) 390px, (min-width: 1024px) 0px, (min-width: 431px) 760px, 390px"
-        className="-z-10 object-cover object-[60%_65%] tabLg:hidden"
+        className="-z-10 object-cover object-[center_52%] tabLg:hidden"
       />
       {/* Dark wash so the headline sits on the noir chrome, not directly on the photograph */}
       <div
@@ -91,7 +91,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
 
           <Link
             href="/experiences"
-            className="arrow-nudge mt-9 hidden h-[56px] w-[280px] items-center justify-between rounded-full bg-terracotta pl-6 pr-2 shadow-[0_10px_24px_-10px_rgba(217,162,75,0.5)] transition-colors hover:bg-terracotta-deep tabLg:flex"
+            className="arrow-nudge mt-9 hidden h-[56px] w-[280px] items-center justify-between rounded-full bg-terracotta-soft pl-6 pr-2 shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed tabLg:flex"
           >
             <span className="text-[16.5px] font-semibold text-ink">
               {t.hero.exploreExperiences}
@@ -104,12 +104,12 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
 
         <div className="relative hidden h-[520px] flex-1 overflow-hidden rounded-panel shadow-float ring-1 ring-terracotta/25 tabLg:block">
           <Image
-            src="/images/hero/ram-mandir-carved-facade.jpg"
-            alt="The intricately carved stone facade of the Ram Mandir in Ayodhya, its arched colonnade lit in warm gold"
+            src="/images/hero/ram-mandir-aerial.jpg"
+            alt="Aerial view of the complete Ram Mandir temple complex in Ayodhya, with pilgrims gathered across its courtyards"
             fill
             priority
             sizes="500px"
-            className="object-cover object-[60%_60%]"
+            className="object-cover object-[center_50%]"
           />
           <CountCard className="absolute left-4 top-4 w-[150px]" />
         </div>
@@ -120,7 +120,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
 
       <Link
         href="/experiences"
-        className="arrow-nudge absolute bottom-[54px] right-3 flex h-[54px] w-[272px] max-w-[calc(100%-24px)] items-center justify-between rounded-full bg-terracotta pl-6 pr-2 shadow-[0_10px_24px_-10px_rgba(217,162,75,0.5)] transition-colors hover:bg-terracotta-deep tab:bottom-8 tab:right-6 tab:h-[58px] tab:w-[300px] tabLg:hidden"
+        className="arrow-nudge absolute bottom-[54px] right-3 flex h-[54px] w-[272px] max-w-[calc(100%-24px)] items-center justify-between rounded-full bg-terracotta-soft pl-6 pr-2 shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed tab:bottom-8 tab:right-6 tab:h-[58px] tab:w-[300px] tabLg:hidden"
       >
         <span className="text-[16.5px] font-semibold text-ink tab:text-[18px]">
           {t.hero.exploreExperiences}

@@ -10,7 +10,7 @@ export const inputErrorClass =
 export const errorTextClass = "mt-1 text-[11.5px] font-medium text-red-600";
 
 export const primaryButtonClass =
-  "flex h-[52px] w-full items-center justify-center gap-2 rounded-full bg-terracotta text-[15.5px] font-semibold text-ink transition-colors hover:bg-terracotta-deep disabled:opacity-60";
+  "flex h-[52px] w-full items-center justify-center gap-2 rounded-full bg-terracotta-soft text-[15.5px] font-semibold text-ink shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed disabled:opacity-60 disabled:active:translate-y-0 disabled:active:shadow-goldButton";
 
 export const secondaryButtonClass =
   "flex h-[52px] w-full items-center justify-center gap-2 rounded-full border border-terracotta/50 bg-white text-[15.5px] font-semibold text-terracotta-deep transition-colors hover:bg-terracotta/10";

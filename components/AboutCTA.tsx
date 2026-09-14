@@ -28,7 +28,7 @@ export default function AboutCTA() {
           className="arrow-nudge relative mt-4 inline-flex h-11 items-center gap-2 rounded-full bg-white pl-4 pr-2 text-[13.5px] font-bold text-terracotta shadow-card"
         >
           {t.about.cta.explore}
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-terracotta text-white">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-terracotta-soft text-ink shadow-goldButtonSm">
             <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
           </span>
         </Link>

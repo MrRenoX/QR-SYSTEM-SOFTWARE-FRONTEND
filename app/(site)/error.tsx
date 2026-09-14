@@ -36,7 +36,7 @@ export default function Error({
         <button
           type="button"
           onClick={reset}
-          className="mt-5 flex h-12 items-center justify-center gap-2 rounded-full bg-terracotta px-6 text-[15px] font-semibold text-white"
+          className="mt-5 flex h-12 items-center justify-center gap-2 rounded-full bg-terracotta-soft px-6 text-[15px] font-semibold text-ink shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed"
         >
           <RefreshCw size={16} aria-hidden="true" />
           {t.error.tryAgain}

@@ -88,7 +88,7 @@ export default function ExperienceCard({
             </div>
             <span
               aria-hidden="true"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta text-ink transition-transform duration-300 group-hover:scale-[1.06] tab:h-10 tab:w-10"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta-soft text-ink shadow-goldButtonSm transition-transform duration-300 group-hover:scale-[1.06] tab:h-10 tab:w-10"
             >
               <ArrowRight size={17} strokeWidth={2.2} />
             </span>

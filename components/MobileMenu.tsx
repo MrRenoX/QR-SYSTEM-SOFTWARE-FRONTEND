@@ -89,7 +89,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             type="button"
             onClick={onClose}
             aria-label={t.mobileMenu.closeAriaLabel}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta text-ink transition-transform active:scale-95"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-terracotta-soft text-ink shadow-goldButtonSm transition-all hover:bg-terracotta active:translate-y-[1px] active:shadow-goldButtonPressed"
           >
             <X size={20} strokeWidth={2.5} aria-hidden="true" />
           </button>

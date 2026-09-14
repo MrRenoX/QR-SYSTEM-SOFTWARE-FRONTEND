@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Flag, MapPin } from "lucide-react";
-import type { JourneyStop } from "@/lib/types";
+import TouchpointModal from "./TouchpointModal";
+import type { Touchpoint } from "@/lib/types";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 interface JourneyRouteProps {
-  stops: JourneyStop[];
+  touchpoints: Touchpoint[];
 }
 
 interface RoutePoint {
@@ -58,13 +59,14 @@ function buildPath(points: RoutePoint[]): string {
  * stops top to bottom, drawing itself in as the section scrolls into view,
  * with a soft ambient flow animation once drawn.
  */
-export default function JourneyRoute({ stops }: JourneyRouteProps) {
+export default function JourneyRoute({ touchpoints }: JourneyRouteProps) {
   const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const routePathRef = useRef<SVGPathElement>(null);
   const carRef = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [selected, setSelected] = useState<Touchpoint | null>(null);
 
   useEffect(() => {
     const node = ref.current;
@@ -90,7 +92,7 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
     return () => observer.disconnect();
   }, []);
 
-  const points = useMemo(() => buildPoints(stops.length), [stops.length]);
+  const points = useMemo(() => buildPoints(touchpoints.length), [touchpoints.length]);
   const pathD = useMemo(() => buildPath(points), [points]);
   const totalHeight = points[points.length - 1].y + BOTTOM_PAD;
 
@@ -106,7 +108,7 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
 
     const total = path.getTotalLength();
     if (total === 0) return;
-    const duration = Math.max(6000, stops.length * 1500);
+    const duration = Math.max(6000, touchpoints.length * 1500);
     const fadeZone = 0.035;
     let rafId = 0;
     let startTime: number | null = null;
@@ -137,7 +139,7 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
 
     rafId = requestAnimationFrame(frame);
     return () => cancelAnimationFrame(rafId);
-  }, [started, reducedMotion, pathD, stops.length]);
+  }, [started, reducedMotion, pathD, touchpoints.length]);
 
   return (
     <section aria-labelledby="journey-route" className="px-4 pt-7 tab:px-8 tabLg:mx-auto tabLg:max-w-[620px] tabLg:px-0">
@@ -154,7 +156,7 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
           </p>
         </div>
         <span className="rounded-full border border-line bg-white px-2.5 py-1 text-[10.5px] font-bold text-ink-muted shadow-card">
-          {t.journeyRoute.stopsCount(stops.length)}
+          {t.journeyRoute.stopsCount(touchpoints.length)}
         </span>
       </div>
 
@@ -227,13 +229,14 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
 
           <RouteMarker point={points[0]} label={t.journeyRoute.start} icon="pin" delay={0} started={started} />
 
-          {stops.map((stop, index) => (
+          {touchpoints.map((touchpoint, index) => (
             <StopMarker
-              key={stop.order}
-              stop={stop}
+              key={touchpoint.id}
+              touchpoint={touchpoint}
               point={points[index + 1]}
               delay={150 + index * 130}
               started={started}
+              onOpen={setSelected}
             />
           ))}
 
@@ -241,25 +244,29 @@ export default function JourneyRoute({ stops }: JourneyRouteProps) {
             point={points[points.length - 1]}
             label={t.journeyRoute.end}
             icon="flag"
-            delay={200 + stops.length * 130}
+            delay={200 + touchpoints.length * 130}
             started={started}
           />
         </div>
       </div>
+
+      <TouchpointModal touchpoint={selected} onClose={() => setSelected(null)} />
     </section>
   );
 }
 
 function StopMarker({
-  stop,
+  touchpoint,
   point,
   delay,
   started,
+  onOpen,
 }: {
-  stop: JourneyStop;
+  touchpoint: Touchpoint;
   point: RoutePoint;
   delay: number;
   started: boolean;
+  onOpen: (touchpoint: Touchpoint) => void;
 }) {
   const isLeft = point.side === "left";
   const revealStyle: React.CSSProperties = {
@@ -275,11 +282,17 @@ function StopMarker({
         className="absolute"
         style={{ left: `${point.x}%`, top: point.y, transform: "translate(-50%, -50%)" }}
       >
-        <div className="relative transition-all duration-700 ease-out" style={revealStyle}>
+        <button
+          type="button"
+          onClick={() => onOpen(touchpoint)}
+          aria-label={touchpoint.name}
+          className="relative block transition-all duration-700 ease-out active:scale-95"
+          style={revealStyle}
+        >
           <span className="relative flex h-[46px] w-[46px] items-center justify-center overflow-hidden rounded-full border-2 border-white bg-sand shadow-float ring-1 ring-line">
-            {stop.image ? (
+            {touchpoint.image ? (
               <Image
-                src={stop.image}
+                src={touchpoint.image}
                 alt=""
                 width={46}
                 height={46}
@@ -290,10 +303,10 @@ function StopMarker({
               <div className="h-full w-full bg-gradient-to-br from-sand-light to-sand" />
             )}
           </span>
-          <span className="absolute -left-1 -top-1 flex h-[19px] w-[19px] items-center justify-center rounded-full border-2 border-white bg-terracotta text-[9.5px] font-bold text-white shadow-card">
-            {stop.order}
+          <span className="absolute -left-1 -top-1 flex h-[19px] w-[19px] items-center justify-center rounded-full border-2 border-white bg-terracotta text-[9.5px] font-bold text-ink shadow-card">
+            {touchpoint.id}
           </span>
-        </div>
+        </button>
       </div>
 
       {/* Label: offset a fixed gap from the pin, flowing away from the route line */}
@@ -309,17 +322,19 @@ function StopMarker({
               }
         }
       >
-        <div
+        <button
+          type="button"
+          onClick={() => onOpen(touchpoint)}
           className={`min-w-0 max-w-[130px] transition-all duration-700 ease-out ${isLeft ? "text-left" : "text-right"}`}
           style={revealStyle}
         >
           <p className="truncate text-[12.5px] font-bold leading-tight text-ink">
-            {stop.name}
+            {touchpoint.name}
           </p>
           <span className="mt-1 inline-block whitespace-nowrap rounded-full bg-terracotta-tint px-2 py-[3px] text-[9.5px] font-semibold text-terracotta">
-            {stop.duration}
+            {touchpoint.duration}
           </span>
-        </div>
+        </button>
       </div>
     </>
   );

@@ -70,7 +70,7 @@ export default function CategoryCard({
               {description}
             </p>
           </div>
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta text-white transition-transform duration-300 group-hover:scale-[1.08]">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-terracotta-soft text-ink shadow-goldButtonSm transition-transform duration-300 group-hover:scale-[1.08]">
             <ArrowRight size={16} strokeWidth={2.2} aria-hidden="true" />
           </span>
         </div>

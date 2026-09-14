@@ -123,7 +123,7 @@ const en = {
   categories: {
     pageHeader: {
       title: "Browse by Category",
-      subtitle: "Sixteen ways into Ayodhya — pick where you begin.",
+      subtitle: "Fourteen ways into Ayodhya — pick where you begin.",
     },
   },
   categoryFilters: {
@@ -223,16 +223,15 @@ const en = {
     estimatedTotalLabel: (guests: number) =>
       `Estimated total (${guests} ${guests === 1 ? "guest" : "guests"})`,
     pricingAppliedLabel: (tier: string) => `Pricing applied: ${tier}`,
-    indicativeOnly: "Indicative only. Reception confirms the final amount before payment.",
     paymentNotice:
       "Payment is not connected yet. Submitting sends your request to reception, who will confirm and share a secure payment link.",
     sendBooking: "Send booking request",
     sending: "Sending…",
     successTitle: "Request received.",
     successBody: (guestName: string, title: string, date: string) =>
-      `${guestName || "Your"} booking for ${title} on ${
-        date || "your chosen date"
-      } has been noted. Reception will confirm on WhatsApp and share the payment link.`,
+      `${guestName || "Your"}'s booking request for ${title}${
+        date ? ` on ${date}` : ""
+      } has been received. Reception will confirm on WhatsApp and share the payment link.`,
     bookAnother: "Book another experience",
   },
   queryForm: {
@@ -559,16 +558,15 @@ const hi: TranslationDict = {
       `${adults} वयस्क${children ? `, ${children} बच्चे` : ""}`,
     estimatedTotalLabel: (guests: number) => `अनुमानित कुल (${guests} अतिथि)`,
     pricingAppliedLabel: (tier: string) => `लागू मूल्य: ${tier}`,
-    indicativeOnly: "यह केवल अनुमानित राशि है। भुगतान से पहले रिसेप्शन अंतिम राशि की पुष्टि करेगा।",
     paymentNotice:
       "भुगतान अभी जुड़ा नहीं है। सबमिट करने पर आपका अनुरोध रिसेप्शन को भेजा जाएगा, जो पुष्टि कर एक सुरक्षित भुगतान लिंक साझा करेगा।",
     sendBooking: "बुकिंग अनुरोध भेजें",
     sending: "भेजा जा रहा है…",
     successTitle: "अनुरोध प्राप्त हुआ।",
     successBody: (guestName: string, title: string, date: string) =>
-      `${guestName || "आपकी"} ${title} की बुकिंग ${
-        date || "आपकी चुनी हुई तारीख"
-      } के लिए दर्ज कर ली गई है। रिसेप्शन व्हाट्सऐप पर पुष्टि करेगा और भुगतान लिंक भेजेगा।`,
+      `${guestName || "आपकी"} की ${title} के लिए बुकिंग रिक्वेस्ट${
+        date ? ` (${date})` : ""
+      } प्राप्त हो गई है। रिसेप्शन व्हाट्सऐप पर पुष्टि करेगा और भुगतान लिंक भेजेगा।`,
     bookAnother: "एक और अनुभव बुक करें",
   },
   queryForm: {
@@ -893,16 +891,15 @@ const gu: TranslationDict = {
       `${adults} પુખ્ત${children ? `, ${children} બાળકો` : ""}`,
     estimatedTotalLabel: (guests: number) => `અંદાજિત કુલ (${guests} મહેમાનો)`,
     pricingAppliedLabel: (tier: string) => `લાગુ કિંમત: ${tier}`,
-    indicativeOnly: "આ ફક્ત અંદાજિત રકમ છે. ચુકવણી પહેલાં રિસેપ્શન અંતિમ રકમની પુષ્ટિ કરશે.",
     paymentNotice:
       "ચુકવણી હજુ જોડાયેલ નથી. સબમિટ કરવાથી તમારી વિનંતી રિસેપ્શનને મોકલાશે, જે પુષ્ટિ કરીને સુરક્ષિત ચુકવણી લિંક શેર કરશે.",
     sendBooking: "બુકિંગ વિનંતી મોકલો",
     sending: "મોકલાઈ રહ્યું છે…",
     successTitle: "વિનંતી પ્રાપ્ત થઈ.",
     successBody: (guestName: string, title: string, date: string) =>
-      `${guestName || "તમારી"} ${title} ની બુકિંગ ${
-        date || "તમારી પસંદ કરેલી તારીખ"
-      } માટે નોંધાઈ ગઈ છે. રિસેપ્શન વોટ્સએપ પર પુષ્ટિ કરશે અને ચુકવણી લિંક શેર કરશે.`,
+      `${guestName || "તમારી"} ની ${title} માટેની બુકિંગ વિનંતી${
+        date ? ` (${date})` : ""
+      } પ્રાપ્ત થઈ ગઈ છે. રિસેપ્શન વોટ્સએપ પર પુષ્ટિ કરશે અને ચુકવણી લિંક શેર કરશે.`,
     bookAnother: "બીજો અનુભવ બુક કરો",
   },
   queryForm: {
@@ -1226,16 +1223,15 @@ const ta: TranslationDict = {
       `${adults} பெரியவர்${children ? `, ${children} குழந்தைகள்` : ""}`,
     estimatedTotalLabel: (guests: number) => `மதிப்பிடப்பட்ட மொத்தம் (${guests} விருந்தினர்கள்)`,
     pricingAppliedLabel: (tier: string) => `பயன்படுத்தப்பட்ட விலை: ${tier}`,
-    indicativeOnly: "இது ஒரு தோராயமான தொகை மட்டுமே. கட்டணத்திற்கு முன் ரிசெப்ஷன் இறுதித் தொகையை உறுதிசெய்யும்.",
     paymentNotice:
       "கட்டணம் இன்னும் இணைக்கப்படவில்லை. சமர்ப்பிப்பது உங்கள் கோரிக்கையை ரிசெப்ஷனுக்கு அனுப்பும், அவர்கள் உறுதிசெய்து பாதுகாப்பான கட்டண இணைப்பைப் பகிர்வார்கள்.",
     sendBooking: "முன்பதிவு கோரிக்கையை அனுப்பு",
     sending: "அனுப்பப்படுகிறது…",
     successTitle: "கோரிக்கை பெறப்பட்டது.",
     successBody: (guestName: string, title: string, date: string) =>
-      `${guestName || "உங்கள்"} ${title} முன்பதிவு ${
-        date || "நீங்கள் தேர்ந்தெடுத்த தேதி"
-      } அன்றுக்குப் பதிவு செய்யப்பட்டுள்ளது. ரிசெப்ஷன் வாட்ஸ்அப்பில் உறுதிசெய்து கட்டண இணைப்பைப் பகிரும்.`,
+      `${guestName || "உங்கள்"} ${title}க்கான முன்பதிவு கோரிக்கை${
+        date ? ` (${date})` : ""
+      } பெறப்பட்டுள்ளது. ரிசெப்ஷன் வாட்ஸ்அப்பில் உறுதிசெய்து கட்டண இணைப்பைப் பகிரும்.`,
     bookAnother: "மற்றொரு அனுபவத்தை முன்பதிவு செய்யுங்கள்",
   },
   queryForm: {

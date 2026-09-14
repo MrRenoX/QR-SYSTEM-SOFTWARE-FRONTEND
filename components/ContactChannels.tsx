@@ -10,7 +10,7 @@ const WHATSAPP_NUMBER = "919695210246";
 const PHONE_NUMBER = "+919695210246";
 const PHONE_DISPLAY = "+91 96952 10246";
 const EMAIL = "ayodhyaanubhav@gmail.com";
-const ADDRESS = "Evoke Rambagh, Ayodhya, Uttar Pradesh";
+const ADDRESS = "Experience Desk - Evoke Rambagh, Ayodhya";
 
 function mapsLink(query: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
@@ -151,10 +151,10 @@ export default function ContactChannels() {
         </p>
         <Link
           href="/experiences"
-          className="arrow-nudge mt-3 inline-flex h-11 items-center gap-2 rounded-full bg-terracotta pl-4 pr-2 text-[13.5px] font-bold text-white shadow-card"
+          className="arrow-nudge mt-3 inline-flex h-11 items-center gap-2 rounded-full bg-terracotta-soft pl-4 pr-2 text-[13.5px] font-bold text-ink shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed"
         >
           {t.contact.channels.exploreExperiences}
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-terracotta">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-terracotta-deep">
             <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
           </span>
         </Link>

@@ -4,11 +4,10 @@ import Footer from "@/components/Footer";
 import ExperienceHero from "@/components/ExperienceHero";
 import ExperienceInfo from "@/components/ExperienceInfo";
 import JourneyRoute from "@/components/JourneyRoute";
-import TouchpointsSection from "@/components/TouchpointsSection";
-import QueryForm from "@/components/QueryForm";
+import BookingSummaryCard from "@/components/BookingSummaryCard";
 import { getExperienceBySlug } from "@/services/experienceService";
 import { getSiteSettings } from "@/services/settingsService";
-import type { JourneyStop, Touchpoint } from "@/lib/types";
+import type { Touchpoint } from "@/lib/types";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -46,12 +45,6 @@ export default async function ExperienceDetailPage({ params }: PageProps) {
 
   if (!experience) notFound();
 
-  const stops: JourneyStop[] = experience.stops.map((stop) => ({
-    order: stop.order,
-    name: stop.name,
-    duration: stop.duration,
-    image: stop.image,
-  }));
   const touchpoints: Touchpoint[] = experience.stops.map((stop) => ({
     id: stop.order,
     name: stop.name,
@@ -68,12 +61,10 @@ export default async function ExperienceDetailPage({ params }: PageProps) {
       <main className="pb-2">
         <ExperienceHero experience={experience} />
         <ExperienceInfo experience={experience} />
-        <JourneyRoute stops={stops} />
-        <TouchpointsSection touchpoints={touchpoints} />
-
-        <section id="raise-a-query" className="px-4 pt-6 tab:px-8 tab:pt-10 tabLg:px-10">
-          <QueryForm experienceTitle={experience.title} experienceId={experience.id} />
-        </section>
+        <JourneyRoute touchpoints={touchpoints} />
+        <div className="px-4 tab:px-8 tabLg:px-10">
+          <BookingSummaryCard experience={experience} className="mt-7" />
+        </div>
       </main>
       <Footer settings={settings} />
     </>

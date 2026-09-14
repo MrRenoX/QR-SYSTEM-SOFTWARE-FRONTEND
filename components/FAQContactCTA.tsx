@@ -25,7 +25,7 @@ export default function FAQContactCTA() {
         </p>
         <Link
           href="/contact"
-          className="mt-3.5 inline-flex h-11 items-center justify-center rounded-full bg-terracotta px-6 text-[13.5px] font-bold text-white transition-colors hover:bg-terracotta-deep"
+          className="mt-3.5 inline-flex h-11 items-center justify-center rounded-full bg-terracotta-soft px-6 text-[13.5px] font-bold text-ink shadow-goldButton transition-all hover:bg-terracotta active:translate-y-[2px] active:shadow-goldButtonPressed"
         >
           {t.faqs.contactCta.contactTeam}
         </Link>

@@ -78,6 +78,14 @@ const config: Config = {
         float: "0 10px 30px -12px rgba(36,26,20,0.28)",
         shell: "0 0 0 1px rgba(36,26,20,0.05), 0 30px 80px -20px rgba(36,26,20,0.22)",
         adminCard: "0 1px 2px rgba(22,19,42,0.04), 0 8px 24px -12px rgba(22,19,42,0.10)",
+        /** Raised, tactile gold button — a bevel highlight/shadow plus a solid "ledge" so it reads as pressable, not flat. */
+        goldButton:
+          "inset 0 1px 0 0 rgba(255,255,255,0.55), inset 0 -3px 5px 0 rgba(58,36,21,0.3), 0 3px 0 0 #A8722C, 0 10px 20px -6px rgba(20,12,6,0.45)",
+        goldButtonPressed:
+          "inset 0 1px 0 0 rgba(255,255,255,0.35), inset 0 -1px 2px 0 rgba(58,36,21,0.25), 0 1px 0 0 #A8722C, 0 4px 10px -4px rgba(20,12,6,0.4)",
+        /** Same treatment, scaled down for small circular icon buttons. */
+        goldButtonSm:
+          "inset 0 1px 0 0 rgba(255,255,255,0.55), inset 0 -2px 3px 0 rgba(58,36,21,0.3), 0 2px 0 0 #A8722C, 0 6px 12px -4px rgba(20,12,6,0.4)",
       },
       borderRadius: {
         card: "14px",
