@@ -39,11 +39,18 @@ export default function ExperienceHero({
         </Link>
 
         <div className="absolute inset-x-4 bottom-4 tab:inset-x-6 tab:bottom-6 tabLg:hidden">
-          <span
-            className={`inline-block rounded-[4px] px-2 py-[3px] text-[9.5px] font-bold uppercase tracking-[0.07em] ${getCategoryBadgeClass(experience.category)}`}
-          >
-            {experience.category}
-          </span>
+          <div className="flex items-center gap-2">
+            <span
+              className={`inline-block rounded-[4px] px-2 py-[3px] text-[9.5px] font-bold uppercase tracking-[0.07em] ${getCategoryBadgeClass(experience.category)}`}
+            >
+              {experience.category}
+            </span>
+            {experience.experienceCode && (
+              <span className="inline-block rounded-[4px] bg-terracotta-soft px-2 py-[3px] text-[9.5px] font-bold uppercase tracking-[0.07em] text-ink shadow-goldButtonSm">
+                {experience.experienceCode}
+              </span>
+            )}
+          </div>
           <h1 className="mt-1.5 font-serif text-[29px] font-bold leading-[1.1] tracking-[-0.02em] text-white tab:text-[38px]">
             {experience.title}
           </h1>
@@ -51,11 +58,18 @@ export default function ExperienceHero({
       </div>
 
       <div className="hidden tabLg:block tabLg:flex-1">
-        <span
-          className={`inline-block rounded-[4px] px-2.5 py-1 text-[10.5px] font-bold uppercase tracking-[0.07em] ${getCategoryBadgeClass(experience.category)}`}
-        >
-          {experience.category}
-        </span>
+        <div className="flex items-center gap-2.5">
+          <span
+            className={`inline-block rounded-[4px] px-2.5 py-1 text-[10.5px] font-bold uppercase tracking-[0.07em] ${getCategoryBadgeClass(experience.category)}`}
+          >
+            {experience.category}
+          </span>
+          {experience.experienceCode && (
+            <span className="inline-block rounded-[4px] bg-terracotta-soft px-2.5 py-1 text-[10.5px] font-bold uppercase tracking-[0.07em] text-ink shadow-goldButtonSm">
+              {experience.experienceCode}
+            </span>
+          )}
+        </div>
         <h1 className="mt-3 font-serif text-[42px] font-bold leading-[1.05] tracking-[-0.02em] text-ink">
           {experience.title}
         </h1>

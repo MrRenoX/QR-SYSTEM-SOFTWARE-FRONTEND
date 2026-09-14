@@ -82,6 +82,7 @@ function formatPrice(value: number): string {
 function mapExperience(raw: ExperienceApiResponse): Experience {
   return {
     id: raw.id,
+    experienceCode: raw.experience_code,
     slug: raw.slug,
     category: raw.category?.name ?? "",
     title: raw.title,

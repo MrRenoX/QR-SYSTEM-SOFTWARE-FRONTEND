@@ -18,7 +18,7 @@ export default function ExperienceCard({
   priority = false,
 }: ExperienceCardProps) {
   const { t } = useLanguage();
-  const { slug, title, category, image, description, duration, groupSize, price } =
+  const { slug, title, experienceCode, category, image, description, duration, groupSize, price } =
     experience;
 
   // Skip rendering if no image is available
@@ -51,6 +51,11 @@ export default function ExperienceCard({
           >
             {category}
           </span>
+          {experienceCode && (
+            <span className="absolute right-3 top-3 w-fit rounded-[4px] bg-ink/70 px-1.5 py-[3px] text-[9.5px] font-bold uppercase tracking-[0.05em] text-terracotta-soft backdrop-blur-[1px]">
+              {experienceCode}
+            </span>
+          )}
           <dl className="absolute inset-x-3 bottom-2.5 flex items-center gap-3 text-[11px] font-semibold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.35)]">
             <div className="flex items-center gap-1">
               <dt className="sr-only">{t.experienceCard.durationSr}</dt>

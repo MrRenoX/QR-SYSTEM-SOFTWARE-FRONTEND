@@ -15,6 +15,7 @@ export const CATEGORIES: FilterName[] = [
 export const experiences: Omit<Experience, "stops">[] = [
   {
     id: 1,
+    experienceCode: "EXP-0001",
     slug: "ram-lala-darshan",
     category: "Spiritual",
     title: "Ram Lala Darshan",
@@ -43,6 +44,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 2,
+    experienceCode: "EXP-0002",
     slug: "hanumangarhi-darshan",
     category: "Spiritual",
     title: "Hanumangarhi Darshan",
@@ -66,6 +68,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 3,
+    experienceCode: "EXP-0003",
     slug: "ayodhya-heritage-walk",
     category: "Walks",
     title: "Ayodhya Heritage Walk",
@@ -89,6 +92,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 4,
+    experienceCode: "EXP-0004",
     slug: "sarayu-aarti-experience",
     category: "Water",
     title: "Sarayu Aarti Experience",
@@ -112,6 +116,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 5,
+    experienceCode: "EXP-0005",
     slug: "local-crafts-culture",
     category: "Craft & Culture",
     title: "Local Crafts & Culture",
@@ -135,6 +140,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 6,
+    experienceCode: "EXP-0006",
     slug: "ayodhya-flavors-food-walk",
     category: "Culinary",
     title: "Ayodhya Flavors Food Walk",
@@ -158,6 +164,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 7,
+    experienceCode: "EXP-0007",
     slug: "sarayu-sunrise-boat",
     category: "Water",
     title: "Sarayu Sunrise Boat",
@@ -173,6 +180,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 8,
+    experienceCode: "EXP-0008",
     slug: "kanak-bhawan-story-trail",
     category: "Spiritual",
     title: "Kanak Bhawan Story Trail",
@@ -188,6 +196,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 9,
+    experienceCode: "EXP-0009",
     slug: "ramkot-temple-circuit",
     category: "Spiritual",
     title: "Ramkot Temple Circuit",
@@ -203,6 +212,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 10,
+    experienceCode: "EXP-0010",
     slug: "guptar-ghat-morning-walk",
     category: "Walks",
     title: "Guptar Ghat Morning Walk",
@@ -218,6 +228,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 11,
+    experienceCode: "EXP-0011",
     slug: "bhakti-path-lantern-walk",
     category: "Walks",
     title: "Bhakti Path Lantern Walk",
@@ -233,6 +244,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 12,
+    experienceCode: "EXP-0012",
     slug: "awadhi-thali-experience",
     category: "Culinary",
     title: "Awadhi Thali Experience",
@@ -248,6 +260,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 13,
+    experienceCode: "EXP-0013",
     slug: "terracotta-workshop",
     category: "Craft & Culture",
     title: "Terracotta Workshop",
@@ -263,6 +276,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 14,
+    experienceCode: "EXP-0014",
     slug: "ramayana-katha-evening",
     category: "Craft & Culture",
     title: "Ramayana Katha Evening",
@@ -278,6 +292,7 @@ export const experiences: Omit<Experience, "stops">[] = [
   },
   {
     id: 15,
+    experienceCode: "EXP-0015",
     slug: "sarayu-riverfront-cycle",
     category: "Walks",
     title: "Sarayu Riverfront Cycle",

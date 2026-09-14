@@ -36,6 +36,8 @@ export interface TimeSlot {
 
 export interface Experience {
   id: number;
+  /** Admin-provided, unique — e.g. "EXP-1001". Shown alongside the title on cards, the detail page and booking/query flows. */
+  experienceCode: string;
   slug: string;
   category: CategoryName;
   title: string;
