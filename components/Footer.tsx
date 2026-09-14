@@ -52,7 +52,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                 alt={general.websiteName}
                 width={128}
                 height={100}
-                className="h-[28px] w-auto rounded-[6px] tab:h-8"
+                className="h-[28px] w-auto tab:h-8"
               />
             </div>
             <p className="mt-2 max-w-[190px] text-[10px] font-medium leading-[1.45] text-white/70 tab:max-w-[240px] tab:text-[11.5px]">

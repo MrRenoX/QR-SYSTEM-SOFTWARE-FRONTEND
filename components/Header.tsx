@@ -37,7 +37,7 @@ export default function Header() {
             width={128}
             height={100}
             priority
-            className="h-[32px] w-auto rounded-[6px] tab:h-[36px] tabLg:h-[40px]"
+            className="h-[32px] w-auto tab:h-[36px] tabLg:h-[40px]"
           />
         </Link>
 
