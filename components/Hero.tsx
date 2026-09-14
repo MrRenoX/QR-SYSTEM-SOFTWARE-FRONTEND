@@ -20,12 +20,12 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
 
   const CountCard = ({ className = "" }: { className?: string }) => (
     <div
-      className={`rotate-6 rounded-[16px] border border-terracotta-deep/30 bg-sand px-3 pb-2 pt-3 text-center shadow-float ${className}`}
+      className={`rounded-[13px] border border-terracotta-deep/30 bg-sand px-2.5 pb-1.5 pt-2 text-center shadow-float ${className}`}
     >
-      <p className="font-serif text-[40px] font-bold leading-none text-terracotta-deep tabLg:text-[46px]">
+      <p className="font-serif text-[26px] font-bold leading-none text-terracotta-deep tabLg:text-[30px]">
         14
       </p>
-      <p className="mt-1.5 text-[12.5px] leading-[1.25] text-ink tabLg:text-[13.5px]">
+      <p className="mt-1 text-[9.5px] leading-[1.2] text-ink tabLg:text-[10.5px]">
         {t.hero.expCountLine1}
         <br />
         {t.hero.expCountLine2}
@@ -36,7 +36,7 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
         width={118}
         height={66}
         aria-hidden="true"
-        className="mx-auto mt-1 h-[62px] w-auto"
+        className="mx-auto mt-1 h-[38px] w-auto"
       />
     </div>
   );
@@ -45,12 +45,12 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
     <section className="relative isolate overflow-hidden pb-[118px] tabLg:pb-0">
       {/* Phone/tablet: full-bleed backdrop photo. At lg the photo becomes its own right-column panel instead. */}
       <Image
-        src="/images/hero/ram-mandir-aerial.jpg"
-        alt="Aerial view of the complete Ram Mandir temple complex in Ayodhya, with pilgrims gathered across its courtyards"
+        src="/images/hero/ram-mandir-sunset.jpg"
+        alt="The Ram Mandir in Ayodhya at golden hour, its carved spire lit by the setting sun"
         fill
         priority
         sizes="(min-width: 1440px) 390px, (min-width: 1024px) 0px, (min-width: 431px) 760px, 390px"
-        className="-z-10 object-cover object-[center_52%] tabLg:hidden"
+        className="-z-10 object-contain object-right-bottom tabLg:hidden"
       />
       {/* Dark wash so the headline sits on the noir chrome, not directly on the photograph */}
       <div
@@ -102,21 +102,21 @@ export default function Hero({ settings }: { settings: SiteSettings }) {
           </Link>
         </div>
 
-        <div className="relative hidden h-[520px] flex-1 overflow-hidden rounded-panel shadow-float ring-1 ring-terracotta/25 tabLg:block">
+        <div className="relative hidden h-[520px] flex-1 overflow-hidden rounded-panel bg-noir shadow-float ring-1 ring-terracotta/25 tabLg:block">
           <Image
-            src="/images/hero/ram-mandir-aerial.jpg"
-            alt="Aerial view of the complete Ram Mandir temple complex in Ayodhya, with pilgrims gathered across its courtyards"
+            src="/images/hero/ram-mandir-sunset.jpg"
+            alt="The Ram Mandir in Ayodhya at golden hour, its carved spire lit by the setting sun"
             fill
             priority
             sizes="500px"
-            className="object-cover object-[center_50%]"
+            className="object-contain object-right-bottom"
           />
-          <CountCard className="absolute left-4 top-4 w-[150px]" />
+          <CountCard className="absolute left-4 top-4 w-[112px]" />
         </div>
       </div>
 
       {/* Phone/tablet floating count card + CTA — the lg split-hero above has its own. */}
-      <CountCard className="absolute right-4 top-1 w-[142px] tab:right-6 tab:top-3 tab:w-[160px] tabLg:hidden" />
+      <CountCard className="absolute right-4 top-3 w-[104px] tab:right-6 tab:top-4 tab:w-[118px] tabLg:hidden" />
 
       <Link
         href="/experiences"
