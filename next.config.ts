@@ -16,6 +16,20 @@ const apiOrigin = (() => {
 })();
 
 const CLOUDFLARE_CHALLENGES = "https://challenges.cloudflare.com";
+/**
+ * Razorpay Checkout (components/BookingForm.tsx, lib/razorpay.ts): the SDK
+ * is loaded from checkout.razorpay.com, which itself loads a risk-detection
+ * bundle + icons from cdn.razorpay.com, opens an in-page iframe (served from
+ * api.razorpay.com) for the actual card/UPI/wallet form, and talks to both
+ * api.razorpay.com and its lumberjack.razorpay.com logging endpoint. All
+ * four need an explicit allowance below — without them the checkout
+ * script/frame is silently blocked by CSP and "Proceed to payment" does
+ * nothing.
+ */
+const RAZORPAY_CHECKOUT = "https://checkout.razorpay.com";
+const RAZORPAY_API = "https://api.razorpay.com";
+const RAZORPAY_LUMBERJACK = "https://lumberjack.razorpay.com";
+const RAZORPAY_CDN = "https://cdn.razorpay.com";
 const isDev = process.env.NODE_ENV === "development";
 
 /**
@@ -40,12 +54,12 @@ const isDev = process.env.NODE_ENV === "development";
  */
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} ${CLOUDFLARE_CHALLENGES}`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} ${CLOUDFLARE_CHALLENGES} ${RAZORPAY_CHECKOUT} ${RAZORPAY_CDN}`,
   "style-src 'self' 'unsafe-inline'",
-  `img-src 'self' data:${apiOrigin ? ` ${apiOrigin}` : ""}`,
+  `img-src 'self' data: ${RAZORPAY_CDN}${apiOrigin ? ` ${apiOrigin}` : ""}`,
   "font-src 'self' data:",
-  `connect-src 'self' ${CLOUDFLARE_CHALLENGES}${apiOrigin ? ` ${apiOrigin}` : ""}`,
-  `frame-src ${CLOUDFLARE_CHALLENGES}`,
+  `connect-src 'self' ${CLOUDFLARE_CHALLENGES} ${RAZORPAY_API} ${RAZORPAY_LUMBERJACK}${apiOrigin ? ` ${apiOrigin}` : ""}`,
+  `frame-src ${CLOUDFLARE_CHALLENGES} ${RAZORPAY_API} ${RAZORPAY_CHECKOUT}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -62,7 +76,10 @@ const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   {
     key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+    // payment: scoped to Razorpay's own origins (not a bare allow) so its
+    // checkout iframe can use the Payment Request API for saved cards/UPI —
+    // see the RAZORPAY_* comment above. Everything else stays fully blocked.
+    value: `camera=(), microphone=(), geolocation=(), payment=(self "${RAZORPAY_API}" "${RAZORPAY_CHECKOUT}"), usb=()`,
   },
   {
     key: "Strict-Transport-Security",

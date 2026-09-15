@@ -32,7 +32,7 @@ export default async function BookPage({ params }: PageProps) {
   return (
     <>
       <main className="px-4 pb-6 tab:px-8 tab:pb-10 tabLg:px-10 tabLg:pb-14">
-        <BookingForm experience={experience} />
+        <BookingForm experience={experience} brandName={settings.general.websiteName} />
       </main>
       <Footer settings={settings} />
     </>

@@ -2,8 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { useState } from "react";
-import { AlertCircle, ArrowLeft, CheckCircle2, Clock, Lock, Users } from "lucide-react";
+import {
+  AlertCircle,
+  AlertTriangle,
+  ArrowLeft,
+  CheckCircle2,
+  Clock,
+  Loader2,
+  Lock,
+  Users,
+} from "lucide-react";
 import {
   errorTextClass,
   inputClass,
@@ -14,9 +24,11 @@ import {
 import { LIMITS } from "@/lib/validation/shared";
 import { validateBookingDraft, type BookingDraftErrors } from "@/lib/validation/booking";
 import { calculateBookingPrice } from "@/lib/pricing";
-import { submitBooking } from "@/services/bookingService";
+import { createBooking, verifyBookingPayment } from "@/services/bookingService";
+import { isRazorpayReady, openRazorpayCheckout } from "@/lib/razorpay";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import type { BookingDraft, Experience, TimeSlot } from "@/lib/types";
+import type { BookingOrder, ConfirmedBooking } from "@/types/api/booking";
 
 const EMPTY: BookingDraft = {
   guestName: "",
@@ -37,17 +49,42 @@ const FALLBACK_SLOTS: TimeSlot[] = [
   { key: "Evening", value: "Evening" },
 ];
 
+/**
+ * Everything up to "the guest has paid" is provisional — `order` only ever
+ * comes from `createBooking()` and `confirmed` only ever comes from
+ * `verifyBookingPayment()` succeeding server-side. Nothing here ever
+ * fabricates a paid/confirmed state on its own.
+ */
+type Phase =
+  | "idle"
+  | "creating"
+  | "payment_cancelled"
+  | "verifying"
+  | "verify_error"
+  | "confirmed";
+
 function priceToNumber(price: string): number {
   return Number(price.replace(/[^\d]/g, "")) || 0;
 }
 
-export default function BookingForm({ experience }: { experience: Experience }) {
+export default function BookingForm({
+  experience,
+  brandName = "Guide Guru Global",
+}: {
+  experience: Experience;
+  brandName?: string;
+}) {
   const { t } = useLanguage();
   const timeSlots = experience.slots && experience.slots.length > 0 ? experience.slots : FALLBACK_SLOTS;
   const [draft, setDraft] = useState<BookingDraft>(() => ({ ...EMPTY, preferredTime: timeSlots[0].key }));
   const [errors, setErrors] = useState<BookingDraftErrors>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
-  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [phase, setPhase] = useState<Phase>("idle");
+  const [formError, setFormError] = useState<string | null>(null);
+  const [order, setOrder] = useState<BookingOrder | null>(null);
+  const [openingCheckout, setOpeningCheckout] = useState(false);
+  const [lastPayment, setLastPayment] = useState<RazorpayHandlerResponse | null>(null);
+  const [confirmed, setConfirmed] = useState<ConfirmedBooking | null>(null);
+  const [razorpayReady, setRazorpayReady] = useState(false);
 
   function update<K extends keyof BookingDraft>(key: K, value: BookingDraft[K]) {
     setDraft((current) => ({ ...current, [key]: value }));
@@ -56,6 +93,7 @@ export default function BookingForm({ experience }: { experience: Experience }) 
 
   const unitPrice = priceToNumber(experience.price);
   const guests = draft.adults + draft.children;
+  const hasPricingTiers = Boolean(experience.pricingOptions && experience.pricingOptions.length > 0);
   const { total: estimate, appliedTier } = calculateBookingPrice(
     unitPrice,
     experience.pricingOptions,
@@ -63,31 +101,98 @@ export default function BookingForm({ experience }: { experience: Experience }) 
     draft.children,
   );
 
+  async function verifyAndConfirm(payment: RazorpayHandlerResponse) {
+    setLastPayment(payment);
+    setPhase("verifying");
+    const response = await verifyBookingPayment(payment);
+    if (response.ok) {
+      setConfirmed(response.data);
+      setPhase("confirmed");
+    } else {
+      setPhase("verify_error");
+    }
+  }
+
+  function launchCheckout(activeOrder: BookingOrder) {
+    setOpeningCheckout(true);
+    const opened = openRazorpayCheckout({
+      order: activeOrder,
+      brandName,
+      prefill: {
+        name: draft.guestName,
+        email: draft.email || undefined,
+        contact: draft.whatsapp,
+      },
+      onSuccess: (response) => {
+        setOpeningCheckout(false);
+        void verifyAndConfirm(response);
+      },
+      onDismiss: () => {
+        setOpeningCheckout(false);
+        setPhase("payment_cancelled");
+      },
+    });
+    if (!opened) {
+      setOpeningCheckout(false);
+      setPhase("idle");
+      setFormError(t.bookingForm.preparingPayment);
+    }
+  }
+
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "submitting") return;
+    if (phase === "creating" || phase === "verifying") return;
 
     const result = validateBookingDraft(draft);
     setErrors(result.errors);
+    setFormError(null);
     if (!result.valid) return;
 
-    setStatus("submitting");
-    setSubmitError(null);
+    if (hasPricingTiers && !appliedTier) {
+      setFormError(t.bookingForm.guestCountUnavailable);
+      return;
+    }
 
-    const response = await submitBooking({
+    if (!razorpayReady) {
+      setFormError(t.bookingForm.preparingPayment);
+      return;
+    }
+
+    setPhase("creating");
+
+    const response = await createBooking({
       ...draft,
       experienceId: experience.id,
+      pricingOptionKey: hasPricingTiers ? appliedTier?.key : undefined,
     });
-    if (response.ok) {
-      setStatus("sent");
-    } else {
-      setStatus("error");
-      setSubmitError(response.message);
+
+    if (!response.ok) {
+      setPhase("idle");
+      setFormError(response.message);
+      return;
     }
+
+    setOrder(response.data);
+    launchCheckout(response.data);
+  }
+
+  function startNewBooking() {
+    setDraft({ ...EMPTY, preferredTime: timeSlots[0].key });
+    setErrors({});
+    setFormError(null);
+    setOrder(null);
+    setLastPayment(null);
+    setConfirmed(null);
+    setPhase("idle");
   }
 
   const header = (
     <div className="tabLg:mx-auto tabLg:max-w-[1080px]">
+      <Script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        strategy="afterInteractive"
+        onLoad={() => setRazorpayReady(isRazorpayReady())}
+      />
       <div className="flex items-center gap-3 py-3 tab:gap-4 tab:py-5">
         <Link
           href={`/experiences/${experience.slug}`}
@@ -138,7 +243,7 @@ export default function BookingForm({ experience }: { experience: Experience }) 
     </div>
   );
 
-  if (status === "sent") {
+  if (phase === "confirmed" && confirmed) {
     return (
       <>
         {header}
@@ -156,23 +261,115 @@ export default function BookingForm({ experience }: { experience: Experience }) 
             {t.bookingForm.successTitle}
           </h2>
           <p className="mt-1.5 text-[13px] leading-[1.5] text-ink-muted">
-            {t.bookingForm.successBody(draft.guestName, experience.title, draft.date, experience.experienceCode)}
+            {t.bookingForm.successBody(
+              confirmed.guestName,
+              experience.title,
+              confirmed.visitDate,
+              experience.experienceCode,
+            )}
           </p>
-          <button
-            type="button"
-            onClick={() => {
-              setDraft({ ...EMPTY, preferredTime: timeSlots[0].key });
-              setErrors({});
-              setStatus("idle");
-            }}
-            className="mt-4 text-[13px] font-semibold text-terracotta underline underline-offset-2"
-          >
+          <div className="mt-3 inline-flex items-baseline gap-1.5 rounded-full bg-terracotta-tint px-4 py-1.5">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.05em] text-terracotta-deep">
+              {t.bookingForm.amountPaidLabel}
+            </span>
+            <span className="font-serif text-[16px] font-bold text-terracotta-deep">
+              ₹{confirmed.amount.toLocaleString("en-IN")}
+            </span>
+          </div>
+          <p className="mt-2 text-[11.5px] font-medium text-ink-faint">{confirmed.bookingRef}</p>
+          <button type="button" onClick={startNewBooking} className="mt-4 text-[13px] font-semibold text-terracotta underline underline-offset-2">
             {t.bookingForm.bookAnother}
           </button>
         </div>
       </>
     );
   }
+
+  if (phase === "payment_cancelled" && order) {
+    return (
+      <>
+        {header}
+        <div
+          role="alert"
+          className="mt-4 rounded-panel border border-line bg-white p-6 text-center shadow-card tabLg:mx-auto tabLg:max-w-[560px] tabLg:p-10"
+        >
+          <AlertTriangle size={34} strokeWidth={1.5} className="mx-auto text-terracotta" aria-hidden="true" />
+          <h2 className="mt-2 font-serif text-[21px] font-bold text-ink">
+            {t.bookingForm.paymentCancelledTitle}
+          </h2>
+          <p className="mt-1.5 text-[13px] leading-[1.5] text-ink-muted">
+            {t.bookingForm.paymentCancelledBody(order.bookingRef)}
+          </p>
+          <button
+            type="button"
+            onClick={() => launchCheckout(order)}
+            disabled={openingCheckout}
+            className={`${primaryButtonClass} mt-4`}
+          >
+            {openingCheckout ? <Loader2 size={18} className="animate-spin" aria-hidden="true" /> : t.bookingForm.retryPayment}
+          </button>
+          <button
+            type="button"
+            onClick={startNewBooking}
+            className="mt-3 text-[13px] font-semibold text-terracotta underline underline-offset-2"
+          >
+            {t.bookingForm.startNewBooking}
+          </button>
+        </div>
+      </>
+    );
+  }
+
+  if (phase === "verify_error" && order) {
+    return (
+      <>
+        {header}
+        <div
+          role="alert"
+          className="mt-4 rounded-panel border border-line bg-white p-6 text-center shadow-card tabLg:mx-auto tabLg:max-w-[560px] tabLg:p-10"
+        >
+          <AlertCircle size={34} strokeWidth={1.5} className="mx-auto text-red-500" aria-hidden="true" />
+          <h2 className="mt-2 font-serif text-[21px] font-bold text-ink">
+            {t.bookingForm.verifyErrorTitle}
+          </h2>
+          <p className="mt-1.5 text-[13px] leading-[1.5] text-ink-muted">
+            {t.bookingForm.verifyErrorBody(order.bookingRef)}
+          </p>
+          <button
+            type="button"
+            onClick={() => lastPayment && void verifyAndConfirm(lastPayment)}
+            className={`${primaryButtonClass} mt-4`}
+          >
+            {t.bookingForm.tryAgain}
+          </button>
+          <button
+            type="button"
+            onClick={startNewBooking}
+            className="mt-3 text-[13px] font-semibold text-terracotta underline underline-offset-2"
+          >
+            {t.bookingForm.startNewBooking}
+          </button>
+        </div>
+      </>
+    );
+  }
+
+  if (phase === "verifying") {
+    return (
+      <>
+        {header}
+        <div
+          role="status"
+          className="mt-4 rounded-panel border border-line bg-white p-6 text-center shadow-card tabLg:mx-auto tabLg:max-w-[560px] tabLg:p-10"
+        >
+          <Loader2 size={30} className="mx-auto animate-spin text-terracotta" aria-hidden="true" />
+          <p className="mt-3 text-[14px] font-semibold text-ink">{t.bookingForm.verifyingPayment}</p>
+        </div>
+      </>
+    );
+  }
+
+  const submitting = phase === "creating";
 
   return (
     <>
@@ -436,22 +633,31 @@ export default function BookingForm({ experience }: { experience: Experience }) 
             </p>
           </div>
 
-          {status === "error" && submitError && (
+          {formError && (
             <div
               role="alert"
               className="mt-4 flex items-start gap-2 rounded-[10px] border border-red-200 bg-red-50 px-3 py-2.5 text-[12.5px] text-red-700"
             >
               <AlertCircle size={15} className="mt-0.5 shrink-0" aria-hidden="true" />
-              {submitError}
+              {formError}
             </div>
           )}
 
           <button
             type="submit"
-            disabled={status === "submitting"}
+            disabled={submitting || !razorpayReady}
             className={`${primaryButtonClass} mt-4`}
           >
-            {status === "submitting" ? t.bookingForm.sending : t.bookingForm.sendBooking}
+            {submitting ? (
+              <>
+                <Loader2 size={18} className="animate-spin" aria-hidden="true" />
+                {order ? t.bookingForm.openingPayment : t.bookingForm.sending}
+              </>
+            ) : razorpayReady ? (
+              t.bookingForm.sendBooking
+            ) : (
+              t.bookingForm.preparingPayment
+            )}
           </button>
         </div>
       </form>

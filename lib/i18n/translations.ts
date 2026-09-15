@@ -225,15 +225,29 @@ const en = {
     estimatedTotalLabel: (guests: number) =>
       `Estimated total (${guests} ${guests === 1 ? "guest" : "guests"})`,
     pricingAppliedLabel: (tier: string) => `Pricing applied: ${tier}`,
-    paymentNotice:
-      "Payment is not connected yet. Submitting sends your request to reception, who will confirm and share a secure payment link.",
-    sendBooking: "Send booking request",
-    sending: "Sending…",
-    successTitle: "Request received.",
+    guestCountUnavailable:
+      "This number of guests isn't available for this experience — please adjust your group size.",
+    paymentNotice: "100% secure checkout — your payment details are always safe with us.",
+    preparingPayment: "Preparing secure payment…",
+    sendBooking: "Proceed to payment",
+    sending: "Creating your booking…",
+    openingPayment: "Opening secure payment…",
+    verifyingPayment: "Verifying your payment…",
+    paymentCancelledTitle: "Payment not completed",
+    paymentCancelledBody: (bookingRef: string) =>
+      `Your booking (${bookingRef}) is saved and still pending payment — nothing is confirmed until payment goes through. You can retry whenever you're ready.`,
+    retryPayment: "Retry payment",
+    startNewBooking: "Start a new booking instead",
+    verifyErrorTitle: "Couldn't confirm your payment",
+    verifyErrorBody: (bookingRef: string) =>
+      `Something went wrong confirming payment for booking ${bookingRef}. If money was deducted, it will be confirmed automatically shortly — or try again below.`,
+    tryAgain: "Try again",
+    amountPaidLabel: "Amount paid",
+    successTitle: "Booking confirmed!",
     successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
-      `${guestName || "Your"}'s booking request for ${title}${
+      `${guestName || "Your"}'s booking for ${title}${
         experienceCode ? ` (${experienceCode})` : ""
-      }${date ? ` on ${date}` : ""} has been received. Reception will confirm on WhatsApp and share the payment link.`,
+      }${date ? ` on ${date}` : ""} is confirmed and paid. A confirmation has been sent to your email.`,
     bookAnother: "Book another experience",
   },
   queryForm: {
@@ -562,17 +576,31 @@ const hi: TranslationDict = {
       `${adults} वयस्क${children ? `, ${children} बच्चे` : ""}`,
     estimatedTotalLabel: (guests: number) => `अनुमानित कुल (${guests} अतिथि)`,
     pricingAppliedLabel: (tier: string) => `लागू मूल्य: ${tier}`,
-    paymentNotice:
-      "भुगतान अभी जुड़ा नहीं है। सबमिट करने पर आपका अनुरोध रिसेप्शन को भेजा जाएगा, जो पुष्टि कर एक सुरक्षित भुगतान लिंक साझा करेगा।",
-    sendBooking: "बुकिंग अनुरोध भेजें",
-    sending: "भेजा जा रहा है…",
-    successTitle: "अनुरोध प्राप्त हुआ।",
+    guestCountUnavailable:
+      "इस अनुभव के लिए इतने अतिथियों की संख्या उपलब्ध नहीं है — कृपया समूह का आकार बदलें।",
+    paymentNotice: "100% सुरक्षित भुगतान — आपकी जानकारी हमेशा सुरक्षित रहती है।",
+    preparingPayment: "सुरक्षित भुगतान तैयार किया जा रहा है…",
+    sendBooking: "भुगतान के लिए आगे बढ़ें",
+    sending: "आपकी बुकिंग बनाई जा रही है…",
+    openingPayment: "सुरक्षित भुगतान खोला जा रहा है…",
+    verifyingPayment: "आपके भुगतान की पुष्टि की जा रही है…",
+    paymentCancelledTitle: "भुगतान पूरा नहीं हुआ",
+    paymentCancelledBody: (bookingRef: string) =>
+      `आपकी बुकिंग (${bookingRef}) सुरक्षित है और अभी भुगतान लंबित है — जब तक भुगतान नहीं होता, कुछ भी पुष्टि नहीं होगा। जब चाहें दोबारा प्रयास करें।`,
+    retryPayment: "भुगतान फिर से करें",
+    startNewBooking: "नई बुकिंग शुरू करें",
+    verifyErrorTitle: "आपके भुगतान की पुष्टि नहीं हो सकी",
+    verifyErrorBody: (bookingRef: string) =>
+      `बुकिंग ${bookingRef} के भुगतान की पुष्टि करने में कुछ गड़बड़ हुई। अगर पैसे कट गए हैं, तो यह जल्द ही अपने आप पुष्टि हो जाएगी — या नीचे फिर से प्रयास करें।`,
+    tryAgain: "फिर से प्रयास करें",
+    amountPaidLabel: "भुगतान की गई राशि",
+    successTitle: "बुकिंग की पुष्टि हो गई!",
     successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
       `${guestName || "आपकी"} की ${title}${
         experienceCode ? ` (${experienceCode})` : ""
-      } के लिए बुकिंग रिक्वेस्ट${
+      } की बुकिंग${
         date ? ` (${date})` : ""
-      } प्राप्त हो गई है। रिसेप्शन व्हाट्सऐप पर पुष्टि करेगा और भुगतान लिंक भेजेगा।`,
+      } की पुष्टि और भुगतान हो चुका है। आपके ईमेल पर पुष्टिकरण भेज दिया गया है।`,
     bookAnother: "एक और अनुभव बुक करें",
   },
   queryForm: {
@@ -899,17 +927,31 @@ const gu: TranslationDict = {
       `${adults} પુખ્ત${children ? `, ${children} બાળકો` : ""}`,
     estimatedTotalLabel: (guests: number) => `અંદાજિત કુલ (${guests} મહેમાનો)`,
     pricingAppliedLabel: (tier: string) => `લાગુ કિંમત: ${tier}`,
-    paymentNotice:
-      "ચુકવણી હજુ જોડાયેલ નથી. સબમિટ કરવાથી તમારી વિનંતી રિસેપ્શનને મોકલાશે, જે પુષ્ટિ કરીને સુરક્ષિત ચુકવણી લિંક શેર કરશે.",
-    sendBooking: "બુકિંગ વિનંતી મોકલો",
-    sending: "મોકલાઈ રહ્યું છે…",
-    successTitle: "વિનંતી પ્રાપ્ત થઈ.",
+    guestCountUnavailable:
+      "આ અનુભવ માટે આટલા મહેમાનોની સંખ્યા ઉપલબ્ધ નથી — કૃપા કરી તમારા જૂથનું કદ બદલો.",
+    paymentNotice: "100% સુરક્ષિત ચુકવણી — તમારી માહિતી હંમેશા સુરક્ષિત રહે છે.",
+    preparingPayment: "સુરક્ષિત ચુકવણી તૈયાર કરવામાં આવી રહી છે…",
+    sendBooking: "ચુકવણી માટે આગળ વધો",
+    sending: "તમારી બુકિંગ બનાવવામાં આવી રહી છે…",
+    openingPayment: "સુરક્ષિત ચુકવણી ખોલવામાં આવી રહી છે…",
+    verifyingPayment: "તમારી ચુકવણીની ચકાસણી થઈ રહી છે…",
+    paymentCancelledTitle: "ચુકવણી પૂર્ણ થઈ નથી",
+    paymentCancelledBody: (bookingRef: string) =>
+      `તમારી બુકિંગ (${bookingRef}) સાચવેલી છે અને હજુ ચુકવણી બાકી છે — ચુકવણી થાય ત્યાં સુધી કંઈ પુષ્ટિ થશે નહીં. તમે તૈયાર હો ત્યારે ફરી પ્રયાસ કરી શકો છો.`,
+    retryPayment: "ફરીથી ચુકવણી કરો",
+    startNewBooking: "નવી બુકિંગ શરૂ કરો",
+    verifyErrorTitle: "તમારી ચુકવણીની પુષ્ટિ થઈ શકી નથી",
+    verifyErrorBody: (bookingRef: string) =>
+      `બુકિંગ ${bookingRef} ની ચુકવણીની પુષ્ટિ કરવામાં કંઈક ખોટું થયું. જો પૈસા કપાયા હોય, તો તે ટૂંક સમયમાં આપમેળે પુષ્ટિ થઈ જશે — અથવા નીચે ફરી પ્રયાસ કરો.`,
+    tryAgain: "ફરી પ્રયાસ કરો",
+    amountPaidLabel: "ચૂકવેલી રકમ",
+    successTitle: "બુકિંગની પુષ્ટિ થઈ ગઈ!",
     successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
       `${guestName || "તમારી"} ની ${title}${
         experienceCode ? ` (${experienceCode})` : ""
-      } માટેની બુકિંગ વિનંતી${
+      } ની બુકિંગ${
         date ? ` (${date})` : ""
-      } પ્રાપ્ત થઈ ગઈ છે. રિસેપ્શન વોટ્સએપ પર પુષ્ટિ કરશે અને ચુકવણી લિંક શેર કરશે.`,
+      } ની પુષ્ટિ અને ચુકવણી થઈ ગઈ છે. તમારા ઈમેલ પર પુષ્ટિકરણ મોકલવામાં આવ્યું છે.`,
     bookAnother: "બીજો અનુભવ બુક કરો",
   },
   queryForm: {
@@ -1235,17 +1277,31 @@ const ta: TranslationDict = {
       `${adults} பெரியவர்${children ? `, ${children} குழந்தைகள்` : ""}`,
     estimatedTotalLabel: (guests: number) => `மதிப்பிடப்பட்ட மொத்தம் (${guests} விருந்தினர்கள்)`,
     pricingAppliedLabel: (tier: string) => `பயன்படுத்தப்பட்ட விலை: ${tier}`,
-    paymentNotice:
-      "கட்டணம் இன்னும் இணைக்கப்படவில்லை. சமர்ப்பிப்பது உங்கள் கோரிக்கையை ரிசெப்ஷனுக்கு அனுப்பும், அவர்கள் உறுதிசெய்து பாதுகாப்பான கட்டண இணைப்பைப் பகிர்வார்கள்.",
-    sendBooking: "முன்பதிவு கோரிக்கையை அனுப்பு",
-    sending: "அனுப்பப்படுகிறது…",
-    successTitle: "கோரிக்கை பெறப்பட்டது.",
+    guestCountUnavailable:
+      "இந்த அனுபவத்திற்கு இத்தனை விருந்தினர்கள் கிடைக்கவில்லை — தயவுசெய்து உங்கள் குழு அளவை மாற்றவும்.",
+    paymentNotice: "100% பாதுகாப்பான கட்டணம் — உங்கள் தகவல்கள் எப்போதும் பாதுகாப்பாக இருக்கும்.",
+    preparingPayment: "பாதுகாப்பான கட்டணம் தயாராகிறது…",
+    sendBooking: "கட்டணத்திற்கு தொடரவும்",
+    sending: "உங்கள் முன்பதிவு உருவாக்கப்படுகிறது…",
+    openingPayment: "பாதுகாப்பான கட்டணம் திறக்கப்படுகிறது…",
+    verifyingPayment: "உங்கள் கட்டணம் சரிபார்க்கப்படுகிறது…",
+    paymentCancelledTitle: "கட்டணம் முடிக்கப்படவில்லை",
+    paymentCancelledBody: (bookingRef: string) =>
+      `உங்கள் முன்பதிவு (${bookingRef}) சேமிக்கப்பட்டுள்ளது, கட்டணம் இன்னும் நிலுவையில் உள்ளது — கட்டணம் செலுத்தும் வரை எதுவும் உறுதிசெய்யப்படாது. நீங்கள் தயாராக இருக்கும்போது மீண்டும் முயற்சிக்கலாம்.`,
+    retryPayment: "மீண்டும் கட்டணம் செலுத்தவும்",
+    startNewBooking: "புதிய முன்பதிவைத் தொடங்கவும்",
+    verifyErrorTitle: "உங்கள் கட்டணத்தை உறுதிசெய்ய முடியவில்லை",
+    verifyErrorBody: (bookingRef: string) =>
+      `முன்பதிவு ${bookingRef} கட்டணத்தை உறுதிசெய்வதில் ஏதோ தவறு ஏற்பட்டது. பணம் கழிக்கப்பட்டிருந்தால், அது விரைவில் தானாக உறுதிசெய்யப்படும் — அல்லது கீழே மீண்டும் முயற்சிக்கவும்.`,
+    tryAgain: "மீண்டும் முயற்சிக்கவும்",
+    amountPaidLabel: "செலுத்திய தொகை",
+    successTitle: "முன்பதிவு உறுதிசெய்யப்பட்டது!",
     successBody: (guestName: string, title: string, date: string, experienceCode?: string) =>
       `${guestName || "உங்கள்"} ${title}${
         experienceCode ? ` (${experienceCode})` : ""
-      }க்கான முன்பதிவு கோரிக்கை${
+      }க்கான முன்பதிவு${
         date ? ` (${date})` : ""
-      } பெறப்பட்டுள்ளது. ரிசெப்ஷன் வாட்ஸ்அப்பில் உறுதிசெய்து கட்டண இணைப்பைப் பகிரும்.`,
+      } உறுதிசெய்யப்பட்டு கட்டணமும் செலுத்தப்பட்டது. உங்கள் மின்னஞ்சலுக்கு உறுதிப்படுத்தல் அனுப்பப்பட்டுள்ளது.`,
     bookAnother: "மற்றொரு அனுபவத்தை முன்பதிவு செய்யுங்கள்",
   },
   queryForm: {
