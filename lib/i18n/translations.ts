@@ -187,7 +187,7 @@ const en = {
     modal: {
       closeAriaLabel: "Close details",
       recommended: "Duration",
-      bestTime: "Preferred trail",
+      bestTime: "Preferred time",
       didYouKnow: "Did you know?",
     },
   },
@@ -527,7 +527,7 @@ const hi: TranslationDict = {
     modal: {
       closeAriaLabel: "विवरण बंद करें",
       recommended: "अवधि",
-      bestTime: "पसंदीदा ट्रेल",
+      bestTime: "पसंदीदा समय",
       didYouKnow: "क्या आप जानते हैं?",
     },
   },
@@ -864,7 +864,7 @@ const gu: TranslationDict = {
     modal: {
       closeAriaLabel: "વિગતો બંધ કરો",
       recommended: "સમયગાળો",
-      bestTime: "પસંદગીનો ટ્રેલ",
+      bestTime: "પસંદગીનો સમય",
       didYouKnow: "શું તમે જાણો છો?",
     },
   },
@@ -1200,7 +1200,7 @@ const ta: TranslationDict = {
     modal: {
       closeAriaLabel: "விவரங்களை மூடு",
       recommended: "கால அளவு",
-      bestTime: "விருப்பமான பயணம்",
+      bestTime: "விருப்பமான நேரம்",
       didYouKnow: "உங்களுக்குத் தெரியுமா?",
     },
   },
