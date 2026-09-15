@@ -374,7 +374,7 @@ function RouteMarker({
           <Icon size={14} strokeWidth={2.4} aria-hidden="true" />
         </span>
       </span>
-      <p className="mt-1 max-w-[120px] text-center text-[9.5px] font-bold uppercase leading-[1.3] tracking-[0.06em] text-terracotta">
+      <p className="relative mt-1 max-w-[120px] rounded-md bg-[#FFFDFA] px-1.5 py-0.5 text-center text-[9.5px] font-bold uppercase leading-[1.3] tracking-[0.06em] text-terracotta">
         {label}
       </p>
     </div>
