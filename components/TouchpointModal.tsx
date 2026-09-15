@@ -161,7 +161,7 @@ export default function TouchpointModal({
                 <dt className="text-[9.5px] font-semibold uppercase tracking-[0.06em] text-ink-faint">
                   {t.touchpoints.modal.recommended}
                 </dt>
-                <dd className="truncate text-[12.5px] font-bold text-ink">
+                <dd className="text-[12.5px] font-bold leading-tight text-ink">
                   {touchpoint.duration}
                 </dd>
               </div>
@@ -174,7 +174,7 @@ export default function TouchpointModal({
                 <dt className="text-[9.5px] font-semibold uppercase tracking-[0.06em] text-ink-faint">
                   {t.touchpoints.modal.bestTime}
                 </dt>
-                <dd className="truncate text-[12.5px] font-bold text-ink">
+                <dd className="text-[12.5px] font-bold leading-tight text-ink">
                   {touchpoint.bestTime}
                 </dd>
               </div>

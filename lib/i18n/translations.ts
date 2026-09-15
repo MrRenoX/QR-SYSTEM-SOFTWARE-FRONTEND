@@ -173,8 +173,8 @@ const en = {
     heading: "The journey",
     subtitle: "Begins and ends at Evoke Rambagh",
     stopsCount: (count: number) => `${count} stops`,
-    start: "Start",
-    end: "End",
+    start: "Start from Evoke Rambagh",
+    end: "End at Evoke Rambagh",
   },
   touchpoints: {
     section: {
@@ -513,8 +513,8 @@ const hi: TranslationDict = {
     heading: "यात्रा मार्ग",
     subtitle: "एवोक रामबाग से शुरू और वहीं समाप्त",
     stopsCount: (count: number) => `${count} पड़ाव`,
-    start: "शुरुआत",
-    end: "समाप्ति",
+    start: "एवोक रामबाग से शुरू",
+    end: "एवोक रामबाग पर समाप्त",
   },
   touchpoints: {
     section: {
@@ -850,8 +850,8 @@ const gu: TranslationDict = {
     heading: "યાત્રા માર્ગ",
     subtitle: "એવોક રામબાગથી શરૂ અને ત્યાં જ પૂર્ણ",
     stopsCount: (count: number) => `${count} સ્ટોપ`,
-    start: "શરૂઆત",
-    end: "અંત",
+    start: "એવોક રામબાગથી શરૂઆત",
+    end: "એવોક રામબાગ ખાતે અંત",
   },
   touchpoints: {
     section: {
@@ -1186,8 +1186,8 @@ const ta: TranslationDict = {
     heading: "பயண வழி",
     subtitle: "எவோக் ராம்பாக்கில் தொடங்கி அங்கேயே முடிவடைகிறது",
     stopsCount: (count: number) => `${count} நிறுத்தங்கள்`,
-    start: "தொடக்கம்",
-    end: "முடிவு",
+    start: "எவோக் ராம்பாக்கில் தொடக்கம்",
+    end: "எவோக் ராம்பாக்கில் முடிவு",
   },
   touchpoints: {
     section: {
